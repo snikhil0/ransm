@@ -1,0 +1,5 @@
+ransm
+==================
+This tool provides a framework to compute routing quality of openstreetmap. It uses the imposm parser
+framework to parse the osm pbf and xml files.
+
