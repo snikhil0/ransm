@@ -1,7 +1,36 @@
+# parse.py
+# --------
+# Get metrics relevant for routing from OSM PBF files. 
+#
+# Usage:
+# ------
+# parse.py requires a modified version of imposm.parser which can be 
+# found at https://github.com/mvexel/imposm.parser
+# 
+# Right now, the OSM file is hardcoded into the script (see the PBF_FILE
+# variable).
+#
+#
+# Copyright 2011 Martijn van Exel / geospatial omnivore
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#     http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 import sys
 from imposm.parser import OSMParser
 from time import time
 from datetime import datetime
+
+PBF_FILE = '/home/mvexel/osm/planet/zillow/Salt_Lake_City_UT.osm.pbf'
 
 class NavTagsCounter(object):
 	turnrestrictions = 0
@@ -52,7 +81,7 @@ class NavTagsCounter(object):
 t0 = time()
 counter = NavTagsCounter()
 p = OSMParser(concurrency=4, coords_callback = counter.coord, nodes_callback = counter.node, ways_callback=counter.way, relations_callback=counter.relation)
-p.parse('/home/mvexel/osm/planet/zillow/Salt_Lake_City_UT.osm.pbf')
+p.parse(PBF_FILE)
 t1 = time()
 
 print 'number of coords / nodes / ways / relations: %d / %d / %d / %d' % (counter.numcoords, counter.numnodes, counter.numways, counter.numrelations)
