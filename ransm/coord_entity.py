@@ -1,21 +1,17 @@
-'''
-Created on Nov 28, 2011
-
-@author: snikhil
-'''
 from entity import Entity
 from datetime import datetime
-__author__ = 'snikhil'
-
-class WayEntity(Entity):
+class CoordEntity(Entity):
 
     def __init__(self):
+        '''
+        Constructor
+        '''
         Entity.__init__(self)
+        self.min_lat = self.min_lon = float(-180.0)
+        self.max_lat = self.max_lon = float(180.0)
 
-
-    def analyze(self, ways):
-        #callback method for the ways
-        for osmid, tags, ref, osmversion, osmtimestamp in ways:
+    def analyze(self, coord):
+        for osmid, lon, lat, osmversion, osmtimestamp in coord:
             self.entity_count += 1
 
             timestamp = datetime.utcfromtimestamp(osmtimestamp)
@@ -32,10 +28,25 @@ class WayEntity(Entity):
             if osmid < self.minid:
                 self.minid = osmid
 
+            if lon > self.max_lon:
+                self.max_lon = lon
+
+            if lon < self.min_lon:
+                self.min_lon = lon
+
+            if lat < self.min_lat:
+                self.min_lat = lat
+
+            if lat > self.max_lat:
+                self.max_lat = lat
+
             if osmversion > self.max_version:
                 self.max_version = osmversion
 
             if osmversion < self.min_version:
                 self.min_version = osmversion
+
+
+
 
 

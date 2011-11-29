@@ -1,11 +1,11 @@
-from entity import Entity
-from datetime import datetime
+from ransm.entity import Entity
+from ransm.entity_action import IEntityAction
 __author__ = 'snikhil'
 
-class NodeEntity(Entity):
+class NodeEntity(Entity, IEntityAction):
 
     def __init__(self):
-        Entity.__init__(self)
+        pass
 
     def analyze(self, nodes):
         #callback method for the ways
@@ -13,13 +13,11 @@ class NodeEntity(Entity):
 
             self.entity_count += 1
 
-            timestamp = datetime.utcfromtimestamp(osmtimestamp)
+            if osmtimestamp > self.last_timestamp:
+                self.last_timestamp = osmtimestamp
 
-            if timestamp > self.last_timestamp:
-                self.last_timestamp = timestamp
-
-            if timestamp < self.first_timestamp:
-                self.first_timestamp = timestamp
+            if osmtimestamp < self.first_timestamp:
+                self.first_timestamp = osmtimestamp
 
             if osmid > self.maxid:
                 self.maxid = osmid
