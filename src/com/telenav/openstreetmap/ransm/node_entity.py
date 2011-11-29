@@ -1,11 +1,11 @@
-from ransm.entity import Entity
-from ransm.entity_action import IEntityAction
+from datetime import datetime
+from com.telenav.openstreetmap.ransm.entity import Entity
 __author__ = 'snikhil'
 
-class NodeEntity(Entity, IEntityAction):
+class NodeEntity(Entity):
 
     def __init__(self):
-        pass
+        Entity.__init__(self)
 
     def analyze(self, nodes):
         #callback method for the ways
@@ -13,11 +13,13 @@ class NodeEntity(Entity, IEntityAction):
 
             self.entity_count += 1
 
-            if osmtimestamp > self.last_timestamp:
-                self.last_timestamp = osmtimestamp
+            timestamp = datetime.utcfromtimestamp(osmtimestamp)
 
-            if osmtimestamp < self.first_timestamp:
-                self.first_timestamp = osmtimestamp
+            if timestamp > self.last_timestamp:
+                self.last_timestamp = timestamp
+
+            if timestamp < self.first_timestamp:
+                self.first_timestamp = timestamp
 
             if osmid > self.maxid:
                 self.maxid = osmid

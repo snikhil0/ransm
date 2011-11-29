@@ -1,10 +1,11 @@
 from imposm.parser import OSMParser
 import sys
-from coord_entity import CoordEntity
 from time import time
-from way_entity import WayEntity
-from node_entity import NodeEntity
-from relation_entity import RelationEntity
+
+from com.telenav.openstreetmap.ransm.way_entity import WayEntity
+from com.telenav.openstreetmap.ransm.node_entity import NodeEntity
+from com.telenav.openstreetmap.ransm.relation_entity import RelationEntity
+from com.telenav.openstreetmap.ransm.coord_entity import CoordEntity
 
 # This class does the way routing analysis.
 # The analysis is based on tags corresponding to

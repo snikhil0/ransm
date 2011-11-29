@@ -3,8 +3,8 @@ Created on Nov 28, 2011
 
 @author: snikhil
 '''
-from entity import Entity
 from datetime import datetime
+from com.telenav.openstreetmap.ransm.entity import Entity
 __author__ = 'snikhil'
 
 class WayEntity(Entity):

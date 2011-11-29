@@ -1,12 +1,12 @@
-from ransm.entity import Entity
-from ransm.entity_action import IEntityAction
-
-class CoordEntity(Entity, IEntityAction):
+from datetime import datetime
+from com.telenav.openstreetmap.ransm.entity import Entity
+class CoordEntity(Entity):
 
     def __init__(self):
         '''
         Constructor
         '''
+        Entity.__init__(self)
         self.min_lat = self.min_lon = float(-180.0)
         self.max_lat = self.max_lon = float(180.0)
 
@@ -14,11 +14,13 @@ class CoordEntity(Entity, IEntityAction):
         for osmid, lon, lat, osmversion, osmtimestamp in coord:
             self.entity_count += 1
 
-            if osmtimestamp > self.last_timestamp:
-                self.last_timestamp = osmtimestamp
+            timestamp = datetime.utcfromtimestamp(osmtimestamp)
 
-            if osmtimestamp < self.first_timestamp:
-                self.first_timestamp = osmtimestamp
+            if timestamp > self.last_timestamp:
+                self.last_timestamp = timestamp
+
+            if timestamp < self.first_timestamp:
+                self.first_timestamp = timestamp
 
             if osmid > self.maxid:
                 self.maxid = osmid

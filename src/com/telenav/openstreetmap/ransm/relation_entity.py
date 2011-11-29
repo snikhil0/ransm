@@ -1,18 +1,18 @@
-from entity import Entity
 from datetime import datetime
+from com.telenav.openstreetmap.ransm.entity import Entity
+
 __author__ = 'snikhil'
 
-class NodeEntity(Entity):
+class RelationEntity(Entity):
 
     def __init__(self):
         Entity.__init__(self)
+        self.num_turnrestrcitions = 0
 
-    def analyze(self, nodes):
+    def analyze(self, relations):
         #callback method for the ways
-        for osmid, tags, ref, osmversion, osmtimestamp in nodes:
-
+        for osmid, tags, refs, osmversion, osmtimestamp in relations:
             self.entity_count += 1
-
             timestamp = datetime.utcfromtimestamp(osmtimestamp)
 
             if timestamp > self.last_timestamp:
@@ -30,7 +30,6 @@ class NodeEntity(Entity):
             if osmversion > self.max_version:
                 self.max_version = osmversion
 
-            if osmversion < self.min_version:
-                self.min_version = osmversion
-
+            if 'type' in tags and tags['type'] == 'restriction':
+                self.num_turnrestrcitions += 1
 
