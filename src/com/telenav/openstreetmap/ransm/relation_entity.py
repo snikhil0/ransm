@@ -1,5 +1,7 @@
 from datetime import datetime
 from com.telenav.openstreetmap.ransm.entity import Entity
+from com.telenav.openstreetmap.ransm.user import User
+
 
 __author__ = 'snikhil'
 
@@ -13,22 +15,11 @@ class RelationEntity(Entity):
         #callback method for the ways
         for osmid, tags, refs, osmversion, osmtimestamp in relations:
             self.entity_count += 1
-            timestamp = datetime.utcfromtimestamp(osmtimestamp)
-
-            if timestamp > self.last_timestamp:
-                self.last_timestamp = timestamp
-
-            if timestamp < self.first_timestamp:
-                self.first_timestamp = timestamp
-
-            if osmid > self.maxid:
-                self.maxid = osmid
-
-            if osmid < self.minid:
-                self.minid = osmid
-
-            if osmversion > self.max_version:
-                self.max_version = osmversion
+            self.extract_user(tags)
+            self.extract_min_max_timestamp(osmtimestamp)
+            self.extract_min_max_id(osmid)
+            self.extract_min_max_version(osmversion)
+            self.ages.push(osmtimestamp)
 
             if 'type' in tags and tags['type'] == 'restriction':
                 self.num_turnrestrcitions += 1
