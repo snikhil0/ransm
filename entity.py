@@ -73,7 +73,7 @@ class CoordEntity(Entity):
 
 
     def analyze(self, coord):
-        for osmid, lon, lat, osmversion, osmtimestamp in coord:
+        for osmid, lon, lat, osmversion, osmtimestamp, osmuid in coord:
             self.entity_count += 1
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_id(osmid)
@@ -87,7 +87,7 @@ class NodeEntity(Entity):
 
     def analyze(self, nodes):
         #callback method for the ways
-        for osmid, tags, ref, osmversion, osmtimestamp in nodes:
+        for osmid, tags, ref, osmversion, osmtimestamp, osmuid in nodes:
             self.entity_count += 1
             self.extract_user(tags)
             self.extract_min_max_timestamp(osmtimestamp)
@@ -103,7 +103,7 @@ class RelationEntity(Entity):
 
     def analyze(self, relations):
         #callback method for the ways
-        for osmid, tags, refs, osmversion, osmtimestamp in relations:
+        for osmid, tags, refs, osmversion, osmtimestamp, osmuid in relations:
             self.entity_count += 1
             self.extract_user(tags)
             self.extract_min_max_timestamp(osmtimestamp)
@@ -121,7 +121,7 @@ class WayEntity(Entity):
 
     def analyze(self, ways):
         #callback method for the ways
-        for osmid, tags, ref, osmversion, osmtimestamp in ways:
+        for osmid, tags, ref, osmversion, osmtimestamp, osmuid in ways:
             self.entity_count += 1
             self.extract_min_max_id(osmid)
             self.extract_min_max_timestamp(osmtimestamp)
