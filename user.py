@@ -1,19 +1,5 @@
-'''
-Created on Nov 29, 2011
-
-@author: snikhil
-'''
-
 class User(object):
-    '''
-    classdocs
-    '''
-
-
     def __init__(self, uid, name):
-        '''
-        Constructor
-        '''
         self.uid = uid
         self.name = name
         self.count_nodes = 0
@@ -32,6 +18,11 @@ class User(object):
 
 class UserMgr(object):
     usermap = {}
+    edit_counts = []
+    ages = []
+    node_ages = []
+    way_ages = []
+    relation_ages = []
 
     def __init__(self):
         pass
@@ -51,11 +42,23 @@ class UserMgr(object):
             user.increment(name)
 
     def merge(self, unodes, uways, urelations):
-        self.usermap = unodes.copy()
+        self.usermap = unodes
         for k, v in uways.iteritems():
             self.add(v)
         for k, v in urelations.iteritems():
             self.add(v)
+        self.user_edit_counts()
 
+    def merge_ages(self, node_ages, way_ages, relation_ages):
+        self.node_ages = node_ages
+        self.way_ages = way_ages
+        self.relation_ages = relation_ages
+        self.ages = node_ages + way_ages + relation_ages
 
+    def count(self):
+        return len(self.usermap)
 
+    def user_edit_counts(self):
+        num = self.count()
+        for v in self.usermap.values():
+            self.edit_counts.append((v.count_nodes + v.count_ways + v.count_relations) / num)
