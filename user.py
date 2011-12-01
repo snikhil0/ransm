@@ -28,7 +28,7 @@ class UserMgr(object):
         pass
 
     def add(self, user):
-        if user.id not in self.usermap:
+        if user.uid not in self.usermap:
             self.usermap[user.uid] = user
         else:
             user1 = self.usermap[user.uid]

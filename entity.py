@@ -19,21 +19,11 @@ class Entity(object):
     def average_age(self):
         return sum(self.ages, 0.0) / len(self.ages)
 
-    def extract_user(self, tags):
-        uid = None
-        name = None
-        if 'uid' in tags:
-            uid = tags['uid']
-        if 'user' in tags:
-            name = tags['user']
-
-        if not uid or not name or name == 'undefined':
-            return
-        
+    def extract_user(self, uid, type):
         if uid not in self.users:
-            self.users[uid] = User(uid, name)
+            self.users[uid] = User(uid, str(uid))
         else:
-            self.users[uid].increment(uid, 'ways')
+            self.users[uid].increment(type)
 
     def extract_min_max_timestamp(self, osmtimestamp):
         timestamp = datetime.utcfromtimestamp(osmtimestamp)
@@ -89,7 +79,7 @@ class NodeEntity(Entity):
         #callback method for the ways
         for osmid, tags, ref, osmversion, osmtimestamp, osmuid in nodes:
             self.entity_count += 1
-            self.extract_user(tags)
+            self.extract_user(osmuid, 'nodes')
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_id(osmid)
             self.extract_min_max_version(osmversion)
@@ -105,7 +95,7 @@ class RelationEntity(Entity):
         #callback method for the ways
         for osmid, tags, refs, osmversion, osmtimestamp, osmuid in relations:
             self.entity_count += 1
-            self.extract_user(tags)
+            self.extract_user(osmuid, 'relations')
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_id(osmid)
             self.extract_min_max_version(osmversion)
@@ -126,6 +116,6 @@ class WayEntity(Entity):
             self.extract_min_max_id(osmid)
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_version(osmversion)
-            self.extract_user(tags)
+            self.extract_user(osmuid, 'ways')
             self.ages.append(float(osmtimestamp/1000.0))
 
