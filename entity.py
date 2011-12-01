@@ -108,6 +108,7 @@ class WayEntity(Entity):
 
     def __init__(self):
         Entity.__init__(self)
+        self.length = 0
 
     def analyze(self, ways):
         #callback method for the ways
@@ -118,4 +119,28 @@ class WayEntity(Entity):
             self.extract_min_max_version(osmversion)
             self.extract_user(osmuid, 'ways')
             self.ages.append(float(osmtimestamp/1000.0))
+	
+	def calc_length(self):
+		if len(self.refs) < 2:
+			return 0
+		lastcoord = ()
+		length = 0.0
+		for coord in self.refs:
+			if not lastcoord:
+				lastcoord = (coord[0], coord[1])
+				continue
+			length += self.calc_dist_fixed(coord[0], coord[1], lastcoord[0], lastcoord[1])
+		return length     
 
+	def calc_dist_fixed(lon0, lat0, lon1, lat1):
+		"""
+		all angles in degrees, result in miles
+		"""
+		lat0 = radians(lat0)
+		lat1 = radians(lat1)
+		delta_long = radians(lon0 - lon1)
+		cos_x = (
+			sin(lon0) * sin(lat1) +
+			cos(lon0) * cos(lat1) * cos(delta_long)
+			)
+		return acos(cos_x) * EARTH_RADIUS_IN_MILES
