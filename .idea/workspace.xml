@@ -44,7 +44,7 @@
       <file leaf-file-name="entity.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/entity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="0" selection-start="4110" selection-end="4110" vertical-scroll-proportion="0.7979798">
+            <state line="140" column="20" selection-start="4743" selection-end="4743" vertical-scroll-proportion="0.7845118">
               <folding />
             </state>
           </provider>
@@ -73,8 +73,8 @@
         <option value="$PROJECT_DIR$/../../MapProjects/GreatMap/DataCompiler/OpenX/TXDAdaptor/branch/adaptor_release/Sandbox/around/OsmAddressPoint/OsmAddressPoint.py" />
         <option value="$PROJECT_DIR$/src/com/telenav/openstreetmap/ransm/routing_analyzer.py" />
         <option value="$PROJECT_DIR$/user.py" />
-        <option value="$PROJECT_DIR$/entity.py" />
         <option value="$PROJECT_DIR$/routing_analyzer.py" />
+        <option value="$PROJECT_DIR$/entity.py" />
       </list>
     </option>
   </component>
@@ -411,7 +411,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/entity.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="0" selection-start="4110" selection-end="4110" vertical-scroll-proportion="0.7979798">
+        <state line="140" column="20" selection-start="4743" selection-end="4743" vertical-scroll-proportion="0.7845118">
           <folding />
         </state>
       </provider>

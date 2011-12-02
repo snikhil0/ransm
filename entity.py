@@ -3,7 +3,6 @@ from datetime import datetime
 from user import  User
 
 class Entity(object):
-
     def __init__(self):
         self.entity_count = 0
         self.min_version = sys.maxint
@@ -54,8 +53,8 @@ class Entity(object):
         if osmversion < self.min_version:
             self.min_version = osmversion
 
-class CoordEntity(Entity):
 
+class CoordEntity(Entity):
     def __init__(self):
         Entity.__init__(self)
         self.min_lat = self.min_lon = float(-180.0)
@@ -70,8 +69,8 @@ class CoordEntity(Entity):
             self.extract_min_max_lat_lon(lon, lat)
             self.extract_min_max_version(osmversion)
 
-class NodeEntity(Entity):
 
+class NodeEntity(Entity):
     def __init__(self):
         Entity.__init__(self)
 
@@ -83,10 +82,10 @@ class NodeEntity(Entity):
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_id(osmid)
             self.extract_min_max_version(osmversion)
-            self.ages.append(float(osmtimestamp/1000.0))
+            self.ages.append(float(osmtimestamp / 1000.0))
+
 
 class RelationEntity(Entity):
-
     def __init__(self):
         Entity.__init__(self)
         self.num_turnrestrcitions = 0
@@ -99,13 +98,13 @@ class RelationEntity(Entity):
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_id(osmid)
             self.extract_min_max_version(osmversion)
-            self.ages.append(float(osmtimestamp/1000.0))
+            self.ages.append(float(osmtimestamp / 1000.0))
 
             if 'type' in tags and tags['type'] == 'restriction':
                 self.num_turnrestrcitions += 1
-                
-class WayEntity(Entity):
 
+
+class WayEntity(Entity):
     def __init__(self):
         Entity.__init__(self)
         self.tigerbreakdown = {}
@@ -113,6 +112,7 @@ class WayEntity(Entity):
         self.untouched_by_user_edits = 0
         self.version_increase_over_tiger = 0
         self.sum_versions = 0
+        self.length = 0
 
     def analyze(self, ways):
         #callback method for the ways
@@ -122,8 +122,7 @@ class WayEntity(Entity):
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_version(osmversion)
             self.extract_user(osmuid, 'ways')
-            self.ages.append(float(osmtimestamp/1000.0))
-
+            self.ages.append(float(osmtimestamp / 1000.0))
             if 'tiger:tlid' in tags:
                 tigerTagValue = tags['tiger:tlid']
                 self.tiger_tagged_ways += 1
@@ -137,7 +136,27 @@ class WayEntity(Entity):
                 self.version_increase_over_tiger += (osmversion - 1)
                 self.sum_versions += osmversion
 
+    def calc_length(self):
+        if len(self.refs) < 2:
+            return 0
+        lastcoord = ()
+        length = 0.0
+        for coord in self.refs:
+            if not lastcoord:
+                lastcoord = (coord[0], coord[1])
+                continue
+            length += self.calc_dist_fixed(coord[0], coord[1], lastcoord[0], lastcoord[1])
+        return length
 
-                
-
-
+    def calc_dist_fixed(lon0, lat0, lon1, lat1):
+        """
+          all angles in degrees, result in miles
+          """
+        lat0 = radians(lat0)
+        lat1 = radians(lat1)
+        delta_long = radians(lon0 - lon1)
+        cos_x = (
+        sin(lon0) * sin(lat1) +
+        cos(lon0) * cos(lat1) * cos(delta_long)
+        )
+        return acos(cos_x) * EARTH_RADIUS_IN_MILES
