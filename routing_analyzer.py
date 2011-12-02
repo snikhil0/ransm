@@ -1,14 +1,19 @@
 from imposm.parser import OSMParser
 import sys
+import os
 from time import time
 import numpy as np
 import math
+from tcdb import hdb
 
 # This class does the way routing analysis.
 # The analysis is based on tags corresponding to
 # ways, nodes and relations
 from entity import WayEntity, NodeEntity, RelationEntity, CoordEntity
 from user import UserMgr
+
+# location of the tokyo cabinet node cache
+CACHE_LOCATION = '/tmp'
 
 DATA_TEMP = 100
 BASIC_TEMP = 68
@@ -28,10 +33,16 @@ NORMALIZE = (USER_WEIGHT95 + AGE_WEIGHT1 + AGE_WEIGHT10 + AGE_WEIGHT25 + AGE_WEI
 
 class RoutingAnalyzer(object):
     def __init__(self):
-        self.ways_entity = WayEntity()
+        self.nodecache = hdb.HDB()
+        try:
+            self.nodecache.open(os.path.join(CACHE_LOCATION, 'nodes.tch'))
+        except Exception:
+            print 'node cache could not be created at %s, does the directory exist? If not, create it. If so, Check permissions and disk space.' % CACHE_LOCATION
+            exit(1)
+        self.ways_entity = WayEntity(self.nodecache)
         self.nodes_entity = NodeEntity()
         self.relations_entity = RelationEntity()
-        self.coords_entity = CoordEntity()
+        self.coords_entity = CoordEntity(self.nodecache)
         self.parser = OSMParser(concurrency=4, coords_callback=self.coords_entity.analyze,
                                 nodes_callback=self.nodes_entity.analyze,
                                 ways_callback=self.ways_entity.analyze,
@@ -68,7 +79,6 @@ class RoutingAnalyzer(object):
         counts = self.userMgr.edit_counts
         counts.sort()
 
-        
         one_percentile_age = self.percentile(array, 0.01)
         ten_percentile_age = self.percentile(array, 0.1)
         twentyfive_percentile_age = self.percentile(array, 0.25)

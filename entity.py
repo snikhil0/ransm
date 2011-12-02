@@ -1,6 +1,9 @@
 import sys
 from datetime import datetime
 from user import  User
+from math import *
+
+EARTH_RADIUS_IN_MILES = 3963.19
 
 class Entity(object):
     def __init__(self):
@@ -55,11 +58,11 @@ class Entity(object):
 
 
 class CoordEntity(Entity):
-    def __init__(self):
+    def __init__(self, nodecache):
         Entity.__init__(self)
         self.min_lat = self.min_lon = float(-180.0)
         self.max_lat = self.max_lon = float(180.0)
-
+        self.nodecache = nodecache
 
     def analyze(self, coord):
         for osmid, lon, lat, osmversion, osmtimestamp, osmuid in coord:
@@ -68,7 +71,7 @@ class CoordEntity(Entity):
             self.extract_min_max_id(osmid)
             self.extract_min_max_lat_lon(lon, lat)
             self.extract_min_max_version(osmversion)
-
+            self.nodecache[osmid] = (lon,lat)
 
 class NodeEntity(Entity):
     def __init__(self):
@@ -105,7 +108,7 @@ class RelationEntity(Entity):
 
 
 class WayEntity(Entity):
-    def __init__(self):
+    def __init__(self, nodecache):
         Entity.__init__(self)
         self.tigerbreakdown = {}
         self.tiger_tagged_ways = 0
@@ -113,16 +116,20 @@ class WayEntity(Entity):
         self.version_increase_over_tiger = 0
         self.sum_versions = 0
         self.length = 0
+        self.refs = []
+        self.nodecache = nodecache
 
     def analyze(self, ways):
         #callback method for the ways
         for osmid, tags, ref, osmversion, osmtimestamp, osmuid in ways:
             self.entity_count += 1
+            self.refs = ref
             self.extract_min_max_id(osmid)
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_version(osmversion)
             self.extract_user(osmuid, 'ways')
             self.ages.append(float(osmtimestamp / 1000.0))
+            self.length = self.calc_length()
             if 'tiger:tlid' in tags:
                 tigerTagValue = tags['tiger:tlid']
                 self.tiger_tagged_ways += 1
@@ -141,22 +148,25 @@ class WayEntity(Entity):
             return 0
         lastcoord = ()
         length = 0.0
-        for coord in self.refs:
+        for ref in self.refs:
+            coord = self.nodecache[ref]
             if not lastcoord:
                 lastcoord = (coord[0], coord[1])
                 continue
-            length += self.calc_dist_fixed(coord[0], coord[1], lastcoord[0], lastcoord[1])
+            length += self.haversine(coord[0], coord[1], lastcoord[0], lastcoord[1])
         return length
 
-    def calc_dist_fixed(lon0, lat0, lon1, lat1):
+    def haversine(self, lon1, lat1, lon2, lat2):
         """
-          all angles in degrees, result in miles
-          """
-        lat0 = radians(lat0)
-        lat1 = radians(lat1)
-        delta_long = radians(lon0 - lon1)
-        cos_x = (
-        sin(lon0) * sin(lat1) +
-        cos(lon0) * cos(lat1) * cos(delta_long)
-        )
-        return acos(cos_x) * EARTH_RADIUS_IN_MILES
+        Calculate the great circle distance between two points 
+        on the earth (specified in decimal degrees)
+        """
+        # convert decimal degrees to radians 
+        lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
+        # haversine formula 
+        dlon = lon2 - lon1 
+        dlat = lat2 - lat1 
+        a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+        c = 2 * asin(sqrt(a)) 
+        mi = EARTH_RADIUS_IN_MILES * c
+        return mi 
