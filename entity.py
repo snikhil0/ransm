@@ -108,6 +108,11 @@ class WayEntity(Entity):
 
     def __init__(self):
         Entity.__init__(self)
+        self.tigerbreakdown = {}
+        self.tiger_tagged_ways = 0
+        self.untouched_by_user_edits = 0
+        self.version_increase_over_tiger = 0
+        self.sum_versions = 0
 
     def analyze(self, ways):
         #callback method for the ways
@@ -118,4 +123,21 @@ class WayEntity(Entity):
             self.extract_min_max_version(osmversion)
             self.extract_user(osmuid, 'ways')
             self.ages.append(float(osmtimestamp/1000.0))
+
+            if 'tiger:tlid' in tags:
+                tigerTagValue = tags['tiger:tlid']
+                self.tiger_tagged_ways += 1
+                if tigerTagValue not in self.tigerbreakdown:
+                    self.tigerbreakdown[tigerTagValue] = 1
+                else:
+                    self.tigerbreakdown[tigerTagValue] += 1
+                if osmversion == 1:
+                    self.untouched_by_user_edits += 1
+
+                self.version_increase_over_tiger += (osmversion - 1)
+                self.sum_versions += osmversion
+
+
+                
+
 
