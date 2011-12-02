@@ -26,10 +26,12 @@ AGE_WEIGHT50 = 0.4
 AGE_WEIGHT75 = 0.2
 UNTOUCHED_WEIGHT = 0.3
 VERSION_INCREASE_OVER_TIGER = 0.5
+ONE_WAY_WEIGHT = 0.4
+MAX_SPEED_WEIGHT = 0.7
 
 ZERO_DATA_TEMPERATURE = 32
 NORMALIZE = (USER_WEIGHT95 + AGE_WEIGHT1 + AGE_WEIGHT10 + AGE_WEIGHT25 + AGE_WEIGHT50 + AGE_WEIGHT75
-             + UNTOUCHED_WEIGHT + VERSION_INCREASE_OVER_TIGER) * 100
+             + UNTOUCHED_WEIGHT + VERSION_INCREASE_OVER_TIGER + ONE_WAY_WEIGHT + MAX_SPEED_WEIGHT) * 100
 
 class RoutingAnalyzer(object):
     def __init__(self):
@@ -92,15 +94,24 @@ class RoutingAnalyzer(object):
         datatemp_ages25 = twentyfive_percentile_age * AGE_WEIGHT25 * DATA_TEMP
         datatemp_ages50 = fifty_percentile_age * AGE_WEIGHT50 * DATA_TEMP
         datatemp_ages75 = seventyfive_percentile_age * AGE_WEIGHT75 * DATA_TEMP
+
+        # Refactor later to compute temps from different sources and fuze them
         datatemp_untouched_by_users = UNTOUCHED_WEIGHT * (float(self.ways_entity.untouched_by_user_edits)/self.ways_entity.tiger_tagged_ways) * DATA_TEMP
         datatemp_version_increase_over_tiger = VERSION_INCREASE_OVER_TIGER * \
                                                (float(self.ways_entity.version_increase_over_tiger)/self.ways_entity.sum_versions)\
                                                 * DATA_TEMP
 
         tiger_contributed_datatemp = datatemp_untouched_by_users + datatemp_version_increase_over_tiger
-       
+
+        # temp from routing features normalized by way distances
+        datatemp_oneway = ONE_WAY_WEIGHT * \
+        (float(self.ways_entity.sum_way_one_way_lengths)/self.ways_entity.sum_way_lengths) * DATA_TEMP
+
+        datatemp_maxspeed = MAX_SPEED_WEIGHT * \
+        (float(self.ways_entity.sum_max_speed_lengths)/self.ways_entity.sum_way_lengths) * DATA_TEMP
+
         # Normalize the data temperature to between 0 and 40 and add a buffer of zero celsius
-        datatemp = ((datatemp_ages1 + datatemp_ages10 + datatemp_ages25 +\
+        datatemp = ((datatemp_ages1 + datatemp_ages10 + datatemp_ages25 + datatemp_oneway + datatemp_maxspeed + \
                    datatemp_user95 + datatemp_ages50 + datatemp_ages75 + tiger_contributed_datatemp)/NORMALIZE) * BASIC_TEMP + ZERO_DATA_TEMPERATURE
         return datatemp
 

@@ -17,6 +17,7 @@ class Entity(object):
         self.minid = sys.maxint
         self.users = {}
         self.ages = []
+        self.nodes = {}
 
     def average_age(self):
         return sum(self.ages, 0.0) / len(self.ages)
@@ -86,6 +87,8 @@ class NodeEntity(Entity):
             self.extract_min_max_id(osmid)
             self.extract_min_max_version(osmversion)
             self.ages.append(float(osmtimestamp / 1000.0))
+            if osmid not in self.nodes:
+                self.nodes[osmid] = (ref[0], ref[1])
 
 
 class RelationEntity(Entity):
@@ -118,6 +121,10 @@ class WayEntity(Entity):
         self.length = 0
         self.refs = []
         self.nodecache = nodecache
+        self.way_length_map = {}
+        self.sum_way_lengths = 0
+        self.sum_way_one_way_lengths = 0
+        self.sum_max_speed_lengths = 0
 
     def analyze(self, ways):
         #callback method for the ways
@@ -129,7 +136,19 @@ class WayEntity(Entity):
             self.extract_min_max_version(osmversion)
             self.extract_user(osmuid, 'ways')
             self.ages.append(float(osmtimestamp / 1000.0))
-            self.length = self.calc_length()
+
+            # only compute lengths for road tags
+            if 'highway' in tags:
+                self.length = self.calc_length()
+                self.way_length_map[osmid] = self.length
+                self.sum_way_lengths += self.length
+
+            if 'oneway' in tags:
+                self.sum_way_one_way_lengths += length
+
+            if 'maxspeed' in tags:
+                self.sum_max_speed_lengths += length
+                
             if 'tiger:tlid' in tags:
                 tigerTagValue = tags['tiger:tlid']
                 self.tiger_tagged_ways += 1
