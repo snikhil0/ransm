@@ -144,10 +144,10 @@ class WayEntity(Entity):
                 self.sum_way_lengths += self.length
 
             if 'oneway' in tags:
-                self.sum_way_one_way_lengths += length
+                self.sum_way_one_way_lengths += self.length
 
             if 'maxspeed' in tags:
-                self.sum_max_speed_lengths += length
+                self.sum_max_speed_lengths += self.length
                 
             if 'tiger:tlid' in tags:
                 tigerTagValue = tags['tiger:tlid']
@@ -168,11 +168,12 @@ class WayEntity(Entity):
         lastcoord = ()
         length = 0.0
         for ref in self.refs:
-            coord = self.nodecache[ref]
-            if not lastcoord:
-                lastcoord = (coord[0], coord[1])
-                continue
-            length += self.haversine(coord[0], coord[1], lastcoord[0], lastcoord[1])
+            if ref in self.nodecache:
+                coord = self.nodecache[ref]
+                if not lastcoord:
+                    lastcoord = (coord[0], coord[1])
+                    continue
+                length += self.haversine(coord[0], coord[1], lastcoord[0], lastcoord[1])
         return length
 
     def haversine(self, lon1, lat1, lon2, lat2):

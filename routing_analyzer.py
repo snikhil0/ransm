@@ -69,7 +69,7 @@ class RoutingAnalyzer(object):
         f = math.floor(k)
         c = math.ceil(k)
         if f == c:
-            return key(N[int(k)])
+            return key(N[int(k)])/N[len(N) -1]
         d0 = key(N[int(f)]) * (c - k)
         d1 = key(N[int(c)]) * (k - f)
         return (d0 + d1)/N[len(N) -1]
@@ -95,6 +95,13 @@ class RoutingAnalyzer(object):
         datatemp_ages50 = fifty_percentile_age * AGE_WEIGHT50 * DATA_TEMP
         datatemp_ages75 = seventyfive_percentile_age * AGE_WEIGHT75 * DATA_TEMP
 
+        print 'datatemp_user95 %f' %datatemp_user95
+        print 'datatemp_ages1 %f' %datatemp_ages1
+        print 'datatemp_ages10 %f' %datatemp_ages10
+        print 'datatemp_ages25 %f' %datatemp_ages25
+        print 'datatemp_ages50 %f' %datatemp_ages50
+        print 'datatemp_ages75 %f' %datatemp_ages75
+
         # Refactor later to compute temps from different sources and fuze them
         datatemp_untouched_by_users = UNTOUCHED_WEIGHT * (float(self.ways_entity.untouched_by_user_edits)/self.ways_entity.tiger_tagged_ways) * DATA_TEMP
         datatemp_version_increase_over_tiger = VERSION_INCREASE_OVER_TIGER * \
@@ -102,7 +109,8 @@ class RoutingAnalyzer(object):
                                                 * DATA_TEMP
 
         tiger_contributed_datatemp = datatemp_untouched_by_users + datatemp_version_increase_over_tiger
-
+        print 'tiger_contributed_datatemp %f' %tiger_contributed_datatemp
+        
         # temp from routing features normalized by way distances
         datatemp_oneway = ONE_WAY_WEIGHT * \
         (float(self.ways_entity.sum_way_one_way_lengths)/self.ways_entity.sum_way_lengths) * DATA_TEMP
