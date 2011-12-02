@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routing_analyzer.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="routing_analyzer.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routing_analyzer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="0" selection-start="3485" selection-end="3485" vertical-scroll-proportion="0.86195284">
+            <state line="83" column="48" selection-start="3028" selection-end="3028" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -41,19 +41,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="entity.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="entity.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/entity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="0" selection-start="4110" selection-end="4110" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OSMQualityMetrics.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../OSMQualityMetrics/OSMQualityMetrics.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="300" column="44" selection-start="10816" selection-end="10816" vertical-scroll-proportion="0.0">
+            <state line="126" column="0" selection-start="4110" selection-end="4110" vertical-scroll-proportion="0.7979798">
               <folding />
             </state>
           </provider>
@@ -399,7 +390,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../OSMQualityMetrics/OSMQualityMetrics.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="300" column="44" selection-start="10816" selection-end="10816" vertical-scroll-proportion="0.0">
+        <state line="300" column="44" selection-start="10816" selection-end="10816" vertical-scroll-proportion="8.338028">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routing_analyzer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="48" selection-start="3028" selection-end="3028" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -413,14 +411,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/entity.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="0" selection-start="4110" selection-end="4110" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routing_analyzer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="0" selection-start="3485" selection-end="3485" vertical-scroll-proportion="0.86195284">
+        <state line="126" column="0" selection-start="4110" selection-end="4110" vertical-scroll-proportion="0.7979798">
           <folding />
         </state>
       </provider>
