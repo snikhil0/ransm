@@ -18,20 +18,20 @@ CACHE_LOCATION = '/tmp'
 DATA_TEMP = 100
 BASIC_TEMP = 68
 
-USER_WEIGHT95 = 0.3
-AGE_WEIGHT1 = 0.7
-AGE_WEIGHT10 = 0.6
-AGE_WEIGHT25 = 0.5
-AGE_WEIGHT50 = 0.4
-AGE_WEIGHT75 = 0.2
-UNTOUCHED_WEIGHT = -0.3
-VERSION_INCREASE_OVER_TIGER = 0.7
-ONE_WAY_WEIGHT = 0.4
-MAX_SPEED_WEIGHT = 0.7
+USER_WEIGHT95 = 0.2
+AGE_WEIGHT1 = 0.3
+AGE_WEIGHT10 = 0.25
+AGE_WEIGHT25 = 0.1
+AGE_WEIGHT50 = 0.1
+AGE_WEIGHT75 = 0.05
+
+ROUTING_WEIGHT = 0.4
+TIGER_WEIGHT = 0.2
+FRESHNESS_WEIGHT = 0.4
 
 ZERO_DATA_TEMPERATURE = 32
-NORMALIZE = (USER_WEIGHT95 + AGE_WEIGHT1 + AGE_WEIGHT10 + AGE_WEIGHT25 + AGE_WEIGHT50 + AGE_WEIGHT75
-             - UNTOUCHED_WEIGHT + VERSION_INCREASE_OVER_TIGER + ONE_WAY_WEIGHT + MAX_SPEED_WEIGHT) * 100
+ROAD_CATEGORY_WEIGHTS = {'highways': 0.3, 'main': 0.20, 'local': 0.10, 'guidance': 0.2,
+                         'unclassified':-0.1, 'uncommon':-0.1}
 
 class RoutingAnalyzer(object):
     def __init__(self):
@@ -74,7 +74,22 @@ class RoutingAnalyzer(object):
         d1 = key(N[int(c)]) * (k - f)
         return (d0 + d1)/N[len(N) -1]
 
-
+    def routing_attributes_temperature(self):
+        highway_costs = self.ways_entity.attribute_cost('highways')
+        main_costs = self.ways_entity.attribute_cost('main')
+        local_costs = self.ways_entity.attribute_cost('local')
+        guidance_costs = self.ways_entity.attribute_cost('guidance')
+        unclassified_costs = self.ways_entity.attribute_cost('unclassified')
+        uncommon_costs = float (self.ways_entity.uncommon_highway_length)/self.ways_entity.RCM.sum_way_lengths
+        costs = highway_costs * ROAD_CATEGORY_WEIGHTS['highways'] + \
+                main_costs * ROAD_CATEGORY_WEIGHTS['main'] + \
+                local_costs * ROAD_CATEGORY_WEIGHTS['local'] + \
+                guidance_costs * ROAD_CATEGORY_WEIGHTS['guidance'] + \
+                unclassified_costs * ROAD_CATEGORY_WEIGHTS['unclassified'] + \
+                uncommon_costs * ROAD_CATEGORY_WEIGHTS['uncommon']
+        
+        return costs * BASIC_TEMP
+    
     def data_temerature(self):
         array = self.userMgr.ages
         array.sort()
@@ -88,41 +103,19 @@ class RoutingAnalyzer(object):
         seventyfive_percentile_age = self.percentile(array, 0.75)
         nintyfive_percentile_user_edits = self.percentile(counts, 0.95)
 
-        datatemp_user95 = nintyfive_percentile_user_edits * USER_WEIGHT95 * DATA_TEMP
-        datatemp_ages1 = one_percentile_age * AGE_WEIGHT1 * DATA_TEMP
-        datatemp_ages10 = ten_percentile_age * AGE_WEIGHT10 * DATA_TEMP
-        datatemp_ages25 = twentyfive_percentile_age * AGE_WEIGHT25 * DATA_TEMP
-        datatemp_ages50 = fifty_percentile_age * AGE_WEIGHT50 * DATA_TEMP
-        datatemp_ages75 = seventyfive_percentile_age * AGE_WEIGHT75 * DATA_TEMP
-
-        print 'datatemp_user95 %f' %datatemp_user95
-        print 'datatemp_ages1 %f' %datatemp_ages1
-        print 'datatemp_ages10 %f' %datatemp_ages10
-        print 'datatemp_ages25 %f' %datatemp_ages25
-        print 'datatemp_ages50 %f' %datatemp_ages50
-        print 'datatemp_ages75 %f' %datatemp_ages75
-
-        # Refactor later to compute temps from different sources and fuze them
-        datatemp_untouched_by_users = UNTOUCHED_WEIGHT * (float(self.ways_entity.untouched_by_user_edits)/self.ways_entity.tiger_tagged_ways) * DATA_TEMP
-        datatemp_version_increase_over_tiger = VERSION_INCREASE_OVER_TIGER * \
-                                               (float(self.ways_entity.version_increase_over_tiger)/self.ways_entity.sum_versions)\
-                                                * DATA_TEMP
-
-        tiger_contributed_datatemp = datatemp_untouched_by_users + datatemp_version_increase_over_tiger
-        print 'tiger_contributed_datatemp %f' %tiger_contributed_datatemp
-        
-        # temp from routing features normalized by way distances
-        datatemp_oneway = ONE_WAY_WEIGHT * \
-        (float(self.ways_entity.sum_way_one_way_lengths)/self.ways_entity.sum_way_lengths) * DATA_TEMP
-
-        datatemp_maxspeed = MAX_SPEED_WEIGHT * \
-        (float(self.ways_entity.sum_max_speed_lengths)/self.ways_entity.sum_way_lengths) * DATA_TEMP
+        cost_user95 = nintyfive_percentile_user_edits * USER_WEIGHT95
+        cost_ages1 = one_percentile_age * AGE_WEIGHT1
+        cost_ages10 = ten_percentile_age * AGE_WEIGHT10
+        cost_ages25 = twentyfive_percentile_age * AGE_WEIGHT25
+        cost_ages50 = fifty_percentile_age * AGE_WEIGHT50
+        cost_ages75 = seventyfive_percentile_age * AGE_WEIGHT75
 
         # Normalize the data temperature to between 0 and 40 and add a buffer of zero celsius
-        datatemp = ((datatemp_ages1 + datatemp_ages10 + datatemp_ages25 + datatemp_oneway + datatemp_maxspeed + \
-                   datatemp_user95 + datatemp_ages50 + datatemp_ages75 + tiger_contributed_datatemp)/NORMALIZE) * BASIC_TEMP + ZERO_DATA_TEMPERATURE
+        datatemp = ROUTING_WEIGHT * self.routing_attributes_temperature() + FRESHNESS_WEIGHT * \
+                    (cost_ages1 + cost_ages10 + cost_ages25   + \
+                   cost_user95 + cost_ages50 + cost_ages75)  * BASIC_TEMP + \
+                   TIGER_WEIGHT * self.ways_entity.RCM.tiger_cost() * BASIC_TEMP + ZERO_DATA_TEMPERATURE
         return datatemp
-
 
     def run(self, filename):
         t0 = time()

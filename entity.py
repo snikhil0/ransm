@@ -4,6 +4,27 @@ from user import  User
 from math import *
 
 EARTH_RADIUS_IN_MILES = 3963.19
+ROAD_CATEGORY = {'motorway': 'highways', 'trunk':'main', 'primary':'main', 'secondary':'local',
+                     'tertiary': 'local', 'residential':'local', 'unclassified': 'unclassified', 'road':'unclassified',
+                     'living_street': 'local', 'service': 'local', 'track':'local', 'pedestrian':'local',
+                     'raceway':'local', 'services':'local', 'rest_area':'local', 'bus_guideway':'local',
+                     'path':'local', 'cycleway':'guidance', 'footway':'guidance', 'mini_roundabout':'guidance',
+                     'stop':'guidance', 'give_way':'guidance', 'traffic_signals':'guidance',
+                     'crossing':'guidance', 'roundabout':'guidance', 'motorway_junction':'guidance',
+                     'turning_circle':'guidance', 'construction':'guidance', 'motorway_link':'local',
+                     'trunk_link':'local', 'primary_link':'local', 'secondary_link':'local',
+                     'tertiary_link':'local'}
+
+ONE_WAY_WEIGHT = 0.4
+MAX_SPEED_WEIGHT = 0.6
+
+UNTOUCHED_WEIGHT = -0.3
+VERSION_INCREASE_OVER_TIGER = 0.7
+
+LENGTH_COST = 0.2
+ROUTING_COST = 0.4
+JUNCTION_COST = 0.15
+TIGER_COST = 0.25
 
 class Entity(object):
     def __init__(self):
@@ -110,21 +131,63 @@ class RelationEntity(Entity):
                 self.num_turnrestrcitions += 1
 
 
-class WayEntity(Entity):
-    def __init__(self, nodecache):
+class RoutingCost(Entity):
+    length = 0
+
+    def __init__(self):
         Entity.__init__(self)
         self.tigerbreakdown = {}
         self.tiger_tagged_ways = 0
         self.untouched_by_user_edits = 0
         self.version_increase_over_tiger = 0
         self.sum_versions = 0
-        self.length = 0
+        self.sum_way_lengths = 0
+        self.sum_one_way_lengths = 0
+        self.sum_max_speed_lengths = 0
+        self.number_of_junctions = 0
+
+    def tiger_cost(self):
+        # Refactor later to compute temps from different sources and fuze them
+        datatemp_untouched_by_users = UNTOUCHED_WEIGHT * float(self.untouched_by_user_edits)/self.tiger_tagged_ways
+        datatemp_version_increase_over_tiger = VERSION_INCREASE_OVER_TIGER * float(self.version_increase_over_tiger)/self.sum_versions
+        tiger_contributed_datatemp = datatemp_untouched_by_users + datatemp_version_increase_over_tiger
+        return  tiger_contributed_datatemp
+
+    def routing_cost(self):
+        # routing features normalized by way distances
+        if not self.sum_one_way_lengths:
+            return 0
+        datatemp_oneway = float(self.sum_one_way_lengths)/self.sum_way_lengths
+        datatemp_maxspeed = float(self.sum_max_speed_lengths)/self.sum_way_lengths
+        return ONE_WAY_WEIGHT * datatemp_oneway + MAX_SPEED_WEIGHT * datatemp_maxspeed
+
+    def junction_cost(self):
+        return self.number_of_junctions/self.entity_count
+
+class WayEntity(Entity):
+    def __init__(self, nodecache):
+        Entity.__init__(self)
         self.refs = []
         self.nodecache = nodecache
         self.way_length_map = {}
-        self.sum_way_lengths = 0
-        self.sum_way_one_way_lengths = 0
-        self.sum_max_speed_lengths = 0
+        self.costmodel = {} #key is road category, value is routing cost model
+        self.RCM = RoutingCost()
+        self.uncommon_highway_count = 0
+        self.uncommon_highway_length = 0
+
+        
+    def attribute_cost(self, road_category):
+        if road_category not in ROAD_CATEGORY.values():
+            return 0
+        road_feature = self.costmodel[road_category]
+        length_cost = float(road_feature.sum_way_lengths)/self.RCM.sum_way_lengths
+        routing_cost = road_feature.routing_cost()
+        junction_cost = road_feature.junction_cost()
+        tiger_cost = road_feature.tiger_cost()
+
+        return length_cost * LENGTH_COST + routing_cost * ROUTING_COST + \
+               junction_cost * JUNCTION_COST + tiger_cost * TIGER_COST
+
 
     def analyze(self, ways):
         #callback method for the ways
@@ -137,30 +200,74 @@ class WayEntity(Entity):
             self.extract_user(osmuid, 'ways')
             self.ages.append(float(osmtimestamp / 1000.0))
 
+
             # only compute lengths for road tags
             if 'highway' in tags:
                 self.length = self.calc_length()
                 self.way_length_map[osmid] = self.length
-                self.sum_way_lengths += self.length
+                self.RCM.sum_way_lengths += self.length
 
+                if tags['highway'] not in ROAD_CATEGORY:
+                    self.uncommon_highway_count += 1
+                    self.uncommon_highway_length += self.length
+                    continue
+
+                if ROAD_CATEGORY[tags['highway']] not in self.costmodel:
+                    self.costmodel[ROAD_CATEGORY[tags['highway']]] = RoutingCost()
+                    
+                road_category_entity = self.costmodel[ROAD_CATEGORY[tags['highway']]]
+
+                road_category_entity.entity_count += 1
+                road_category_entity.extract_min_max_id(osmid)
+                road_category_entity.extract_min_max_timestamp(osmtimestamp)
+                road_category_entity.extract_min_max_version(osmversion)
+                road_category_entity.extract_user(osmuid, 'ways')
+                road_category_entity.ages.append(float(osmtimestamp / 1000.0))
+                road_category_entity.length += self.length
+                road_category_entity.sum_way_lengths += self.length
+
+                if 'oneway' in tags:
+                    road_category_entity.sum_one_way_lengths += self.length
+
+                if 'maxspeed' in tags:
+                    road_category_entity.sum_max_speed_lengths += self.length
+
+                if 'tiger:tlid' in tags:
+                    tigerTagValue = tags['tiger:tlid']
+                    road_category_entity.tiger_tagged_ways += 1
+                    if tigerTagValue not in road_category_entity.tigerbreakdown:
+                        road_category_entity.tigerbreakdown[tigerTagValue] = 1
+                    else:
+                        road_category_entity.tigerbreakdown[tigerTagValue] += 1
+                    if osmversion == 1:
+                        road_category_entity.untouched_by_user_edits += 1
+
+                    road_category_entity.version_increase_over_tiger += (osmversion - 1)
+                    road_category_entity.sum_versions += osmversion
+
+                if 'junction' in tags:
+                    road_category_entity.number_of_junctions += 1
+
+            if 'junction' in tags:
+                self.RCM.number_of_junctions += 1
             if 'oneway' in tags:
-                self.sum_way_one_way_lengths += self.length
+                self.RCM.sum_one_way_lengths += self.length
 
             if 'maxspeed' in tags:
-                self.sum_max_speed_lengths += self.length
-                
+                self.RCM.sum_max_speed_lengths += self.length
+
             if 'tiger:tlid' in tags:
                 tigerTagValue = tags['tiger:tlid']
-                self.tiger_tagged_ways += 1
-                if tigerTagValue not in self.tigerbreakdown:
-                    self.tigerbreakdown[tigerTagValue] = 1
+                self.RCM.tiger_tagged_ways += 1
+                if tigerTagValue not in self.RCM.tigerbreakdown:
+                    self.RCM.tigerbreakdown[tigerTagValue] = 1
                 else:
-                    self.tigerbreakdown[tigerTagValue] += 1
+                    self.RCM.tigerbreakdown[tigerTagValue] += 1
                 if osmversion == 1:
-                    self.untouched_by_user_edits += 1
+                    self.RCM.untouched_by_user_edits += 1
 
-                self.version_increase_over_tiger += (osmversion - 1)
-                self.sum_versions += osmversion
+                self.RCM.version_increase_over_tiger += (osmversion - 1)
+                self.RCM.sum_versions += osmversion
 
     def calc_length(self):
         if len(self.refs) < 2:
@@ -189,4 +296,4 @@ class WayEntity(Entity):
         a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
         c = 2 * asin(sqrt(a)) 
         mi = EARTH_RADIUS_IN_MILES * c
-        return mi 
+        return mi
