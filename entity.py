@@ -15,16 +15,19 @@ ROAD_CATEGORY = {'motorway': 'highways', 'trunk':'main', 'primary':'main', 'seco
                      'trunk_link':'local', 'primary_link':'local', 'secondary_link':'local',
                      'tertiary_link':'local'}
 
-ONE_WAY_WEIGHT = 0.4
-MAX_SPEED_WEIGHT = 0.6
+ONE_WAY_WEIGHT = 0.45
+MAX_SPEED_WEIGHT = 0.45
+ACCESS_WEIGHT = 0.1
 
 UNTOUCHED_WEIGHT = -0.3
 VERSION_INCREASE_OVER_TIGER = 0.7
 
 LENGTH_COST = 0.2
 ROUTING_COST = 0.4
-JUNCTION_COST = 0.15
-TIGER_COST = 0.25
+JUNCTION_COST = 0.1
+TIGER_COST = 0.3
+
+WAY_LENGTH_MAP = {}
 
 class Entity(object):
     def __init__(self):
@@ -39,6 +42,7 @@ class Entity(object):
         self.users = {}
         self.ages = []
         self.nodes = {}
+
 
     def average_age(self):
         return sum(self.ages, 0.0) / len(self.ages)
@@ -116,6 +120,7 @@ class RelationEntity(Entity):
     def __init__(self):
         Entity.__init__(self)
         self.num_turnrestrcitions = 0
+        self.restriction_length = 0
 
     def analyze(self, relations):
         #callback method for the ways
@@ -129,6 +134,9 @@ class RelationEntity(Entity):
 
             if 'type' in tags and tags['type'] == 'restriction':
                 self.num_turnrestrcitions += 1
+                for ref in refs:
+                    if ref[0] in WAY_LENGTH_MAP:
+                        self.restriction_length += WAY_LENGTH_MAP[ref[0]]
 
 
 class RoutingCost(Entity):
@@ -145,31 +153,33 @@ class RoutingCost(Entity):
         self.sum_one_way_lengths = 0
         self.sum_max_speed_lengths = 0
         self.number_of_junctions = 0
+        self.number_of_access = 0
+        self.sum_access_length = 0
 
     def tiger_cost(self):
         # Refactor later to compute temps from different sources and fuze them
-        datatemp_untouched_by_users = UNTOUCHED_WEIGHT * float(self.untouched_by_user_edits)/self.tiger_tagged_ways
-        datatemp_version_increase_over_tiger = VERSION_INCREASE_OVER_TIGER * float(self.version_increase_over_tiger)/self.sum_versions
-        tiger_contributed_datatemp = datatemp_untouched_by_users + datatemp_version_increase_over_tiger
-        return  tiger_contributed_datatemp
+        cost_untouched_by_users = UNTOUCHED_WEIGHT * float(self.untouched_by_user_edits)/self.tiger_tagged_ways
+        cost_version_increase_over_tiger = VERSION_INCREASE_OVER_TIGER * float(self.version_increase_over_tiger)/self.sum_versions
+        return cost_untouched_by_users + cost_version_increase_over_tiger
 
     def routing_cost(self):
         # routing features normalized by way distances
         if not self.sum_one_way_lengths:
             return 0
-        datatemp_oneway = float(self.sum_one_way_lengths)/self.sum_way_lengths
-        datatemp_maxspeed = float(self.sum_max_speed_lengths)/self.sum_way_lengths
-        return ONE_WAY_WEIGHT * datatemp_oneway + MAX_SPEED_WEIGHT * datatemp_maxspeed
+        cost_oneway = float(self.sum_one_way_lengths)/self.sum_way_lengths
+        cost_maxspeed = float(self.sum_max_speed_lengths)/self.sum_way_lengths
+        cost_access = float(self.sum_access_length)/self.sum_way_lengths
+        
+        return ONE_WAY_WEIGHT * cost_oneway + MAX_SPEED_WEIGHT * cost_maxspeed + cost_access * ACCESS_WEIGHT
 
     def junction_cost(self):
-        return self.number_of_junctions/self.entity_count
+        return float(self.number_of_junctions)/self.entity_count
 
 class WayEntity(Entity):
     def __init__(self, nodecache):
         Entity.__init__(self)
         self.refs = []
         self.nodecache = nodecache
-        self.way_length_map = {}
         self.costmodel = {} #key is road category, value is routing cost model
         self.RCM = RoutingCost()
         self.uncommon_highway_count = 0
@@ -189,6 +199,37 @@ class WayEntity(Entity):
                junction_cost * JUNCTION_COST + tiger_cost * TIGER_COST
 
 
+    def collect_cost_data(self, osmid, osmtimestamp, osmuid, osmversion, road_category_entity, tags):
+        road_category_entity.entity_count += 1
+        road_category_entity.extract_min_max_id(osmid)
+        road_category_entity.extract_min_max_timestamp(osmtimestamp)
+        road_category_entity.extract_min_max_version(osmversion)
+        road_category_entity.extract_user(osmuid, 'ways')
+        road_category_entity.ages.append(float(osmtimestamp / 1000.0))
+        road_category_entity.length += self.length
+        road_category_entity.sum_way_lengths += self.length
+        if 'access' in tags:
+            road_category_entity.sum_access_length += self.length
+            road_category_entity.number_of_access += 1
+        if 'oneway' in tags:
+            road_category_entity.sum_one_way_lengths += self.length
+        if 'maxspeed' in tags:
+            road_category_entity.sum_max_speed_lengths += self.length
+        if 'tiger:tlid' in tags:
+            tigerTagValue = tags['tiger:tlid']
+            road_category_entity.tiger_tagged_ways += 1
+            if tigerTagValue not in road_category_entity.tigerbreakdown:
+                road_category_entity.tigerbreakdown[tigerTagValue] = 1
+            else:
+                road_category_entity.tigerbreakdown[tigerTagValue] += 1
+            if osmversion == 1:
+                road_category_entity.untouched_by_user_edits += 1
+
+            road_category_entity.version_increase_over_tiger += (osmversion - 1)
+            road_category_entity.sum_versions += osmversion
+        if 'junction' in tags:
+            road_category_entity.number_of_junctions += 1
+
     def analyze(self, ways):
         #callback method for the ways
         for osmid, tags, ref, osmversion, osmtimestamp, osmuid in ways:
@@ -204,70 +245,21 @@ class WayEntity(Entity):
             # only compute lengths for road tags
             if 'highway' in tags:
                 self.length = self.calc_length()
-                self.way_length_map[osmid] = self.length
+                WAY_LENGTH_MAP[osmid] = self.length
                 self.RCM.sum_way_lengths += self.length
 
                 if tags['highway'] not in ROAD_CATEGORY:
                     self.uncommon_highway_count += 1
                     self.uncommon_highway_length += self.length
-                    continue
-
-                if ROAD_CATEGORY[tags['highway']] not in self.costmodel:
-                    self.costmodel[ROAD_CATEGORY[tags['highway']]] = RoutingCost()
-                    
-                road_category_entity = self.costmodel[ROAD_CATEGORY[tags['highway']]]
-
-                road_category_entity.entity_count += 1
-                road_category_entity.extract_min_max_id(osmid)
-                road_category_entity.extract_min_max_timestamp(osmtimestamp)
-                road_category_entity.extract_min_max_version(osmversion)
-                road_category_entity.extract_user(osmuid, 'ways')
-                road_category_entity.ages.append(float(osmtimestamp / 1000.0))
-                road_category_entity.length += self.length
-                road_category_entity.sum_way_lengths += self.length
-
-                if 'oneway' in tags:
-                    road_category_entity.sum_one_way_lengths += self.length
-
-                if 'maxspeed' in tags:
-                    road_category_entity.sum_max_speed_lengths += self.length
-
-                if 'tiger:tlid' in tags:
-                    tigerTagValue = tags['tiger:tlid']
-                    road_category_entity.tiger_tagged_ways += 1
-                    if tigerTagValue not in road_category_entity.tigerbreakdown:
-                        road_category_entity.tigerbreakdown[tigerTagValue] = 1
-                    else:
-                        road_category_entity.tigerbreakdown[tigerTagValue] += 1
-                    if osmversion == 1:
-                        road_category_entity.untouched_by_user_edits += 1
-
-                    road_category_entity.version_increase_over_tiger += (osmversion - 1)
-                    road_category_entity.sum_versions += osmversion
-
-                if 'junction' in tags:
-                    road_category_entity.number_of_junctions += 1
-
-            if 'junction' in tags:
-                self.RCM.number_of_junctions += 1
-            if 'oneway' in tags:
-                self.RCM.sum_one_way_lengths += self.length
-
-            if 'maxspeed' in tags:
-                self.RCM.sum_max_speed_lengths += self.length
-
-            if 'tiger:tlid' in tags:
-                tigerTagValue = tags['tiger:tlid']
-                self.RCM.tiger_tagged_ways += 1
-                if tigerTagValue not in self.RCM.tigerbreakdown:
-                    self.RCM.tigerbreakdown[tigerTagValue] = 1
                 else:
-                    self.RCM.tigerbreakdown[tigerTagValue] += 1
-                if osmversion == 1:
-                    self.RCM.untouched_by_user_edits += 1
+                    if ROAD_CATEGORY[tags['highway']] not in self.costmodel:
+                        self.costmodel[ROAD_CATEGORY[tags['highway']]] = RoutingCost()
+                    
+                    road_category_entity = self.costmodel[ROAD_CATEGORY[tags['highway']]]
+                    self.collect_cost_data(osmid, osmtimestamp, osmuid, osmversion, road_category_entity, tags)
 
-                self.RCM.version_increase_over_tiger += (osmversion - 1)
-                self.RCM.sum_versions += osmversion
+                # update total cost
+                self.collect_cost_data(osmid, osmtimestamp, osmid, osmversion, self.RCM, tags)
 
     def calc_length(self):
         if len(self.refs) < 2:

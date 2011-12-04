@@ -27,7 +27,8 @@ AGE_WEIGHT75 = 0.05
 
 ROUTING_WEIGHT = 0.4
 TIGER_WEIGHT = 0.2
-FRESHNESS_WEIGHT = 0.4
+FRESHNESS_WEIGHT = 0.3
+RELATION_WEIGHT = 0.1
 
 ZERO_DATA_TEMPERATURE = 32
 ROAD_CATEGORY_WEIGHTS = {'highways': 0.3, 'main': 0.20, 'local': 0.10, 'guidance': 0.2,
@@ -89,7 +90,10 @@ class RoutingAnalyzer(object):
                 uncommon_costs * ROAD_CATEGORY_WEIGHTS['uncommon']
         
         return costs * BASIC_TEMP
-    
+
+    def relation_temperature(self):
+        return float(self.relations_entity.restriction_length)/self.ways_entity.RCM.sum_way_lengths * BASIC_TEMP
+
     def data_temerature(self):
         array = self.userMgr.ages
         array.sort()
@@ -111,7 +115,8 @@ class RoutingAnalyzer(object):
         cost_ages75 = seventyfive_percentile_age * AGE_WEIGHT75
 
         # Normalize the data temperature to between 0 and 40 and add a buffer of zero celsius
-        datatemp = ROUTING_WEIGHT * self.routing_attributes_temperature() + FRESHNESS_WEIGHT * \
+        datatemp = RELATION_WEIGHT * self.relation_temperature() + \
+                   ROUTING_WEIGHT * self.routing_attributes_temperature() + FRESHNESS_WEIGHT * \
                     (cost_ages1 + cost_ages10 + cost_ages25   + \
                    cost_user95 + cost_ages50 + cost_ages75)  * BASIC_TEMP + \
                    TIGER_WEIGHT * self.ways_entity.RCM.tiger_cost() * BASIC_TEMP + ZERO_DATA_TEMPERATURE
