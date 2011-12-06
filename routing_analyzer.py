@@ -15,19 +15,34 @@ from user import UserMgr
 # location of the tokyo cabinet node cache
 CACHE_LOCATION = '/tmp'
 
+#The maximum value for the data temperature value
 DATA_TEMP = 100
 BASIC_TEMP = 68
 
+# Relative weighing value for the number of users doing 95% of the edits.
 USER_WEIGHT95 = 0.2
+
+# Relative weighing value for the routing temperature
+ROUTING_WEIGHT = 0.4
+
+# Relative weighing value for the TIGER temperature
+TIGER_WEIGHT = 0.2
+
+# Relative weighing value for the Freshness temperature
+# Calculated 
+FRESHNESS_WEIGHT = 0.3
+
+# Relative weighing factor for the proportion representing the most recent 1/10/25/50/75% of edits
+# These factors are used to calculate data freshness.
 AGE_WEIGHT1 = 0.3
 AGE_WEIGHT10 = 0.25
 AGE_WEIGHT25 = 0.1
 AGE_WEIGHT50 = 0.1
 AGE_WEIGHT75 = 0.05
 
-ROUTING_WEIGHT = 0.4
-TIGER_WEIGHT = 0.2
-FRESHNESS_WEIGHT = 0.3
+
+# Relative weighing value for the Relations temperature
+# See relation_temperature()
 RELATION_WEIGHT = 0.1
 
 ZERO_DATA_TEMPERATURE = 32
@@ -36,23 +51,33 @@ ROAD_CATEGORY_WEIGHTS = {'highways': 0.3, 'main': 0.20, 'local': 0.10, 'guidance
 
 class RoutingAnalyzer(object):
     def __init__(self):
+        
+        # Initialize the Tokyo Cabinet node cache.
         self.nodecache = hdb.HDB()
         try:
             self.nodecache.open(os.path.join(CACHE_LOCATION, 'nodes.tch'))
         except Exception:
             print 'node cache could not be created at %s, does the directory exist? If not, create it. If so, Check permissions and disk space.' % CACHE_LOCATION
             exit(1)
+
+        # Initialize feature containers, passing cache ref
         self.ways_entity = WayEntity(self.nodecache)
         self.nodes_entity = NodeEntity()
         self.relations_entity = RelationEntity()
         self.coords_entity = CoordEntity(self.nodecache)
+        
+        # Initialize the parser
         self.parser = OSMParser(concurrency=4, coords_callback=self.coords_entity.analyze,
                                 nodes_callback=self.nodes_entity.analyze,
                                 ways_callback=self.ways_entity.analyze,
                                 relations_callback=self.relations_entity.analyze)
+        
+        # Initialize the User manager.
         self.userMgr = UserMgr()
 
 
+    # Calculate percentiles (not depending on numpy / scipy)
+    # http://stackoverflow.com/questions/2374640/how-do-i-calculate-percentiles-with-python-numpy
     def percentile(self, N, percent, key=lambda x:x):
 
         """
@@ -75,6 +100,7 @@ class RoutingAnalyzer(object):
         d1 = key(N[int(c)]) * (k - f)
         return (d0 + d1)/N[len(N) -1]
 
+    # This function calculates the ROUTING dimension of data temperature
     def routing_attributes_temperature(self):
         highway_costs = self.ways_entity.attribute_cost('highways')
         main_costs = self.ways_entity.attribute_cost('main')
@@ -91,28 +117,38 @@ class RoutingAnalyzer(object):
         
         return costs * BASIC_TEMP
 
+    # This function calculates the RELATION dimension of data temperature
     def relation_temperature(self):
         return float(self.relations_entity.restriction_length)/self.ways_entity.RCM.sum_way_lengths * BASIC_TEMP
 
     def data_temerature(self):
+        # Aggregate user and edit counts
         array = self.userMgr.ages
         array.sort()
         counts = self.userMgr.edit_counts
         counts.sort()
 
+        # Freshness factors calculation 
         one_percentile_age = self.percentile(array, 0.01)
-        ten_percentile_age = self.percentile(array, 0.1)
-        twentyfive_percentile_age = self.percentile(array, 0.25)
-        fifty_percentile_age = self.percentile(array, 0.50)
-        seventyfive_percentile_age = self.percentile(array, 0.75)
-        nintyfive_percentile_user_edits = self.percentile(counts, 0.95)
-
-        cost_user95 = nintyfive_percentile_user_edits * USER_WEIGHT95
         cost_ages1 = one_percentile_age * AGE_WEIGHT1
+
+        ten_percentile_age = self.percentile(array, 0.1)
         cost_ages10 = ten_percentile_age * AGE_WEIGHT10
+
+        twentyfive_percentile_age = self.percentile(array, 0.25)
         cost_ages25 = twentyfive_percentile_age * AGE_WEIGHT25
+
+        fifty_percentile_age = self.percentile(array, 0.50)
         cost_ages50 = fifty_percentile_age * AGE_WEIGHT50
+
+        seventyfive_percentile_age = self.percentile(array, 0.75)
         cost_ages75 = seventyfive_percentile_age * AGE_WEIGHT75
+
+        # Calculate 95 percintile of users, this is not part of freshness but
+        # is used in the freshness temperature.
+        nintyfive_percentile_user_edits = self.percentile(counts, 0.95)
+        cost_user95 = nintyfive_percentile_user_edits * USER_WEIGHT95
+        
 
         # Normalize the data temperature to between 0 and 40 and add a buffer of zero celsius
         datatemp = RELATION_WEIGHT * self.relation_temperature() + \
@@ -123,15 +159,23 @@ class RoutingAnalyzer(object):
         return datatemp
 
     def run(self, filename):
+        # Timings can be done outside of the program using time(1)
+        # and should probably be deprecated here
         t0 = time()
+        
+        # Parse the input data
         self.parser.parse(filename)
         t1 = time()
+        
+        # Merge the User collections from the various feature containers
         self.userMgr.merge(self.nodes_entity.users, self.ways_entity.users,
                            self.relations_entity.users)
 
+        # Merge the ages collections from the various feature containers
         self.userMgr.merge_ages(self.nodes_entity.ages, self.ways_entity.ages,
                                 self.relations_entity.ages)
 
+        # Calculate data temperature
         datatemp = self.data_temerature()
 
         print 'data temperature for %s is: %f' % (filename, datatemp)
