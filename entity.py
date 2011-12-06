@@ -3,7 +3,18 @@ from datetime import datetime
 from user import  User
 from math import *
 
+# The radius of the earth, used in the Haversine formula for
+# simplified distance calculations
 EARTH_RADIUS_IN_MILES = 3963.19
+
+# Binning OSM features into a limited number of categories:
+#   - highways
+#   - main
+#   - local
+#   - guidance
+#   - unclassified
+
+# [MvE] this needs some scrutiny!
 ROAD_CATEGORY = {'motorway': 'highways', 'trunk':'main', 'primary':'main', 'secondary':'local',
                      'tertiary': 'local', 'residential':'local', 'unclassified': 'unclassified', 'road':'unclassified',
                      'living_street': 'local', 'service': 'local', 'track':'local', 'pedestrian':'local',
@@ -15,13 +26,18 @@ ROAD_CATEGORY = {'motorway': 'highways', 'trunk':'main', 'primary':'main', 'seco
                      'trunk_link':'local', 'primary_link':'local', 'secondary_link':'local',
                      'tertiary_link':'local'}
 
+# The relative weighing factors used in calculating the 
+# ROUTING factor: oneway, maxspeed and access tags
 ONE_WAY_WEIGHT = 0.45
 MAX_SPEED_WEIGHT = 0.45
 ACCESS_WEIGHT = 0.1
 
+# The relative weighing factors used in calculating the
+# TIGER factor
 UNTOUCHED_WEIGHT = -0.3
 VERSION_INCREASE_OVER_TIGER = 0.7
 
+# The relative weighing factors used in the ATTRIBUTE factor
 LENGTH_COST = 0.2
 ROUTING_COST = 0.4
 JUNCTION_COST = 0.1
@@ -185,7 +201,8 @@ class WayEntity(Entity):
         self.uncommon_highway_count = 0
         self.uncommon_highway_length = 0
 
-        
+    # This function calculates the ATTRIBUTES factor which is used in the
+    # ROUTING dimension of the data temperature. 
     def attribute_cost(self, road_category):
         if road_category not in ROAD_CATEGORY.values():
             return 0

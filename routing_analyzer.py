@@ -45,7 +45,11 @@ AGE_WEIGHT75 = 0.05
 # See relation_temperature()
 RELATION_WEIGHT = 0.1
 
+# Base temperature
 ZERO_DATA_TEMPERATURE = 32
+
+# The relative weighing factors for each of the binned way categories as
+# defined in entity.py
 ROAD_CATEGORY_WEIGHTS = {'highways': 0.3, 'main': 0.20, 'local': 0.10, 'guidance': 0.2,
                          'unclassified':-0.1, 'uncommon':-0.1}
 
@@ -101,6 +105,8 @@ class RoutingAnalyzer(object):
         return (d0 + d1)/N[len(N) -1]
 
     # This function calculates the ROUTING dimension of data temperature
+    # by calculating the atributes factor for each of the binned categories
+    # of way features and weighing them according to the relative bin weight
     def routing_attributes_temperature(self):
         highway_costs = self.ways_entity.attribute_cost('highways')
         main_costs = self.ways_entity.attribute_cost('main')
