@@ -141,7 +141,7 @@ class RoutingAnalyzer(object):
 
     # This function calculates the RELATION dimension of data temperature
     def relation_temperature(self):
-        return float(self.relations_entity.restriction_length)/self.ways_entity.length * BASIC_TEMP
+        return float(self.relations_entity.sum_restriction_length)/self.relations_entity.sum_restriction_length * BASIC_TEMP
 
     def data_temerature(self):
         # Aggregate user and edit counts

@@ -197,7 +197,8 @@ class RelationEntity(Entity):
     def __init__(self):
         Entity.__init__(self)
         self.num_turnrestrcitions = 0
-        self.restriction_length = 0
+        self.sum_restriction_length = 0
+        self.sum_turn_restriction_length = 0
 
     #callback method for the relations
     def analyze(self, relations):
@@ -208,12 +209,17 @@ class RelationEntity(Entity):
             self.extract_min_max_id(osmid)
             self.extract_min_max_version(osmversion)
             AGES_CACHE.append(float(osmtimestamp / 1000.0))
+            length = 0
+            for ref in refs:
+                    if ref[0] in WAY_LENGTH_MAP:
+                        length += WAY_LENGTH_MAP[ref[0]]
 
+            self.sum_restriction_length += length
+                    
             if 'type' in tags and tags['type'] == 'restriction':
                 self.num_turnrestrcitions += 1
-                for ref in refs:
-                    if ref[0] in WAY_LENGTH_MAP:
-                        self.restriction_length += WAY_LENGTH_MAP[ref[0]]
+                self.sum_turn_restriction_length += length
+
 
 
 class WayAttributeModel(Entity):
