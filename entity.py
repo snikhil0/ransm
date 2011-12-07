@@ -357,7 +357,7 @@ class WayEntity(Entity):
                 # sum the lengths 
                 self.length += length
                 # keep a map for later reference : for relations
-                WAY_LENGTH_MAP[osmid] = self.length
+                WAY_LENGTH_MAP[osmid] = length
 
                 # Keep a master tiger count
                 if 'tiger:tlid' in tags:
