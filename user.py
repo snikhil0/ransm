@@ -1,3 +1,16 @@
+# Copyright 2011 Martijn Van Excel and Telenav Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 class User(object):
     def __init__(self, uid, name):
         self.uid = uid
@@ -41,19 +54,13 @@ class UserMgr(object):
             user = self.usermap[uid]
             user.increment(name)
 
-    def merge(self, unodes, uways, urelations):
-        self.usermap = unodes
-        for k, v in uways.iteritems():
-            self.add(v)
-        for k, v in urelations.iteritems():
+    def merge(self, users_cache):
+        for k, v in users_cache.iteritems():
             self.add(v)
         self.user_edit_counts()
 
-    def merge_ages(self, node_ages, way_ages, relation_ages):
-        self.node_ages = node_ages
-        self.way_ages = way_ages
-        self.relation_ages = relation_ages
-        self.ages = node_ages + way_ages + relation_ages
+    def merge_ages(self, ages_cache):
+        self.ages = ages_cache
 
     def count(self):
         return len(self.usermap)

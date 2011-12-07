@@ -1,3 +1,16 @@
+# Copyright 2011 Martijn Van Excel and Telenav Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 from imposm.parser import OSMParser
 import sys
 import os
@@ -9,7 +22,7 @@ from tcdb import hdb
 # This class does the way routing analysis.
 # The analysis is based on tags corresponding to
 # ways, nodes and relations
-from entity import WayEntity, NodeEntity, RelationEntity, CoordEntity
+from entity import WayEntity, NodeEntity, RelationEntity, CoordEntity, USERS_CACHE, AGES_CACHE
 from user import UserMgr
 
 # location of the tokyo cabinet node cache
@@ -108,12 +121,12 @@ class RoutingAnalyzer(object):
     # by calculating the atributes factor for each of the binned categories
     # of way features and weighing them according to the relative bin weight
     def routing_attributes_temperature(self):
-        highway_costs = self.ways_entity.attribute_cost('highways')
-        main_costs = self.ways_entity.attribute_cost('main')
-        local_costs = self.ways_entity.attribute_cost('local')
-        guidance_costs = self.ways_entity.attribute_cost('guidance')
-        unclassified_costs = self.ways_entity.attribute_cost('unclassified')
-        uncommon_costs = float (self.ways_entity.uncommon_highway_length)/self.ways_entity.RCM.sum_way_lengths
+        highway_costs = self.ways_entity.attribute_factor('highways')
+        main_costs = self.ways_entity.attribute_factor('main')
+        local_costs = self.ways_entity.attribute_factor('local')
+        guidance_costs = self.ways_entity.attribute_factor('guidance')
+        unclassified_costs = self.ways_entity.attribute_factor('unclassified')
+        uncommon_costs = float (self.ways_entity.uncommon_highway_length)/self.ways_entity.length
         costs = highway_costs * ROAD_CATEGORY_WEIGHTS['highways'] + \
                 main_costs * ROAD_CATEGORY_WEIGHTS['main'] + \
                 local_costs * ROAD_CATEGORY_WEIGHTS['local'] + \
@@ -125,20 +138,20 @@ class RoutingAnalyzer(object):
 
     # This function calculates the RELATION dimension of data temperature
     def relation_temperature(self):
-        return float(self.relations_entity.restriction_length)/self.ways_entity.RCM.sum_way_lengths * BASIC_TEMP
+        return float(self.relations_entity.restriction_length)/self.ways_entity.length * BASIC_TEMP
 
     def data_temerature(self):
         # Aggregate user and edit counts
         array = self.userMgr.ages
-        array.sort()
+        array.sort(reverse=True)
         counts = self.userMgr.edit_counts
-        counts.sort()
+        counts.sort(reverse=True)
 
         # Freshness factors calculation 
         one_percentile_age = self.percentile(array, 0.01)
         cost_ages1 = one_percentile_age * AGE_WEIGHT1
 
-        ten_percentile_age = self.percentile(array, 0.1)
+        ten_percentile_age = self.percentile(array, 0.10)
         cost_ages10 = ten_percentile_age * AGE_WEIGHT10
 
         twentyfive_percentile_age = self.percentile(array, 0.25)
@@ -152,8 +165,8 @@ class RoutingAnalyzer(object):
 
         # Calculate 95 percintile of users, this is not part of freshness but
         # is used in the freshness temperature.
-        nintyfive_percentile_user_edits = self.percentile(counts, 0.95)
-        cost_user95 = nintyfive_percentile_user_edits * USER_WEIGHT95
+        #nintyfive_percentile_user_edits = self.percentile(counts, 0.25)
+        cost_user95 = 0 #nintyfive_percentile_user_edits * USER_WEIGHT95
         
 
         # Normalize the data temperature to between 0 and 40 and add a buffer of zero celsius
@@ -161,7 +174,7 @@ class RoutingAnalyzer(object):
                    ROUTING_WEIGHT * self.routing_attributes_temperature() + FRESHNESS_WEIGHT * \
                     (cost_ages1 + cost_ages10 + cost_ages25   + \
                    cost_user95 + cost_ages50 + cost_ages75)  * BASIC_TEMP + \
-                   TIGER_WEIGHT * self.ways_entity.RCM.tiger_cost() * BASIC_TEMP + ZERO_DATA_TEMPERATURE
+                   TIGER_WEIGHT * self.ways_entity.tiger_factor() * BASIC_TEMP + ZERO_DATA_TEMPERATURE
         return datatemp
 
     def run(self, filename):
@@ -172,14 +185,12 @@ class RoutingAnalyzer(object):
         # Parse the input data
         self.parser.parse(filename)
         t1 = time()
-        
+
         # Merge the User collections from the various feature containers
-        self.userMgr.merge(self.nodes_entity.users, self.ways_entity.users,
-                           self.relations_entity.users)
+        self.userMgr.merge(USERS_CACHE)
 
         # Merge the ages collections from the various feature containers
-        self.userMgr.merge_ages(self.nodes_entity.ages, self.ways_entity.ages,
-                                self.relations_entity.ages)
+        self.userMgr.merge_ages(AGES_CACHE)
 
         # Calculate data temperature
         datatemp = self.data_temerature()
