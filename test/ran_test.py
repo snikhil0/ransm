@@ -26,6 +26,7 @@ class Test(unittest.TestCase):
 
     def testPercentile(self):
         list = [1, 2, 3, 4, 5]
-        p = self.ran.percentile(list, 0.1)
-        print p
-        #self.assertEquals(4, p, 'Wrong ')
+        p = self.ran.percentile(list, 0.75)
+        below_p = filter(lambda l: l < p, list)
+        self.assertEquals(4, p, 'Wrong ')
+        self.assertEquals(3,len(below_p), 'Wrong')

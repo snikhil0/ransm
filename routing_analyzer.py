@@ -22,7 +22,7 @@ from tcdb import hdb
 # This class does the way routing analysis.
 # The analysis is based on tags corresponding to
 # ways, nodes and relations
-from entity import WayEntity, NodeEntity, RelationEntity, CoordEntity, AGES, USERS_EDITS
+from entity import WayEntity, NodeEntity, RelationEntity, CoordEntity, AGES, USERS_EDITS, INTERSECTIONS
 
 # location of the tokyo cabinet node cache
 CACHE_LOCATION = '/tmp'
@@ -34,17 +34,17 @@ BASIC_TEMP = 68
 ## Weights
 
 # Relative weighing value for the number of users doing 95% of the edits.
-USER_WEIGHT95 = 0.2
+USER_WEIGHT95 = 0.1
 
 # Relative weighing value for the routing temperature
 ROUTING_WEIGHT = 0.4
 
 # Relative weighing value for the TIGER temperature
-TIGER_WEIGHT = 0.3
+TIGER_WEIGHT = 0.35
 
 # Relative weighing value for the Freshness temperature
 # Calculated 
-FRESHNESS_WEIGHT = 0.2
+FRESHNESS_WEIGHT = 0.25
 
 # Relative weighing value for the Relations temperature
 # See relation_temperature()
@@ -137,7 +137,9 @@ class RoutingAnalyzer(object):
 
     # This function calculates the RELATION dimension of data temperature
     def relation_temperature(self):
-        return float(self.relations_entity.sum_restriction_length)/self.relations_entity.sum_restriction_length * BASIC_TEMP
+        number_of_intersections = len(filter(lambda x: x > 1, INTERSECTIONS.values()))
+        print number_of_intersections
+        return (float(self.relations_entity.num_turnrestrcitions)/number_of_intersections) * BASIC_TEMP
 
     def data_temerature(self):
         # Aggregate user and edit counts
@@ -151,16 +153,18 @@ class RoutingAnalyzer(object):
         counts.sort()
 
         # Freshness factors calculation
+        # Count the number of values above the 1% , 10% age score, this gives the number of edits that are fresher
+        # than 1% of the value.
         max_array = max(ages)
-        ages1_factor = self.percentile(ages, 0.01)/max_array * AGE_WEIGHT1
-        ages10_factor = self.percentile(ages, 0.10)/max_array * AGE_WEIGHT10
-        ages25_factor = self.percentile(ages, 0.25)/max_array * AGE_WEIGHT25
-        ages50_factor = self.percentile(ages, 0.50)/max_array * AGE_WEIGHT50
-        ages75_factor = self.percentile(ages, 0.75)/max_array * AGE_WEIGHT75
+        ages1_factor = float(len(filter(lambda a: a > self.percentile(ages, 0.01), ages)))/max_array * AGE_WEIGHT1
+        ages10_factor = float(len(filter(lambda a: a > self.percentile(ages, 0.10), ages)))/max_array * AGE_WEIGHT10
+        ages25_factor = float(len(filter(lambda a: a > self.percentile(ages, 0.25), ages)))/max_array * AGE_WEIGHT25
+        ages50_factor = float(len(filter(lambda a: a > self.percentile(ages, 0.50), ages)))/max_array * AGE_WEIGHT50
+        ages75_factor = float(len(filter(lambda a: a > self.percentile(ages, 0.75), ages)))/max_array * AGE_WEIGHT75
         
         # Calculate 95 percintile of users, this is not part of freshness but
         # is used in the freshness temperature.
-        user95_factor = self.percentile(counts, 0.95)/max(counts) * USER_WEIGHT95
+        user95_factor = float(len(filter(lambda a: a < self.percentile(counts, 0.95), counts)))/max(counts) * USER_WEIGHT95
 
         # Normalize the data temperature to between 0 and 40 and add a buffer of zero celsius
         return  (RELATION_WEIGHT * self.relation_temperature() + \

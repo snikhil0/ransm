@@ -48,7 +48,7 @@ ACCESS_WEIGHT = 0.1
 # The relative weighing factors used in calculating the
 # TIGER factor: untouched, version increment over tiger
 UNTOUCHED_WEIGHT = -0.3
-VERSION_INCREASE_OVER_TIGER = 0.7
+VERSION_INCREASE_OVER_TIGER = 1
 
 # The relative weighing factors used in the ATTRIBUTE factor
 # ATTRIBUTE factor: length
@@ -65,6 +65,9 @@ WAY_LENGTH_MAP = {}
 USERS_EDITS = {}
 AGES = []
 NODES = {}
+
+# The mapping of the node id's to the number of times they are referenced
+INTERSECTIONS = {}
 
 # The users cache is a global container for all users
 # The user cache's below are containers for entity related users (Not used)
@@ -275,6 +278,7 @@ class WayAttributeModel(Entity):
             self.sum_one_way_lengths += length
         if 'maxspeed' in tags:
             self.sum_max_speed_lengths += length
+
         if 'tiger:tlid' in tags:
             tigerTagValue = tags['tiger:tlid']
             self.tiger_tagged_ways += 1
@@ -297,7 +301,11 @@ class WayAttributeModel(Entity):
     # the data. Go figure!
     def tiger_factor(self):
         # Refactor later to compute temps from different sources and fuze them
-        untouched_by_users_factor = UNTOUCHED_WEIGHT * float(self.untouched_by_user_edits)/self.tiger_tagged_ways
+        untouched_by_users_factor = 0
+        if self.tiger_tagged_ways:
+            untouched_by_users_factor = UNTOUCHED_WEIGHT * float(self.untouched_by_user_edits)/self.tiger_tagged_ways
+        else:
+            print 'Tiger ways zero'
         version_increase_over_tiger_factor = VERSION_INCREASE_OVER_TIGER * float(self.version_increase_over_tiger)/self.sum_versions
         return untouched_by_users_factor + version_increase_over_tiger_factor
 
@@ -384,6 +392,13 @@ class WayEntity(Entity):
                 self.length += length
                 # keep a map for later reference : for relations
                 WAY_LENGTH_MAP[osmid] = length
+
+                if 'oneway' not in tags:
+                    for r in ref:
+                        if r in INTERSECTIONS:
+                            INTERSECTIONS[r] += 1
+                        else:
+                            INTERSECTIONS[r] = 1
 
                 # Keep a master tiger count
                 if 'tiger:tlid' in tags:
