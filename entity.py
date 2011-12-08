@@ -62,9 +62,22 @@ WAY_LENGTH_MAP = {}
 # Cache used for temperature computation that is
 # computed in one entity and used in another. This does not belong to the
 # entity class but is a more global container
-USERS_CACHE = {}
-AGES_CACHE = []
-NODES_CACHE = {}
+USERS_EDITS = {}
+AGES = []
+NODES = {}
+
+# The users cache is a global container for all users
+# The user cache's below are containers for entity related users (Not used)
+USER_EDITS_NODES = {}
+USER_EDITS_WAYS = {}
+USER_EDITS_RELATIONS = {}
+
+# The same for the age: age is the timestamp of the edit made divided by 1000.
+# We collect it in the containers and find the 1,10,25, 50 and 75 percentile ages. (not used)
+AGES_NODES = {}
+AGES_WAYS = {}
+AGES_RELATIONS = {}
+
 
 # Map of the tiger tags and count for them
 # tiger:tlid, tiger:cfcc etc
@@ -73,16 +86,15 @@ TIGER_BREAKDOWN = {}
 # Common functions to extract user information and age (timestamps)
 # and populate the above
 def average_age():
-    if len(AGES_CACHE) > 0:
-        return sum(AGES_CACHE, 0.0) / len(AGES_CACHE)
+    if len(AGES) > 0:
+        return sum(AGES, 0.0) / len(AGES)
     return 0
 
 def extract_user(uid, type):
-    if uid not in USERS_CACHE:
-        USERS_CACHE[uid] = User(uid, str(uid))
+    if uid not in USERS_EDITS:
+        USERS_EDITS[uid] = 1
     else:
-        USERS_CACHE[uid].increment(type)
-
+        USERS_EDITS[uid] += 1
 
 class Entity(object):
     '''
@@ -184,9 +196,12 @@ class NodeEntity(Entity):
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_id(osmid)
             self.extract_min_max_version(osmversion)
-            AGES_CACHE.append(float(osmtimestamp / 1000.0))
-            if osmid not in NODES_CACHE:
-                NODES_CACHE[osmid] = (ref[0], ref[1])
+
+            AGES_NODES[osmuid] = (float(osmtimestamp / 1000.0))
+            AGES.append(AGES_NODES[osmuid])
+
+            if osmid not in NODES:
+                NODES[osmid] = (ref[0], ref[1])
 
 
 class RelationEntity(Entity):
@@ -208,7 +223,10 @@ class RelationEntity(Entity):
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_id(osmid)
             self.extract_min_max_version(osmversion)
-            AGES_CACHE.append(float(osmtimestamp / 1000.0))
+
+            AGES_RELATIONS[osmuid] = (float(osmtimestamp / 1000.0))
+            AGES.append(AGES_RELATIONS[osmuid])
+
             length = 0
             for ref in refs:
                     if ref[0] in WAY_LENGTH_MAP:
@@ -355,7 +373,9 @@ class WayEntity(Entity):
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_version(osmversion)
             extract_user(osmuid, 'ways')
-            AGES_CACHE.append(float(osmtimestamp / 1000.0))
+
+            AGES_WAYS[osmuid] = (float(osmtimestamp / 1000.0))
+            AGES.append(AGES_WAYS[osmuid])
 
             # only compute lengths for road tags
             if 'highway' in tags:

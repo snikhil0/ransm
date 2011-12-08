@@ -22,8 +22,7 @@ from tcdb import hdb
 # This class does the way routing analysis.
 # The analysis is based on tags corresponding to
 # ways, nodes and relations
-from entity import WayEntity, NodeEntity, RelationEntity, CoordEntity, USERS_CACHE, AGES_CACHE
-from user import UserMgr
+from entity import WayEntity, NodeEntity, RelationEntity, CoordEntity, AGES, USERS_EDITS
 
 # location of the tokyo cabinet node cache
 CACHE_LOCATION = '/tmp'
@@ -41,11 +40,11 @@ USER_WEIGHT95 = 0.2
 ROUTING_WEIGHT = 0.4
 
 # Relative weighing value for the TIGER temperature
-TIGER_WEIGHT = 0.2
+TIGER_WEIGHT = 0.3
 
 # Relative weighing value for the Freshness temperature
 # Calculated 
-FRESHNESS_WEIGHT = 0.3
+FRESHNESS_WEIGHT = 0.2
 
 # Relative weighing value for the Relations temperature
 # See relation_temperature()
@@ -90,9 +89,6 @@ class RoutingAnalyzer(object):
                                 nodes_callback=self.nodes_entity.analyze,
                                 ways_callback=self.ways_entity.analyze,
                                 relations_callback=self.relations_entity.analyze)
-        
-        # Initialize the User manager.
-        self.userMgr = UserMgr()
 
 
     # Calculate percentiles (not depending on numpy / scipy)
@@ -147,21 +143,21 @@ class RoutingAnalyzer(object):
         # Aggregate user and edit counts
         # reverse the AGES because the newest will be at the top, so when we get the 1%, 10%,
         # we search from the top
-        array = self.userMgr.ages
-        array.sort(reverse=True)
+        ages = AGES
+        ages.sort(reverse=True)
 
         # don't reverse it, so when we ask for 95% edits it gets from the ascending order
-        counts = self.userMgr.edit_counts
+        counts = USERS_EDITS.values()
         counts.sort()
 
         # Freshness factors calculation
-        max_array = max(array)
-        ages1_factor = self.percentile(array, 0.01)/max_array * AGE_WEIGHT1
-        ages10_factor = self.percentile(array, 0.10)/max_array * AGE_WEIGHT10
-        ages25_factor = self.percentile(array, 0.25)/max_array * AGE_WEIGHT25
-        ages50_factor = self.percentile(array, 0.50)/max_array * AGE_WEIGHT50
-        ages75_factor = self.percentile(array, 0.75)/max_array * AGE_WEIGHT75
-
+        max_array = max(ages)
+        ages1_factor = self.percentile(ages, 0.01)/max_array * AGE_WEIGHT1
+        ages10_factor = self.percentile(ages, 0.10)/max_array * AGE_WEIGHT10
+        ages25_factor = self.percentile(ages, 0.25)/max_array * AGE_WEIGHT25
+        ages50_factor = self.percentile(ages, 0.50)/max_array * AGE_WEIGHT50
+        ages75_factor = self.percentile(ages, 0.75)/max_array * AGE_WEIGHT75
+        
         # Calculate 95 percintile of users, this is not part of freshness but
         # is used in the freshness temperature.
         user95_factor = self.percentile(counts, 0.95)/max(counts) * USER_WEIGHT95
@@ -184,12 +180,7 @@ class RoutingAnalyzer(object):
 
         # Print the parsing time
         print 'The parsing of the file took %f' %(t1 - t0)
-        # Merge the User collections from the various feature containers
-        self.userMgr.merge(USERS_CACHE)
-
-        # Merge the ages collections from the various feature containers
-        self.userMgr.merge_ages(AGES_CACHE)
-
+        
         # Calculate data temperature
         datatemp = self.data_temerature()
 
