@@ -363,7 +363,7 @@ class WayEntity(Entity):
     # This function calculates the ATTRIBUTES factor which is used in the
     # ROUTING dimension of the data temperature. 
     def attribute_factor(self, road_category):
-        if road_category not in ROAD_CATEGORY.values():
+        if road_category not in ROAD_CATEGORY.values() or road_category not in self.attribute_models:
             return 0
         road_feature = self.attribute_models[road_category]
         length_factor = float(road_feature.sum_way_lengths)/self.length
@@ -379,6 +379,7 @@ class WayEntity(Entity):
     # the data. Go figure!
     def tiger_factor(self):
         # Refactor later to compute temps from different sources and fuze them
+        if self.tiger_tagged_ways == 0: return 0
         untouched_by_users_factor = UNTOUCHED_WEIGHT * float(self.untouched_by_user_edits)/self.tiger_tagged_ways
         version_increase_over_tiger_factor = VERSION_INCREASE_OVER_TIGER * float(self.version_increase_over_tiger)/self.sum_versions
         return untouched_by_users_factor + version_increase_over_tiger_factor
