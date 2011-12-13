@@ -11,3 +11,28 @@ How was this fixture data created?
 * Added nodes at intersections using JOSM Utils plugin
 * Added version, timestamp, user, uid attributes to node and way elements using a text editor (using constant values)
 * Added tiger tags to all ways using constant values.
+
+fixture1.osm
+* 10202 nodes, all version 1, all created 2011-12-01 by the same user
+* 201 ways, all version 1, all created 2011-12-01 by the same user
+    motorway	9
+    primary	16
+    secondary	16
+    tertiary	0
+    unclassified	0
+    residential	0
+    cycleway	0
+    footway	0
+    road	5
+fixture1a.osm
+    fixture1.osm + all residential roads have TIGER tags.
+fixture1b.osm
+    fixture1a.osm + all ways and nodes are version 2
+fixture1c.osm
+    fixture1a.osm + all ways are version 1, way nodes are version 2
+    
+fixture2.osm
+    fixture1.osm + 10 no left / no right turn restrictions, all version 1, all created 2011-12-01 by the same user
+    
+fixture3.osm
+    fixture1.osm + all data created on 2008-01-01

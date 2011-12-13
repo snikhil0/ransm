@@ -10202,1133 +10202,6 @@
   <node id='11306' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798' lat='40.709999999994054' lon='-109.96999999999987' />
   <node id='11307' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798' lat='40.70999999998751' lon='-109.14999999997966' />
   <node id='11308' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798' lat='40.71000000001148' lon='-109.8800000000121' />
-  <way id='-122894' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='2904' />
-    <nd ref='10122' />
-    <nd ref='8572' />
-    <nd ref='8727' />
-    <nd ref='6170' />
-    <nd ref='10144' />
-    <nd ref='10124' />
-    <nd ref='10134' />
-    <nd ref='9871' />
-    <nd ref='4798' />
-    <nd ref='1475' />
-    <nd ref='1770' />
-    <nd ref='10136' />
-    <nd ref='7853' />
-    <nd ref='5036' />
-    <nd ref='5347' />
-    <nd ref='2156' />
-    <nd ref='9980' />
-    <nd ref='8083' />
-    <nd ref='8359' />
-    <nd ref='5726' />
-    <nd ref='10139' />
-    <nd ref='10119' />
-    <nd ref='10151' />
-    <nd ref='256' />
-    <tag k='highway' v='residential' />
-    <tag k='id' v='137' />
-  </way>
-  <way id='-122892' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='2904' />
-    <nd ref='2884' />
-    <nd ref='2925' />
-    <nd ref='2906' />
-    <nd ref='2754' />
-    <nd ref='1318' />
-    <nd ref='2877' />
-    <nd ref='2859' />
-    <nd ref='2901' />
-    <nd ref='2880' />
-    <nd ref='2921' />
-    <nd ref='2903' />
-    <nd ref='1906' />
-    <nd ref='2852' />
-    <nd ref='2893' />
-    <nd ref='2873' />
-    <nd ref='2915' />
-    <nd ref='2897' />
-    <nd ref='2934' />
-    <nd ref='2918' />
-    <nd ref='2856' />
-    <nd ref='2864' />
-    <nd ref='2907' />
-    <nd ref='2888' />
-    <nd ref='2927' />
-    <nd ref='2911' />
-    <nd ref='2849' />
-    <nd ref='2932' />
-    <nd ref='2869' />
-    <nd ref='2883' />
-    <nd ref='2923' />
-    <nd ref='2905' />
-    <nd ref='2382' />
-    <nd ref='2926' />
-    <nd ref='2863' />
-    <nd ref='2846' />
-    <nd ref='2885' />
-    <nd ref='2879' />
-    <nd ref='2920' />
-    <nd ref='2902' />
-    <nd ref='1516' />
-    <nd ref='2922' />
-    <nd ref='2860' />
-    <nd ref='2193' />
-    <nd ref='2882' />
-    <nd ref='2895' />
-    <nd ref='2933' />
-    <nd ref='2916' />
-    <nd ref='2854' />
-    <nd ref='2936' />
-    <nd ref='2875' />
-    <nd ref='2858' />
-    <nd ref='2899' />
-    <nd ref='2908' />
-    <nd ref='2847' />
-    <nd ref='2929' />
-    <nd ref='2866' />
-    <nd ref='2851' />
-    <nd ref='2890' />
-    <nd ref='2871' />
-    <nd ref='2913' />
-    <nd ref='2924' />
-    <nd ref='2861' />
-    <nd ref='2569' />
-    <nd ref='498' />
-    <tag k='highway' v='residential' />
-    <tag k='id' v='76' />
-  </way>
-  <way id='-122880' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='5783' />
-    <nd ref='5764' />
-    <nd ref='5806' />
-    <nd ref='5788' />
-    <nd ref='5827' />
-    <nd ref='2020' />
-    <nd ref='5778' />
-    <nd ref='5611' />
-    <nd ref='5801' />
-    <nd ref='5781' />
-    <nd ref='5822' />
-    <nd ref='5803' />
-    <nd ref='2772' />
-    <nd ref='1336' />
-    <nd ref='5774' />
-    <nd ref='4918' />
-    <nd ref='5798' />
-    <nd ref='5777' />
-    <nd ref='5818' />
-    <nd ref='5800' />
-    <nd ref='1924' />
-    <nd ref='3926' />
-    <nd ref='5790' />
-    <nd ref='5770' />
-    <nd ref='5812' />
-    <nd ref='5794' />
-    <nd ref='5831' />
-    <nd ref='5815' />
-    <nd ref='4432' />
-    <nd ref='5761' />
-    <nd ref='5804' />
-    <nd ref='5785' />
-    <nd ref='5824' />
-    <nd ref='5808' />
-    <nd ref='3404' />
-    <nd ref='5829' />
-    <nd ref='5766' />
-    <nd ref='5780' />
-    <nd ref='5820' />
-    <nd ref='5802' />
-    <nd ref='2400' />
-    <nd ref='5823' />
-    <nd ref='5760' />
-    <nd ref='2955' />
-    <nd ref='5782' />
-    <nd ref='5776' />
-    <nd ref='5817' />
-    <nd ref='5799' />
-    <nd ref='1534' />
-    <nd ref='5819' />
-    <nd ref='5076' />
-    <nd ref='2211' />
-    <nd ref='5779' />
-    <nd ref='5792' />
-    <nd ref='5830' />
-    <nd ref='5813' />
-    <nd ref='4098' />
-    <nd ref='5833' />
-    <nd ref='5772' />
-    <nd ref='4600' />
-    <nd ref='5796' />
-    <nd ref='5805' />
-    <nd ref='3046' />
-    <nd ref='5826' />
-    <nd ref='5763' />
-    <nd ref='3668' />
-    <nd ref='5787' />
-    <nd ref='5768' />
-    <nd ref='5810' />
-    <nd ref='5821' />
-    <nd ref='5460' />
-    <nd ref='2587' />
-    <nd ref='506' />
-    <tag k='highway' v='residential' />
-    <tag k='id' v='74' />
-  </way>
-  <way id='-122878' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='5783' />
-    <nd ref='6004' />
-    <nd ref='2886' />
-    <nd ref='8829' />
-    <nd ref='8554' />
-    <nd ref='8709' />
-    <nd ref='6152' />
-    <nd ref='8851' />
-    <nd ref='8831' />
-    <nd ref='8841' />
-    <nd ref='8821' />
-    <nd ref='4780' />
-    <nd ref='1457' />
-    <nd ref='1752' />
-    <nd ref='8843' />
-    <nd ref='7835' />
-    <nd ref='5018' />
-    <nd ref='5329' />
-    <nd ref='2138' />
-    <nd ref='8823' />
-    <nd ref='8065' />
-    <nd ref='8341' />
-    <nd ref='5708' />
-    <nd ref='8846' />
-    <nd ref='8826' />
-    <nd ref='8858' />
-    <nd ref='288' />
-    <tag k='highway' v='residential' />
-    <tag k='id' v='129' />
-  </way>
-  <way id='-122849' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='9544' />
-    <nd ref='9524' />
-    <nd ref='4380' />
-    <nd ref='1268' />
-    <nd ref='7546' />
-    <nd ref='8917' />
-    <nd ref='9538' />
-    <nd ref='9518' />
-    <nd ref='3347' />
-    <nd ref='9541' />
-    <nd ref='6714' />
-    <nd ref='3872' />
-    <nd ref='9287' />
-    <nd ref='9512' />
-    <nd ref='2338' />
-    <nd ref='9534' />
-    <nd ref='8405' />
-    <nd ref='5793' />
-    <nd ref='6014' />
-    <nd ref='2896' />
-    <nd ref='9514' />
-    <nd ref='8564' />
-    <nd ref='8719' />
-    <nd ref='6162' />
-    <nd ref='9536' />
-    <nd ref='9516' />
-    <nd ref='9526' />
-    <nd ref='9506' />
-    <nd ref='4790' />
-    <nd ref='1467' />
-    <nd ref='1762' />
-    <nd ref='9528' />
-    <nd ref='7845' />
-    <nd ref='5028' />
-    <nd ref='5339' />
-    <nd ref='2148' />
-    <nd ref='9508' />
-    <nd ref='8075' />
-    <nd ref='8351' />
-    <nd ref='5718' />
-    <nd ref='9531' />
-    <nd ref='9511' />
-    <nd ref='9543' />
-    <nd ref='384' />
-    <tag k='highway' v='secondary' />
-    <tag k='id' v='105' />
-  </way>
-  <way id='-122847' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='9544' />
-    <nd ref='7338' />
-    <nd ref='7525' />
-    <nd ref='4588' />
-    <nd ref='10867' />
-    <nd ref='9669' />
-    <nd ref='9790' />
-    <nd ref='7708' />
-    <nd ref='11304' />
-    <nd ref='10929' />
-    <nd ref='3298' />
-    <nd ref='11253' />
-    <nd ref='8907' />
-    <nd ref='6412' />
-    <nd ref='6685' />
-    <nd ref='3652' />
-    <nd ref='10551' />
-    <nd ref='9099' />
-    <nd ref='9282' />
-    <nd ref='6953' />
-    <nd ref='11277' />
-    <nd ref='10657' />
-    <nd ref='10732' />
-    <nd ref='9415' />
-    <nd ref='8859' />
-    <nd ref='6618' />
-    <nd ref='10523' />
-    <nd ref='9237' />
-    <nd ref='11272' />
-    <nd ref='2092' />
-    <nd ref='8059' />
-    <nd ref='5683' />
-    <nd ref='10152' />
-    <nd ref='8551' />
-    <nd ref='11163' />
-    <nd ref='10377' />
-    <nd ref='2844' />
-    <nd ref='1408' />
-    <nd ref='7647' />
-    <nd ref='4990' />
-    <nd ref='9867' />
-    <nd ref='8001' />
-    <nd ref='11019' />
-    <nd ref='10083' />
-    <nd ref='1996' />
-    <nd ref='3998' />
-    <nd ref='9371' />
-    <nd ref='7275' />
-    <nd ref='10779' />
-    <nd ref='9627' />
-    <nd ref='11301' />
-    <nd ref='10908' />
-    <nd ref='4504' />
-    <nd ref='6271' />
-    <nd ref='10437' />
-    <nd ref='9004' />
-    <nd ref='11237' />
-    <nd ref='10605' />
-    <nd ref='3476' />
-    <nd ref='11287' />
-    <nd ref='6820' />
-    <nd ref='8283' />
-    <nd ref='11083' />
-    <nd ref='10251' />
-    <nd ref='2472' />
-    <nd ref='11186' />
-    <nd ref='5906' />
-    <nd ref='3027' />
-    <nd ref='8655' />
-    <nd ref='7769' />
-    <nd ref='10950' />
-    <nd ref='9942' />
-    <nd ref='1606' />
-    <nd ref='11052' />
-    <nd ref='5148' />
-    <nd ref='2283' />
-    <nd ref='8172' />
-    <nd ref='9459' />
-    <nd ref='11291' />
-    <nd ref='10824' />
-    <nd ref='4170' />
-    <nd ref='11303' />
-    <nd ref='7401' />
-    <nd ref='4672' />
-    <nd ref='9711' />
-    <nd ref='10466' />
-    <nd ref='3118' />
-    <nd ref='11259' />
-    <nd ref='6480' />
-    <nd ref='3740' />
-    <nd ref='9145' />
-    <nd ref='7018' />
-    <nd ref='10683' />
-    <nd ref='11138' />
-    <nd ref='5532' />
-    <nd ref='2659' />
-    <nd ref='574' />
-    <tag k='highway' v='residential' />
-    <tag k='id' v='57' />
-  </way>
-  <way id='-122819' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='5418' />
-    <nd ref='7174' />
-    <nd ref='9646' />
-    <nd ref='9547' />
-    <nd ref='9669' />
-    <nd ref='9649' />
-    <nd ref='4382' />
-    <nd ref='1270' />
-    <nd ref='7548' />
-    <nd ref='8919' />
-    <nd ref='9663' />
-    <nd ref='9643' />
-    <nd ref='3349' />
-    <nd ref='9666' />
-    <nd ref='6716' />
-    <nd ref='3874' />
-    <nd ref='9289' />
-    <nd ref='9637' />
-    <nd ref='2340' />
-    <nd ref='9659' />
-    <nd ref='8407' />
-    <nd ref='5795' />
-    <nd ref='6016' />
-    <nd ref='2898' />
-    <nd ref='9639' />
-    <nd ref='8566' />
-    <nd ref='8721' />
-    <nd ref='6164' />
-    <nd ref='9661' />
-    <nd ref='9641' />
-    <nd ref='9651' />
-    <nd ref='9631' />
-    <nd ref='4792' />
-    <nd ref='1469' />
-    <nd ref='1764' />
-    <nd ref='9653' />
-    <nd ref='7847' />
-    <nd ref='5030' />
-    <nd ref='5341' />
-    <nd ref='2150' />
-    <nd ref='9633' />
-    <nd ref='8077' />
-    <nd ref='8353' />
-    <nd ref='5720' />
-    <nd ref='9656' />
-    <nd ref='9636' />
-    <nd ref='9668' />
-    <nd ref='364' />
-    <tag k='highway' v='primary' />
-    <tag k='id' v='110' />
-  </way>
-  <way id='-122817' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='5418' />
-    <nd ref='5420' />
-    <nd ref='5398' />
-    <nd ref='5457' />
-    <nd ref='5439' />
-    <nd ref='3223' />
-    <nd ref='5448' />
-    <nd ref='5407' />
-    <nd ref='5385' />
-    <nd ref='5388' />
-    <nd ref='3577' />
-    <nd ref='5430' />
-    <nd ref='5409' />
-    <nd ref='5412' />
-    <nd ref='5390' />
-    <nd ref='5451' />
-    <nd ref='5432' />
-    <nd ref='5434' />
-    <nd ref='5414' />
-    <nd ref='5406' />
-    <nd ref='5387' />
-    <nd ref='5429' />
-    <nd ref='5411' />
-    <nd ref='5450' />
-    <nd ref='2017' />
-    <nd ref='5401' />
-    <nd ref='5382' />
-    <nd ref='5424' />
-    <nd ref='5404' />
-    <nd ref='5445' />
-    <nd ref='5426' />
-    <nd ref='2769' />
-    <nd ref='1333' />
-    <nd ref='5397' />
-    <nd ref='4915' />
-    <nd ref='5421' />
-    <nd ref='5400' />
-    <nd ref='5441' />
-    <nd ref='5423' />
-    <nd ref='1921' />
-    <nd ref='3923' />
-    <nd ref='5413' />
-    <nd ref='5393' />
-    <nd ref='5435' />
-    <nd ref='5417' />
-    <nd ref='5454' />
-    <nd ref='5438' />
-    <nd ref='4429' />
-    <nd ref='5384' />
-    <nd ref='5427' />
-    <nd ref='5408' />
-    <nd ref='5447' />
-    <nd ref='5431' />
-    <nd ref='3401' />
-    <nd ref='5452' />
-    <nd ref='5389' />
-    <nd ref='5403' />
-    <nd ref='5443' />
-    <nd ref='5425' />
-    <nd ref='2397' />
-    <nd ref='5446' />
-    <nd ref='5383' />
-    <nd ref='2952' />
-    <nd ref='5405' />
-    <nd ref='5399' />
-    <nd ref='5440' />
-    <nd ref='5422' />
-    <nd ref='1531' />
-    <nd ref='5442' />
-    <nd ref='5073' />
-    <nd ref='2208' />
-    <nd ref='5402' />
-    <nd ref='5415' />
-    <nd ref='5453' />
-    <nd ref='5436' />
-    <nd ref='4095' />
-    <nd ref='5456' />
-    <nd ref='5395' />
-    <nd ref='4597' />
-    <nd ref='5419' />
-    <nd ref='5428' />
-    <nd ref='3043' />
-    <nd ref='5449' />
-    <nd ref='5386' />
-    <nd ref='3665' />
-    <nd ref='5410' />
-    <nd ref='5391' />
-    <nd ref='5433' />
-    <nd ref='5444' />
-    <nd ref='5381' />
-    <nd ref='2584' />
-    <nd ref='590' />
-    <tag k='highway' v='residential' />
-    <tag k='id' v='53' />
-  </way>
-  <way id='-122795' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='6392' />
-    <nd ref='4349' />
-    <nd ref='1237' />
-    <nd ref='6352' />
-    <nd ref='6366' />
-    <nd ref='6406' />
-    <nd ref='6386' />
-    <nd ref='3316' />
-    <nd ref='6409' />
-    <nd ref='6347' />
-    <nd ref='3841' />
-    <nd ref='6369' />
-    <nd ref='6380' />
-    <nd ref='2307' />
-    <nd ref='6402' />
-    <nd ref='6360' />
-    <nd ref='5762' />
-    <nd ref='5983' />
-    <nd ref='2865' />
-    <nd ref='6382' />
-    <nd ref='6362' />
-    <nd ref='6364' />
-    <nd ref='6131' />
-    <nd ref='6404' />
-    <nd ref='6384' />
-    <nd ref='6394' />
-    <nd ref='6374' />
-    <nd ref='4759' />
-    <nd ref='1436' />
-    <nd ref='1731' />
-    <nd ref='6396' />
-    <nd ref='6354' />
-    <nd ref='4997' />
-    <nd ref='5308' />
-    <nd ref='2117' />
-    <nd ref='6376' />
-    <nd ref='6356' />
-    <nd ref='6359' />
-    <nd ref='5687' />
-    <nd ref='6399' />
-    <nd ref='6379' />
-    <nd ref='6411' />
-    <nd ref='332' />
-    <tag k='highway' v='residential' />
-    <tag k='id' v='118' />
-  </way>
-  <way id='-122793' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='6392' />
-    <nd ref='6665' />
-    <nd ref='3632' />
-    <nd ref='10531' />
-    <nd ref='9079' />
-    <nd ref='9262' />
-    <nd ref='6933' />
-    <nd ref='10882' />
-    <nd ref='10637' />
-    <nd ref='10712' />
-    <nd ref='9395' />
-    <nd ref='8839' />
-    <nd ref='6598' />
-    <nd ref='10503' />
-    <nd ref='9217' />
-    <nd ref='10881' />
-    <nd ref='2072' />
-    <nd ref='8039' />
-    <nd ref='5663' />
-    <nd ref='10132' />
-    <nd ref='8531' />
-    <nd ref='10876' />
-    <nd ref='10357' />
-    <nd ref='2824' />
-    <nd ref='1388' />
-    <nd ref='7627' />
-    <nd ref='4970' />
-    <nd ref='9847' />
-    <nd ref='7981' />
-    <nd ref='10872' />
-    <nd ref='10063' />
-    <nd ref='1976' />
-    <nd ref='3978' />
-    <nd ref='9351' />
-    <nd ref='7255' />
-    <nd ref='10759' />
-    <nd ref='9607' />
-    <nd ref='10885' />
-    <nd ref='10869' />
-    <nd ref='4484' />
-    <nd ref='6251' />
-    <nd ref='10417' />
-    <nd ref='8984' />
-    <nd ref='10878' />
-    <nd ref='10585' />
-    <nd ref='3456' />
-    <nd ref='10883' />
-    <nd ref='6800' />
-    <nd ref='8263' />
-    <nd ref='10874' />
-    <nd ref='10231' />
-    <nd ref='2452' />
-    <nd ref='10877' />
-    <nd ref='5886' />
-    <nd ref='3007' />
-    <nd ref='8635' />
-    <nd ref='7749' />
-    <nd ref='10871' />
-    <nd ref='9922' />
-    <nd ref='1586' />
-    <nd ref='10873' />
-    <nd ref='5128' />
-    <nd ref='2263' />
-    <nd ref='8152' />
-    <nd ref='9439' />
-    <nd ref='10884' />
-    <nd ref='10804' />
-    <nd ref='4150' />
-    <nd ref='10887' />
-    <nd ref='7381' />
-    <nd ref='4652' />
-    <nd ref='9691' />
-    <nd ref='10446' />
-    <nd ref='3098' />
-    <nd ref='10880' />
-    <nd ref='6460' />
-    <nd ref='3720' />
-    <nd ref='9125' />
-    <nd ref='6998' />
-    <nd ref='10663' />
-    <nd ref='10875' />
-    <nd ref='5512' />
-    <nd ref='2639' />
-    <nd ref='570' />
-    <tag k='highway' v='residential' />
-    <tag k='id' v='58' />
-  </way>
-  <way id='-122771' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='1870' />
-    <nd ref='10365' />
-    <nd ref='5426' />
-    <nd ref='7182' />
-    <nd ref='10354' />
-    <nd ref='9555' />
-    <nd ref='10377' />
-    <nd ref='10357' />
-    <nd ref='4390' />
-    <nd ref='1278' />
-    <nd ref='7556' />
-    <nd ref='8927' />
-    <nd ref='10371' />
-    <nd ref='10351' />
-    <nd ref='3357' />
-    <nd ref='10374' />
-    <nd ref='6724' />
-    <nd ref='3882' />
-    <nd ref='9297' />
-    <nd ref='10188' />
-    <nd ref='2348' />
-    <nd ref='10367' />
-    <nd ref='8415' />
-    <nd ref='5803' />
-    <nd ref='6024' />
-    <nd ref='2906' />
-    <nd ref='10285' />
-    <nd ref='8574' />
-    <nd ref='8729' />
-    <nd ref='6172' />
-    <nd ref='10369' />
-    <nd ref='10349' />
-    <nd ref='10359' />
-    <nd ref='9873' />
-    <nd ref='4800' />
-    <nd ref='1477' />
-    <nd ref='1772' />
-    <nd ref='10361' />
-    <nd ref='7855' />
-    <nd ref='5038' />
-    <nd ref='5349' />
-    <nd ref='2158' />
-    <nd ref='9982' />
-    <nd ref='8085' />
-    <nd ref='8361' />
-    <nd ref='5728' />
-    <nd ref='10364' />
-    <nd ref='10155' />
-    <nd ref='10376' />
-    <nd ref='244' />
-    <tag k='highway' v='primary' />
-    <tag k='id' v='140' />
-  </way>
-  <way id='-122769' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='1870' />
-    <nd ref='1809' />
-    <nd ref='1313' />
-    <nd ref='1841' />
-    <nd ref='1823' />
-    <nd ref='1865' />
-    <nd ref='1844' />
-    <nd ref='1885' />
-    <nd ref='1867' />
-    <nd ref='1804' />
-    <nd ref='1816' />
-    <nd ref='1857' />
-    <nd ref='1837' />
-    <nd ref='1879' />
-    <nd ref='1861' />
-    <nd ref='1898' />
-    <nd ref='1882' />
-    <nd ref='1820' />
-    <nd ref='1828' />
-    <nd ref='1871' />
-    <nd ref='1852' />
-    <nd ref='1891' />
-    <nd ref='1875' />
-    <nd ref='1813' />
-    <nd ref='1896' />
-    <nd ref='1833' />
-    <nd ref='1847' />
-    <nd ref='1887' />
-    <nd ref='1869' />
-    <nd ref='1807' />
-    <nd ref='1890' />
-    <nd ref='1827' />
-    <nd ref='1810' />
-    <nd ref='1849' />
-    <nd ref='1843' />
-    <nd ref='1884' />
-    <nd ref='1866' />
-    <nd ref='1511' />
-    <nd ref='1886' />
-    <nd ref='1824' />
-    <nd ref='1806' />
-    <nd ref='1846' />
-    <nd ref='1859' />
-    <nd ref='1897' />
-    <nd ref='1880' />
-    <nd ref='1818' />
-    <nd ref='1900' />
-    <nd ref='1839' />
-    <nd ref='1822' />
-    <nd ref='1863' />
-    <nd ref='1872' />
-    <nd ref='1811' />
-    <nd ref='1893' />
-    <nd ref='1830' />
-    <nd ref='1815' />
-    <nd ref='1854' />
-    <nd ref='1835' />
-    <nd ref='1877' />
-    <nd ref='1888' />
-    <nd ref='1825' />
-    <nd ref='1808' />
-    <nd ref='598' />
-    <tag k='highway' v='residential' />
-    <tag k='id' v='51' />
-  </way>
-  <way id='-122757' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='4866' />
-    <nd ref='9332' />
-    <nd ref='7900' />
-    <nd ref='9354' />
-    <nd ref='9336' />
-    <nd ref='1857' />
-    <nd ref='9359' />
-    <nd ref='5413' />
-    <nd ref='7169' />
-    <nd ref='9348' />
-    <nd ref='9330' />
-    <nd ref='9371' />
-    <nd ref='9351' />
-    <nd ref='4377' />
-    <nd ref='1265' />
-    <nd ref='7543' />
-    <nd ref='8914' />
-    <nd ref='9365' />
-    <nd ref='9345' />
-    <nd ref='3344' />
-    <nd ref='9368' />
-    <nd ref='6711' />
-    <nd ref='3869' />
-    <nd ref='9284' />
-    <nd ref='9339' />
-    <nd ref='2335' />
-    <nd ref='9361' />
-    <nd ref='8402' />
-    <nd ref='5790' />
-    <nd ref='6011' />
-    <nd ref='2893' />
-    <nd ref='9341' />
-    <nd ref='8561' />
-    <nd ref='8716' />
-    <nd ref='6159' />
-    <nd ref='9363' />
-    <nd ref='9343' />
-    <nd ref='9353' />
-    <nd ref='9333' />
-    <nd ref='4787' />
-    <nd ref='1464' />
-    <nd ref='1759' />
-    <nd ref='9355' />
-    <nd ref='7842' />
-    <nd ref='5025' />
-    <nd ref='5336' />
-    <nd ref='2145' />
-    <nd ref='9335' />
-    <nd ref='8072' />
-    <nd ref='8348' />
-    <nd ref='5715' />
-    <nd ref='9358' />
-    <nd ref='9338' />
-    <nd ref='9370' />
-    <nd ref='200' />
-    <tag k='highway' v='residential' />
-    <tag k='id' v='151' />
-  </way>
-  <way id='-122755' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='4866' />
-    <nd ref='4846' />
-    <nd ref='4888' />
-    <nd ref='4870' />
-    <nd ref='4907' />
-    <nd ref='4891' />
-    <nd ref='4424' />
-    <nd ref='4837' />
-    <nd ref='4880' />
-    <nd ref='4861' />
-    <nd ref='4900' />
-    <nd ref='4884' />
-    <nd ref='3396' />
-    <nd ref='4905' />
-    <nd ref='4842' />
-    <nd ref='4856' />
-    <nd ref='4896' />
-    <nd ref='4878' />
-    <nd ref='2392' />
-    <nd ref='4899' />
-    <nd ref='4836' />
-    <nd ref='2947' />
-    <nd ref='4858' />
-    <nd ref='4852' />
-    <nd ref='4893' />
-    <nd ref='4875' />
-    <nd ref='1526' />
-    <nd ref='4895' />
-    <nd ref='4833' />
-    <nd ref='2203' />
-    <nd ref='4855' />
-    <nd ref='4868' />
-    <nd ref='4906' />
-    <nd ref='4889' />
-    <nd ref='4090' />
-    <nd ref='4909' />
-    <nd ref='4848' />
-    <nd ref='4592' />
-    <nd ref='4872' />
-    <nd ref='4881' />
-    <nd ref='3038' />
-    <nd ref='4902' />
-    <nd ref='4839' />
-    <nd ref='3660' />
-    <nd ref='4863' />
-    <nd ref='4844' />
-    <nd ref='4886' />
-    <nd ref='4897' />
-    <nd ref='4834' />
-    <nd ref='2579' />
-    <nd ref='618' />
-    <tag k='highway' v='residential' />
-    <tag k='id' v='46' />
-  </way>
-  <way id='-122745' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='7890' />
-    <nd ref='8266' />
-    <nd ref='8248' />
-    <nd ref='1847' />
-    <nd ref='8271' />
-    <nd ref='5403' />
-    <nd ref='7159' />
-    <nd ref='8260' />
-    <nd ref='8242' />
-    <nd ref='8283' />
-    <nd ref='8263' />
-    <nd ref='4367' />
-    <nd ref='1255' />
-    <nd ref='7533' />
-    <nd ref='8237' />
-    <nd ref='8277' />
-    <nd ref='8257' />
-    <nd ref='3334' />
-    <nd ref='8280' />
-    <nd ref='6701' />
-    <nd ref='3859' />
-    <nd ref='8240' />
-    <nd ref='8251' />
-    <nd ref='2325' />
-    <nd ref='8273' />
-    <nd ref='8231' />
-    <nd ref='5780' />
-    <nd ref='6001' />
-    <nd ref='2883' />
-    <nd ref='8253' />
-    <nd ref='8233' />
-    <nd ref='8235' />
-    <nd ref='6149' />
-    <nd ref='8275' />
-    <nd ref='8255' />
-    <nd ref='8265' />
-    <nd ref='8245' />
-    <nd ref='4777' />
-    <nd ref='1454' />
-    <nd ref='1749' />
-    <nd ref='8267' />
-    <nd ref='7832' />
-    <nd ref='5015' />
-    <nd ref='5326' />
-    <nd ref='2135' />
-    <nd ref='8247' />
-    <nd ref='8062' />
-    <nd ref='8230' />
-    <nd ref='5705' />
-    <nd ref='8270' />
-    <nd ref='8250' />
-    <nd ref='8282' />
-    <nd ref='140' />
-    <tag k='highway' v='residential' />
-    <tag k='id' v='166' />
-  </way>
-  <way id='-122743' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='7890' />
-    <nd ref='7930' />
-    <nd ref='7912' />
-    <nd ref='2415' />
-    <nd ref='7933' />
-    <nd ref='5849' />
-    <nd ref='2970' />
-    <nd ref='7892' />
-    <nd ref='7712' />
-    <nd ref='7927' />
-    <nd ref='7909' />
-    <nd ref='1549' />
-    <nd ref='7929' />
-    <nd ref='5091' />
-    <nd ref='2226' />
-    <nd ref='7889' />
-    <nd ref='7902' />
-    <nd ref='7940' />
-    <nd ref='7923' />
-    <nd ref='4113' />
-    <nd ref='7943' />
-    <nd ref='7344' />
-    <nd ref='4615' />
-    <nd ref='7906' />
-    <nd ref='7915' />
-    <nd ref='3061' />
-    <nd ref='7936' />
-    <nd ref='6423' />
-    <nd ref='3683' />
-    <nd ref='7897' />
-    <nd ref='6961' />
-    <nd ref='7920' />
-    <nd ref='7931' />
-    <nd ref='5475' />
-    <nd ref='2602' />
-    <nd ref='610' />
-    <tag k='highway' v='residential' />
-    <tag k='id' v='48' />
-    <tag k='oneway' v='true' />
-  </way>
-  <way id='-122708' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='4163' />
-    <nd ref='4101' />
-    <nd ref='4090' />
-    <nd ref='4131' />
-    <nd ref='4113' />
-    <nd ref='4153' />
-    <nd ref='4135' />
-    <nd ref='1818' />
-    <nd ref='4158' />
-    <nd ref='4095' />
-    <nd ref='4108' />
-    <nd ref='4147' />
-    <nd ref='4129' />
-    <nd ref='4170' />
-    <nd ref='4150' />
-    <nd ref='4087' />
-    <nd ref='1226' />
-    <nd ref='4110' />
-    <nd ref='4124' />
-    <nd ref='4164' />
-    <nd ref='4144' />
-    <nd ref='3305' />
-    <nd ref='4167' />
-    <nd ref='4105' />
-    <nd ref='3830' />
-    <nd ref='4127' />
-    <nd ref='4138' />
-    <nd ref='2296' />
-    <nd ref='4160' />
-    <nd ref='4118' />
-    <nd ref='4098' />
-    <nd ref='4100' />
-    <nd ref='2854' />
-    <nd ref='4140' />
-    <nd ref='4120' />
-    <nd ref='4122' />
-    <nd ref='4102' />
-    <nd ref='4162' />
-    <nd ref='4142' />
-    <nd ref='4152' />
-    <nd ref='4132' />
-    <nd ref='4089' />
-    <nd ref='1425' />
-    <nd ref='1720' />
-    <nd ref='4154' />
-    <nd ref='4112' />
-    <nd ref='4091' />
-    <nd ref='4094' />
-    <nd ref='2106' />
-    <nd ref='4134' />
-    <nd ref='4114' />
-    <nd ref='4117' />
-    <nd ref='4097' />
-    <nd ref='4157' />
-    <nd ref='4137' />
-    <nd ref='4169' />
-    <nd ref='64' />
-    <tag k='highway' v='secondary' />
-    <tag k='id' v='185' />
-  </way>
-  <way id='-122706' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='4163' />
-    <nd ref='11219' />
-    <nd ref='7394' />
-    <nd ref='4665' />
-    <nd ref='9704' />
-    <nd ref='10459' />
-    <nd ref='3111' />
-    <nd ref='11212' />
-    <nd ref='6473' />
-    <nd ref='3733' />
-    <nd ref='9138' />
-    <nd ref='7011' />
-    <nd ref='10676' />
-    <nd ref='11131' />
-    <nd ref='5525' />
-    <nd ref='2652' />
-    <nd ref='626' />
-    <tag k='highway' v='residential' />
-    <tag k='id' v='44' />
-  </way>
-  <way id='-122694' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='9134' />
-    <nd ref='9116' />
-    <nd ref='2706' />
-    <nd ref='9138' />
-    <nd ref='6082' />
-    <nd ref='4863' />
-    <nd ref='9106' />
-    <nd ref='7897' />
-    <nd ref='9128' />
-    <nd ref='9110' />
-    <nd ref='1854' />
-    <nd ref='9133' />
-    <nd ref='5410' />
-    <nd ref='7166' />
-    <nd ref='9122' />
-    <nd ref='9104' />
-    <nd ref='9145' />
-    <nd ref='9125' />
-    <nd ref='4374' />
-    <nd ref='1262' />
-    <nd ref='7540' />
-    <nd ref='8911' />
-    <nd ref='9139' />
-    <nd ref='9119' />
-    <nd ref='3341' />
-    <nd ref='9142' />
-    <nd ref='6708' />
-    <nd ref='3866' />
-    <nd ref='9102' />
-    <nd ref='9113' />
-    <nd ref='2332' />
-    <nd ref='9135' />
-    <nd ref='8399' />
-    <nd ref='5787' />
-    <nd ref='6008' />
-    <nd ref='2890' />
-    <nd ref='9115' />
-    <nd ref='8558' />
-    <nd ref='8713' />
-    <nd ref='6156' />
-    <nd ref='9137' />
-    <nd ref='9117' />
-    <nd ref='9127' />
-    <nd ref='9107' />
-    <nd ref='4784' />
-    <nd ref='1461' />
-    <nd ref='1756' />
-    <nd ref='9129' />
-    <nd ref='7839' />
-    <nd ref='5022' />
-    <nd ref='5333' />
-    <nd ref='2142' />
-    <nd ref='9109' />
-    <nd ref='8069' />
-    <nd ref='8345' />
-    <nd ref='5712' />
-    <nd ref='9132' />
-    <nd ref='9112' />
-    <nd ref='9144' />
-    <nd ref='24' />
-    <tag k='highway' v='secondary' />
-    <tag k='id' v='195' />
-  </way>
-  <way id='-122692' visible='true' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' version='1' changeset='10038798'>
-    <nd ref='9134' />
-    <nd ref='7007' />
-    <nd ref='10672' />
-    <nd ref='11127' />
-    <nd ref='5521' />
-    <nd ref='2648' />
-    <nd ref='638' />
-    <tag k='highway' v='residential' />
-    <tag k='id' v='41' />
-  </way>
   <way id='806' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='294' />
     <nd ref='6302' />
@@ -11434,7 +10307,7 @@
     <tag k='highway' v='road' />
     <tag k='id' v='128' />
   </way>
-  <way id='808' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='808' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='298' />
     <nd ref='6322' />
     <nd ref='3542' />
@@ -11538,8 +10411,17 @@
     <nd ref='296' />
     <tag k='highway' v='residential' />
     <tag k='id' v='127' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='810' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='810' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='302' />
     <nd ref='6320' />
     <nd ref='3540' />
@@ -11643,6 +10525,15 @@
     <nd ref='300' />
     <tag k='highway' v='residential' />
     <tag k='id' v='126' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='812' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='306' />
@@ -11749,7 +10640,7 @@
     <tag k='highway' v='motorway' />
     <tag k='id' v='125' />
   </way>
-  <way id='814' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='814' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='310' />
     <nd ref='6278' />
     <nd ref='3498' />
@@ -11853,8 +10744,17 @@
     <nd ref='308' />
     <tag k='highway' v='residential' />
     <tag k='id' v='124' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='816' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='816' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='314' />
     <nd ref='6300' />
     <nd ref='3520' />
@@ -11958,8 +10858,17 @@
     <nd ref='312' />
     <tag k='highway' v='residential' />
     <tag k='id' v='123' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='818' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='818' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='318' />
     <nd ref='6297' />
     <nd ref='3517' />
@@ -12063,8 +10972,17 @@
     <nd ref='316' />
     <tag k='highway' v='residential' />
     <tag k='id' v='122' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='820' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='820' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='322' />
     <nd ref='6318' />
     <nd ref='3538' />
@@ -12168,6 +11086,15 @@
     <nd ref='320' />
     <tag k='highway' v='residential' />
     <tag k='id' v='121' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='822' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='326' />
@@ -12274,7 +11201,7 @@
     <tag k='highway' v='primary' />
     <tag k='id' v='120' />
   </way>
-  <way id='824' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='824' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='330' />
     <nd ref='6276' />
     <nd ref='3496' />
@@ -12378,6 +11305,15 @@
     <nd ref='328' />
     <tag k='highway' v='residential' />
     <tag k='id' v='119' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='826' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='334' />
@@ -12439,10 +11375,61 @@
     <nd ref='6371' />
     <nd ref='6412' />
     <nd ref='6392' />
+    <nd ref='4349' />
+    <nd ref='1237' />
+    <nd ref='6352' />
+    <nd ref='6366' />
+    <nd ref='6406' />
+    <nd ref='6386' />
+    <nd ref='3316' />
+    <nd ref='6409' />
+    <nd ref='6347' />
+    <nd ref='3841' />
+    <nd ref='6369' />
+    <nd ref='6380' />
+    <nd ref='2307' />
+    <nd ref='6402' />
+    <nd ref='6360' />
+    <nd ref='5762' />
+    <nd ref='5983' />
+    <nd ref='2865' />
+    <nd ref='6382' />
+    <nd ref='6362' />
+    <nd ref='6364' />
+    <nd ref='6131' />
+    <nd ref='6404' />
+    <nd ref='6384' />
+    <nd ref='6394' />
+    <nd ref='6374' />
+    <nd ref='4759' />
+    <nd ref='1436' />
+    <nd ref='1731' />
+    <nd ref='6396' />
+    <nd ref='6354' />
+    <nd ref='4997' />
+    <nd ref='5308' />
+    <nd ref='2117' />
+    <nd ref='6376' />
+    <nd ref='6356' />
+    <nd ref='6359' />
+    <nd ref='5687' />
+    <nd ref='6399' />
+    <nd ref='6379' />
+    <nd ref='6411' />
+    <nd ref='332' />
     <tag k='highway' v='residential' />
     <tag k='id' v='118' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='828' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='828' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='338' />
     <nd ref='6295' />
     <nd ref='3515' />
@@ -12546,8 +11533,17 @@
     <nd ref='336' />
     <tag k='highway' v='residential' />
     <tag k='id' v='117' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='830' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='830' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='342' />
     <nd ref='6336' />
     <nd ref='3556' />
@@ -12651,6 +11647,15 @@
     <nd ref='340' />
     <tag k='highway' v='residential' />
     <tag k='id' v='116' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='832' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='346' />
@@ -12757,7 +11762,7 @@
     <tag k='highway' v='secondary' />
     <tag k='id' v='115' />
   </way>
-  <way id='834' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='834' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='350' />
     <nd ref='6327' />
     <nd ref='3547' />
@@ -12861,8 +11866,17 @@
     <nd ref='348' />
     <tag k='highway' v='residential' />
     <tag k='id' v='114' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='836' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='836' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='354' />
     <nd ref='6345' />
     <nd ref='3565' />
@@ -12966,8 +11980,17 @@
     <nd ref='352' />
     <tag k='highway' v='residential' />
     <tag k='id' v='113' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='838' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='838' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='358' />
     <nd ref='6286' />
     <nd ref='3506' />
@@ -13071,8 +12094,17 @@
     <nd ref='356' />
     <tag k='highway' v='residential' />
     <tag k='id' v='112' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='840' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='840' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='362' />
     <nd ref='6308' />
     <nd ref='3528' />
@@ -13176,8 +12208,17 @@
     <nd ref='360' />
     <tag k='highway' v='residential' />
     <tag k='id' v='111' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='842' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='842' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='366' />
     <nd ref='6306' />
     <nd ref='3526' />
@@ -13232,10 +12273,57 @@
     <nd ref='1862' />
     <nd ref='9657' />
     <nd ref='5418' />
+    <nd ref='7174' />
+    <nd ref='9646' />
+    <nd ref='9547' />
+    <nd ref='9669' />
+    <nd ref='9649' />
+    <nd ref='4382' />
+    <nd ref='1270' />
+    <nd ref='7548' />
+    <nd ref='8919' />
+    <nd ref='9663' />
+    <nd ref='9643' />
+    <nd ref='3349' />
+    <nd ref='9666' />
+    <nd ref='6716' />
+    <nd ref='3874' />
+    <nd ref='9289' />
+    <nd ref='9637' />
+    <nd ref='2340' />
+    <nd ref='9659' />
+    <nd ref='8407' />
+    <nd ref='5795' />
+    <nd ref='6016' />
+    <nd ref='2898' />
+    <nd ref='9639' />
+    <nd ref='8566' />
+    <nd ref='8721' />
+    <nd ref='6164' />
+    <nd ref='9661' />
+    <nd ref='9641' />
+    <nd ref='9651' />
+    <nd ref='9631' />
+    <nd ref='4792' />
+    <nd ref='1469' />
+    <nd ref='1764' />
+    <nd ref='9653' />
+    <nd ref='7847' />
+    <nd ref='5030' />
+    <nd ref='5341' />
+    <nd ref='2150' />
+    <nd ref='9633' />
+    <nd ref='8077' />
+    <nd ref='8353' />
+    <nd ref='5720' />
+    <nd ref='9656' />
+    <nd ref='9636' />
+    <nd ref='9668' />
+    <nd ref='364' />
     <tag k='highway' v='primary' />
     <tag k='id' v='110' />
   </way>
-  <way id='844' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='844' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='370' />
     <nd ref='6325' />
     <nd ref='3545' />
@@ -13339,8 +12427,17 @@
     <nd ref='368' />
     <tag k='highway' v='residential' />
     <tag k='id' v='109' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='846' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='846' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='374' />
     <nd ref='4521' />
     <nd ref='3485' />
@@ -13444,9 +12541,18 @@
     <nd ref='372' />
     <tag k='highway' v='residential' />
     <tag k='id' v='108' />
+    <tag k='name' v='Birch Creek Road' />
     <tag k='oneway' v='true' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='848' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='848' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='378' />
     <nd ref='6284' />
     <nd ref='3504' />
@@ -13550,8 +12656,17 @@
     <nd ref='376' />
     <tag k='highway' v='residential' />
     <tag k='id' v='107' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='850' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='850' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='382' />
     <nd ref='6282' />
     <nd ref='3502' />
@@ -13655,8 +12770,17 @@
     <nd ref='380' />
     <tag k='highway' v='residential' />
     <tag k='id' v='106' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='852' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='852' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='386' />
     <nd ref='6304' />
     <nd ref='3524' />
@@ -13715,10 +12839,53 @@
     <nd ref='9521' />
     <nd ref='9503' />
     <nd ref='9544' />
+    <nd ref='9524' />
+    <nd ref='4380' />
+    <nd ref='1268' />
+    <nd ref='7546' />
+    <nd ref='8917' />
+    <nd ref='9538' />
+    <nd ref='9518' />
+    <nd ref='3347' />
+    <nd ref='9541' />
+    <nd ref='6714' />
+    <nd ref='3872' />
+    <nd ref='9287' />
+    <nd ref='9512' />
+    <nd ref='2338' />
+    <nd ref='9534' />
+    <nd ref='8405' />
+    <nd ref='5793' />
+    <nd ref='6014' />
+    <nd ref='2896' />
+    <nd ref='9514' />
+    <nd ref='8564' />
+    <nd ref='8719' />
+    <nd ref='6162' />
+    <nd ref='9536' />
+    <nd ref='9516' />
+    <nd ref='9526' />
+    <nd ref='9506' />
+    <nd ref='4790' />
+    <nd ref='1467' />
+    <nd ref='1762' />
+    <nd ref='9528' />
+    <nd ref='7845' />
+    <nd ref='5028' />
+    <nd ref='5339' />
+    <nd ref='2148' />
+    <nd ref='9508' />
+    <nd ref='8075' />
+    <nd ref='8351' />
+    <nd ref='5718' />
+    <nd ref='9531' />
+    <nd ref='9511' />
+    <nd ref='9543' />
+    <nd ref='384' />
     <tag k='highway' v='secondary' />
     <tag k='id' v='105' />
   </way>
-  <way id='854' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='854' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='390' />
     <nd ref='6343' />
     <nd ref='3563' />
@@ -13822,8 +12989,17 @@
     <nd ref='388' />
     <tag k='highway' v='residential' />
     <tag k='id' v='104' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='856' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='856' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='394' />
     <nd ref='4271' />
     <nd ref='3483' />
@@ -13927,8 +13103,17 @@
     <nd ref='392' />
     <tag k='highway' v='residential' />
     <tag k='id' v='103' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='858' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='858' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='398' />
     <nd ref='4017' />
     <nd ref='3481' />
@@ -14032,8 +13217,17 @@
     <nd ref='396' />
     <tag k='highway' v='residential' />
     <tag k='id' v='102' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='860' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='860' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='804' />
     <nd ref='800' />
     <nd ref='796' />
@@ -14137,6 +13331,15 @@
     <nd ref='400' />
     <tag k='highway' v='residential' />
     <tag k='id' v='101' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='862' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='404' />
@@ -14243,7 +13446,7 @@
     <tag k='highway' v='motorway' />
     <tag k='id' v='100' />
   </way>
-  <way id='864' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='864' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='408' />
     <nd ref='4083' />
     <nd ref='4337' />
@@ -14347,8 +13550,17 @@
     <nd ref='406' />
     <tag k='highway' v='residential' />
     <tag k='id' v='99' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='866' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='866' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='412' />
     <nd ref='4051' />
     <nd ref='4305' />
@@ -14452,8 +13664,17 @@
     <nd ref='410' />
     <tag k='highway' v='residential' />
     <tag k='id' v='98' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='868' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='868' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='416' />
     <nd ref='4071' />
     <nd ref='4325' />
@@ -14557,6 +13778,15 @@
     <nd ref='414' />
     <tag k='highway' v='residential' />
     <tag k='id' v='97' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='870' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='420' />
@@ -14769,7 +13999,7 @@
     <tag k='highway' v='secondary' />
     <tag k='id' v='95' />
   </way>
-  <way id='874' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='874' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='428' />
     <nd ref='4028' />
     <nd ref='4282' />
@@ -14873,8 +14103,17 @@
     <nd ref='426' />
     <tag k='highway' v='residential' />
     <tag k='id' v='94' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='876' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='876' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='432' />
     <nd ref='4048' />
     <nd ref='4302' />
@@ -14978,8 +14217,17 @@
     <nd ref='430' />
     <tag k='highway' v='residential' />
     <tag k='id' v='93' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='878' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='878' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='436' />
     <nd ref='2105' />
     <nd ref='2107' />
@@ -15083,8 +14331,17 @@
     <nd ref='434' />
     <tag k='highway' v='residential' />
     <tag k='id' v='92' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='880' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='880' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='440' />
     <nd ref='4008' />
     <nd ref='4262' />
@@ -15188,6 +14445,15 @@
     <nd ref='438' />
     <tag k='highway' v='residential' />
     <tag k='id' v='91' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='882' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='444' />
@@ -15294,7 +14560,7 @@
     <tag k='highway' v='primary' />
     <tag k='id' v='90' />
   </way>
-  <way id='884' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='884' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='448' />
     <nd ref='4026' />
     <nd ref='4280' />
@@ -15398,8 +14664,17 @@
     <nd ref='446' />
     <tag k='highway' v='residential' />
     <tag k='id' v='89' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='886' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='886' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='452' />
     <nd ref='4068' />
     <nd ref='4322' />
@@ -15503,8 +14778,17 @@
     <nd ref='450' />
     <tag k='highway' v='residential' />
     <tag k='id' v='88' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='888' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='888' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='456' />
     <nd ref='1719' />
     <nd ref='1721' />
@@ -15608,8 +14892,17 @@
     <nd ref='454' />
     <tag k='highway' v='residential' />
     <tag k='id' v='87' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='890' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='890' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='460' />
     <nd ref='1424' />
     <nd ref='1426' />
@@ -15713,6 +15006,15 @@
     <nd ref='458' />
     <tag k='highway' v='residential' />
     <tag k='id' v='86' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='892' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='464' />
@@ -15819,7 +15121,7 @@
     <tag k='highway' v='secondary' />
     <tag k='id' v='85' />
   </way>
-  <way id='894' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='894' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='468' />
     <nd ref='4046' />
     <nd ref='4300' />
@@ -15923,9 +15225,18 @@
     <nd ref='466' />
     <tag k='highway' v='residential' />
     <tag k='id' v='84' />
+    <tag k='name' v='Birch Creek Road' />
     <tag k='oneway' v='true' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='896' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='896' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='472' />
     <nd ref='4066' />
     <nd ref='4320' />
@@ -16029,8 +15340,17 @@
     <nd ref='470' />
     <tag k='highway' v='residential' />
     <tag k='id' v='83' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='898' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='898' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='476' />
     <nd ref='4056' />
     <nd ref='4310' />
@@ -16134,8 +15454,17 @@
     <nd ref='474' />
     <tag k='highway' v='residential' />
     <tag k='id' v='82' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='900' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='900' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='480' />
     <nd ref='4076' />
     <nd ref='4330' />
@@ -16239,6 +15568,15 @@
     <nd ref='478' />
     <tag k='highway' v='residential' />
     <tag k='id' v='81' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='902' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='484' />
@@ -16345,7 +15683,7 @@
     <tag k='highway' v='primary' />
     <tag k='id' v='80' />
   </way>
-  <way id='904' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='904' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='488' />
     <nd ref='4036' />
     <nd ref='4290' />
@@ -16449,8 +15787,17 @@
     <nd ref='486' />
     <tag k='highway' v='residential' />
     <tag k='id' v='79' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='906' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='906' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='492' />
     <nd ref='4034' />
     <nd ref='4288' />
@@ -16554,8 +15901,17 @@
     <nd ref='490' />
     <tag k='highway' v='residential' />
     <tag k='id' v='78' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='908' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='908' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='496' />
     <nd ref='4054' />
     <nd ref='4308' />
@@ -16659,6 +16015,15 @@
     <nd ref='494' />
     <tag k='highway' v='residential' />
     <tag k='id' v='77' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='910' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='500' />
@@ -16698,8 +16063,81 @@
     <nd ref='2881' />
     <nd ref='2862' />
     <nd ref='2904' />
+    <nd ref='2884' />
+    <nd ref='2925' />
+    <nd ref='2906' />
+    <nd ref='2754' />
+    <nd ref='1318' />
+    <nd ref='2877' />
+    <nd ref='2859' />
+    <nd ref='2901' />
+    <nd ref='2880' />
+    <nd ref='2921' />
+    <nd ref='2903' />
+    <nd ref='1906' />
+    <nd ref='2852' />
+    <nd ref='2893' />
+    <nd ref='2873' />
+    <nd ref='2915' />
+    <nd ref='2897' />
+    <nd ref='2934' />
+    <nd ref='2918' />
+    <nd ref='2856' />
+    <nd ref='2864' />
+    <nd ref='2907' />
+    <nd ref='2888' />
+    <nd ref='2927' />
+    <nd ref='2911' />
+    <nd ref='2849' />
+    <nd ref='2932' />
+    <nd ref='2869' />
+    <nd ref='2883' />
+    <nd ref='2923' />
+    <nd ref='2905' />
+    <nd ref='2382' />
+    <nd ref='2926' />
+    <nd ref='2863' />
+    <nd ref='2846' />
+    <nd ref='2885' />
+    <nd ref='2879' />
+    <nd ref='2920' />
+    <nd ref='2902' />
+    <nd ref='1516' />
+    <nd ref='2922' />
+    <nd ref='2860' />
+    <nd ref='2193' />
+    <nd ref='2882' />
+    <nd ref='2895' />
+    <nd ref='2933' />
+    <nd ref='2916' />
+    <nd ref='2854' />
+    <nd ref='2936' />
+    <nd ref='2875' />
+    <nd ref='2858' />
+    <nd ref='2899' />
+    <nd ref='2908' />
+    <nd ref='2847' />
+    <nd ref='2929' />
+    <nd ref='2866' />
+    <nd ref='2851' />
+    <nd ref='2890' />
+    <nd ref='2871' />
+    <nd ref='2913' />
+    <nd ref='2924' />
+    <nd ref='2861' />
+    <nd ref='2569' />
+    <nd ref='498' />
     <tag k='highway' v='residential' />
     <tag k='id' v='76' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='912' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='504' />
@@ -16836,10 +16274,91 @@
     <nd ref='5811' />
     <nd ref='5791' />
     <nd ref='5783' />
+    <nd ref='5764' />
+    <nd ref='5806' />
+    <nd ref='5788' />
+    <nd ref='5827' />
+    <nd ref='2020' />
+    <nd ref='5778' />
+    <nd ref='5611' />
+    <nd ref='5801' />
+    <nd ref='5781' />
+    <nd ref='5822' />
+    <nd ref='5803' />
+    <nd ref='2772' />
+    <nd ref='1336' />
+    <nd ref='5774' />
+    <nd ref='4918' />
+    <nd ref='5798' />
+    <nd ref='5777' />
+    <nd ref='5818' />
+    <nd ref='5800' />
+    <nd ref='1924' />
+    <nd ref='3926' />
+    <nd ref='5790' />
+    <nd ref='5770' />
+    <nd ref='5812' />
+    <nd ref='5794' />
+    <nd ref='5831' />
+    <nd ref='5815' />
+    <nd ref='4432' />
+    <nd ref='5761' />
+    <nd ref='5804' />
+    <nd ref='5785' />
+    <nd ref='5824' />
+    <nd ref='5808' />
+    <nd ref='3404' />
+    <nd ref='5829' />
+    <nd ref='5766' />
+    <nd ref='5780' />
+    <nd ref='5820' />
+    <nd ref='5802' />
+    <nd ref='2400' />
+    <nd ref='5823' />
+    <nd ref='5760' />
+    <nd ref='2955' />
+    <nd ref='5782' />
+    <nd ref='5776' />
+    <nd ref='5817' />
+    <nd ref='5799' />
+    <nd ref='1534' />
+    <nd ref='5819' />
+    <nd ref='5076' />
+    <nd ref='2211' />
+    <nd ref='5779' />
+    <nd ref='5792' />
+    <nd ref='5830' />
+    <nd ref='5813' />
+    <nd ref='4098' />
+    <nd ref='5833' />
+    <nd ref='5772' />
+    <nd ref='4600' />
+    <nd ref='5796' />
+    <nd ref='5805' />
+    <nd ref='3046' />
+    <nd ref='5826' />
+    <nd ref='5763' />
+    <nd ref='3668' />
+    <nd ref='5787' />
+    <nd ref='5768' />
+    <nd ref='5810' />
+    <nd ref='5821' />
+    <nd ref='5460' />
+    <nd ref='2587' />
+    <nd ref='506' />
     <tag k='highway' v='residential' />
     <tag k='id' v='74' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='916' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='916' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='512' />
     <nd ref='4032' />
     <nd ref='4286' />
@@ -16943,8 +16462,17 @@
     <nd ref='510' />
     <tag k='highway' v='residential' />
     <tag k='id' v='73' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='918' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='918' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='516' />
     <nd ref='4074' />
     <nd ref='4328' />
@@ -17048,7 +16576,16 @@
     <nd ref='514' />
     <tag k='highway' v='residential' />
     <tag k='id' v='72' />
+    <tag k='name' v='Birch Creek Road' />
     <tag k='oneway' v='true' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='920' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='6' />
@@ -17155,7 +16692,7 @@
     <tag k='highway' v='motorway' />
     <tag k='id' v='200' />
   </way>
-  <way id='922' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='922' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='520' />
     <nd ref='2295' />
     <nd ref='2297' />
@@ -17259,8 +16796,17 @@
     <nd ref='518' />
     <tag k='highway' v='residential' />
     <tag k='id' v='71' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='924' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='924' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='10' />
     <nd ref='5465' />
     <nd ref='3489' />
@@ -17364,6 +16910,15 @@
     <nd ref='8' />
     <tag k='highway' v='residential' />
     <tag k='id' v='199' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='926' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='524' />
@@ -17470,7 +17025,7 @@
     <tag k='highway' v='primary' />
     <tag k='id' v='70' />
   </way>
-  <way id='928' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='928' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='14' />
     <nd ref='6332' />
     <nd ref='3552' />
@@ -17574,8 +17129,17 @@
     <nd ref='12' />
     <tag k='highway' v='residential' />
     <tag k='id' v='198' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='930' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='930' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='528' />
     <nd ref='4041' />
     <nd ref='4295' />
@@ -17679,8 +17243,17 @@
     <nd ref='526' />
     <tag k='highway' v='residential' />
     <tag k='id' v='69' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='932' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='932' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='18' />
     <nd ref='6321' />
     <nd ref='3541' />
@@ -17784,8 +17357,17 @@
     <nd ref='16' />
     <tag k='highway' v='residential' />
     <tag k='id' v='197' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='934' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='934' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='532' />
     <nd ref='3829' />
     <nd ref='3831' />
@@ -17889,8 +17471,17 @@
     <nd ref='530' />
     <tag k='highway' v='residential' />
     <tag k='id' v='68' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='936' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='936' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='22' />
     <nd ref='6279' />
     <nd ref='3499' />
@@ -17994,8 +17585,17 @@
     <nd ref='20' />
     <tag k='highway' v='residential' />
     <tag k='id' v='196' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='938' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='938' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='536' />
     <nd ref='4019' />
     <nd ref='4273' />
@@ -18099,8 +17699,17 @@
     <nd ref='534' />
     <tag k='highway' v='residential' />
     <tag k='id' v='67' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='940' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='940' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='26' />
     <nd ref='6298' />
     <nd ref='3518' />
@@ -18143,10 +17752,69 @@
     <nd ref='9111' />
     <nd ref='8453' />
     <nd ref='9134' />
+    <nd ref='9116' />
+    <nd ref='2706' />
+    <nd ref='9138' />
+    <nd ref='6082' />
+    <nd ref='4863' />
+    <nd ref='9106' />
+    <nd ref='7897' />
+    <nd ref='9128' />
+    <nd ref='9110' />
+    <nd ref='1854' />
+    <nd ref='9133' />
+    <nd ref='5410' />
+    <nd ref='7166' />
+    <nd ref='9122' />
+    <nd ref='9104' />
+    <nd ref='9145' />
+    <nd ref='9125' />
+    <nd ref='4374' />
+    <nd ref='1262' />
+    <nd ref='7540' />
+    <nd ref='8911' />
+    <nd ref='9139' />
+    <nd ref='9119' />
+    <nd ref='3341' />
+    <nd ref='9142' />
+    <nd ref='6708' />
+    <nd ref='3866' />
+    <nd ref='9102' />
+    <nd ref='9113' />
+    <nd ref='2332' />
+    <nd ref='9135' />
+    <nd ref='8399' />
+    <nd ref='5787' />
+    <nd ref='6008' />
+    <nd ref='2890' />
+    <nd ref='9115' />
+    <nd ref='8558' />
+    <nd ref='8713' />
+    <nd ref='6156' />
+    <nd ref='9137' />
+    <nd ref='9117' />
+    <nd ref='9127' />
+    <nd ref='9107' />
+    <nd ref='4784' />
+    <nd ref='1461' />
+    <nd ref='1756' />
+    <nd ref='9129' />
+    <nd ref='7839' />
+    <nd ref='5022' />
+    <nd ref='5333' />
+    <nd ref='2142' />
+    <nd ref='9109' />
+    <nd ref='8069' />
+    <nd ref='8345' />
+    <nd ref='5712' />
+    <nd ref='9132' />
+    <nd ref='9112' />
+    <nd ref='9144' />
+    <nd ref='24' />
     <tag k='highway' v='secondary' />
     <tag k='id' v='195' />
   </way>
-  <way id='942' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='942' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='540' />
     <nd ref='4081' />
     <nd ref='4335' />
@@ -18250,8 +17918,17 @@
     <nd ref='538' />
     <tag k='highway' v='residential' />
     <tag k='id' v='66' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='944' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='944' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='30' />
     <nd ref='3673' />
     <nd ref='3479' />
@@ -18355,6 +18032,15 @@
     <nd ref='28' />
     <tag k='highway' v='residential' />
     <tag k='id' v='194' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='946' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='544' />
@@ -18461,7 +18147,7 @@
     <tag k='highway' v='secondary' />
     <tag k='id' v='65' />
   </way>
-  <way id='948' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='948' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='34' />
     <nd ref='6274' />
     <nd ref='3494' />
@@ -18565,6 +18251,15 @@
     <nd ref='32' />
     <tag k='highway' v='residential' />
     <tag k='id' v='193' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='950' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='548' />
@@ -18777,7 +18472,7 @@
     <tag k='id' v='192' />
     <tag k='oneway' v='true' />
   </way>
-  <way id='954' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='954' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='552' />
     <nd ref='4078' />
     <nd ref='4332' />
@@ -18881,8 +18576,17 @@
     <nd ref='550' />
     <tag k='highway' v='residential' />
     <tag k='id' v='63' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='956' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='956' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='42' />
     <nd ref='3051' />
     <nd ref='3031' />
@@ -18986,8 +18690,17 @@
     <nd ref='40' />
     <tag k='highway' v='residential' />
     <tag k='id' v='191' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='958' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='958' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='556' />
     <nd ref='4038' />
     <nd ref='4292' />
@@ -19091,6 +18804,15 @@
     <nd ref='554' />
     <tag k='highway' v='residential' />
     <tag k='id' v='62' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='960' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='46' />
@@ -19197,7 +18919,7 @@
     <tag k='highway' v='primary' />
     <tag k='id' v='190' />
   </way>
-  <way id='962' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='962' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='560' />
     <nd ref='4024' />
     <nd ref='4278' />
@@ -19301,8 +19023,17 @@
     <nd ref='558' />
     <tag k='highway' v='residential' />
     <tag k='id' v='61' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='964' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='964' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='50' />
     <nd ref='6307' />
     <nd ref='3527' />
@@ -19406,6 +19137,15 @@
     <nd ref='48' />
     <tag k='highway' v='residential' />
     <tag k='id' v='189' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='966' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='564' />
@@ -19512,7 +19252,7 @@
     <tag k='highway' v='primary' />
     <tag k='id' v='60' />
   </way>
-  <way id='968' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='968' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='54' />
     <nd ref='4605' />
     <nd ref='3486' />
@@ -19616,8 +19356,17 @@
     <nd ref='52' />
     <tag k='highway' v='residential' />
     <tag k='id' v='188' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='970' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='970' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='568' />
     <nd ref='4001' />
     <nd ref='4255' />
@@ -19721,8 +19470,17 @@
     <nd ref='566' />
     <tag k='highway' v='residential' />
     <tag k='id' v='59' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='972' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='972' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='58' />
     <nd ref='6283' />
     <nd ref='3503' />
@@ -19826,6 +19584,15 @@
     <nd ref='56' />
     <tag k='highway' v='residential' />
     <tag k='id' v='187' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='974' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='572' />
@@ -19846,10 +19613,102 @@
     <nd ref='10879' />
     <nd ref='8887' />
     <nd ref='6392' />
+    <nd ref='6665' />
+    <nd ref='3632' />
+    <nd ref='10531' />
+    <nd ref='9079' />
+    <nd ref='9262' />
+    <nd ref='6933' />
+    <nd ref='10882' />
+    <nd ref='10637' />
+    <nd ref='10712' />
+    <nd ref='9395' />
+    <nd ref='8839' />
+    <nd ref='6598' />
+    <nd ref='10503' />
+    <nd ref='9217' />
+    <nd ref='10881' />
+    <nd ref='2072' />
+    <nd ref='8039' />
+    <nd ref='5663' />
+    <nd ref='10132' />
+    <nd ref='8531' />
+    <nd ref='10876' />
+    <nd ref='10357' />
+    <nd ref='2824' />
+    <nd ref='1388' />
+    <nd ref='7627' />
+    <nd ref='4970' />
+    <nd ref='9847' />
+    <nd ref='7981' />
+    <nd ref='10872' />
+    <nd ref='10063' />
+    <nd ref='1976' />
+    <nd ref='3978' />
+    <nd ref='9351' />
+    <nd ref='7255' />
+    <nd ref='10759' />
+    <nd ref='9607' />
+    <nd ref='10885' />
+    <nd ref='10869' />
+    <nd ref='4484' />
+    <nd ref='6251' />
+    <nd ref='10417' />
+    <nd ref='8984' />
+    <nd ref='10878' />
+    <nd ref='10585' />
+    <nd ref='3456' />
+    <nd ref='10883' />
+    <nd ref='6800' />
+    <nd ref='8263' />
+    <nd ref='10874' />
+    <nd ref='10231' />
+    <nd ref='2452' />
+    <nd ref='10877' />
+    <nd ref='5886' />
+    <nd ref='3007' />
+    <nd ref='8635' />
+    <nd ref='7749' />
+    <nd ref='10871' />
+    <nd ref='9922' />
+    <nd ref='1586' />
+    <nd ref='10873' />
+    <nd ref='5128' />
+    <nd ref='2263' />
+    <nd ref='8152' />
+    <nd ref='9439' />
+    <nd ref='10884' />
+    <nd ref='10804' />
+    <nd ref='4150' />
+    <nd ref='10887' />
+    <nd ref='7381' />
+    <nd ref='4652' />
+    <nd ref='9691' />
+    <nd ref='10446' />
+    <nd ref='3098' />
+    <nd ref='10880' />
+    <nd ref='6460' />
+    <nd ref='3720' />
+    <nd ref='9125' />
+    <nd ref='6998' />
+    <nd ref='10663' />
+    <nd ref='10875' />
+    <nd ref='5512' />
+    <nd ref='2639' />
+    <nd ref='570' />
     <tag k='highway' v='residential' />
     <tag k='id' v='58' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='976' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='976' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='62' />
     <nd ref='6344' />
     <nd ref='3564' />
@@ -19953,6 +19812,15 @@
     <nd ref='60' />
     <tag k='highway' v='residential' />
     <tag k='id' v='186' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='978' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='576' />
@@ -19960,10 +19828,115 @@
     <nd ref='4338' />
     <nd ref='11302' />
     <nd ref='9544' />
+    <nd ref='7338' />
+    <nd ref='7525' />
+    <nd ref='4588' />
+    <nd ref='10867' />
+    <nd ref='9669' />
+    <nd ref='9790' />
+    <nd ref='7708' />
+    <nd ref='11304' />
+    <nd ref='10929' />
+    <nd ref='3298' />
+    <nd ref='11253' />
+    <nd ref='8907' />
+    <nd ref='6412' />
+    <nd ref='6685' />
+    <nd ref='3652' />
+    <nd ref='10551' />
+    <nd ref='9099' />
+    <nd ref='9282' />
+    <nd ref='6953' />
+    <nd ref='11277' />
+    <nd ref='10657' />
+    <nd ref='10732' />
+    <nd ref='9415' />
+    <nd ref='8859' />
+    <nd ref='6618' />
+    <nd ref='10523' />
+    <nd ref='9237' />
+    <nd ref='11272' />
+    <nd ref='2092' />
+    <nd ref='8059' />
+    <nd ref='5683' />
+    <nd ref='10152' />
+    <nd ref='8551' />
+    <nd ref='11163' />
+    <nd ref='10377' />
+    <nd ref='2844' />
+    <nd ref='1408' />
+    <nd ref='7647' />
+    <nd ref='4990' />
+    <nd ref='9867' />
+    <nd ref='8001' />
+    <nd ref='11019' />
+    <nd ref='10083' />
+    <nd ref='1996' />
+    <nd ref='3998' />
+    <nd ref='9371' />
+    <nd ref='7275' />
+    <nd ref='10779' />
+    <nd ref='9627' />
+    <nd ref='11301' />
+    <nd ref='10908' />
+    <nd ref='4504' />
+    <nd ref='6271' />
+    <nd ref='10437' />
+    <nd ref='9004' />
+    <nd ref='11237' />
+    <nd ref='10605' />
+    <nd ref='3476' />
+    <nd ref='11287' />
+    <nd ref='6820' />
+    <nd ref='8283' />
+    <nd ref='11083' />
+    <nd ref='10251' />
+    <nd ref='2472' />
+    <nd ref='11186' />
+    <nd ref='5906' />
+    <nd ref='3027' />
+    <nd ref='8655' />
+    <nd ref='7769' />
+    <nd ref='10950' />
+    <nd ref='9942' />
+    <nd ref='1606' />
+    <nd ref='11052' />
+    <nd ref='5148' />
+    <nd ref='2283' />
+    <nd ref='8172' />
+    <nd ref='9459' />
+    <nd ref='11291' />
+    <nd ref='10824' />
+    <nd ref='4170' />
+    <nd ref='11303' />
+    <nd ref='7401' />
+    <nd ref='4672' />
+    <nd ref='9711' />
+    <nd ref='10466' />
+    <nd ref='3118' />
+    <nd ref='11259' />
+    <nd ref='6480' />
+    <nd ref='3740' />
+    <nd ref='9145' />
+    <nd ref='7018' />
+    <nd ref='10683' />
+    <nd ref='11138' />
+    <nd ref='5532' />
+    <nd ref='2659' />
+    <nd ref='574' />
     <tag k='highway' v='residential' />
     <tag k='id' v='57' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='980' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='980' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='66' />
     <nd ref='4103' />
     <nd ref='3482' />
@@ -20009,10 +19982,66 @@
     <nd ref='4141' />
     <nd ref='2670' />
     <nd ref='4163' />
+    <nd ref='4101' />
+    <nd ref='4090' />
+    <nd ref='4131' />
+    <nd ref='4113' />
+    <nd ref='4153' />
+    <nd ref='4135' />
+    <nd ref='1818' />
+    <nd ref='4158' />
+    <nd ref='4095' />
+    <nd ref='4108' />
+    <nd ref='4147' />
+    <nd ref='4129' />
+    <nd ref='4170' />
+    <nd ref='4150' />
+    <nd ref='4087' />
+    <nd ref='1226' />
+    <nd ref='4110' />
+    <nd ref='4124' />
+    <nd ref='4164' />
+    <nd ref='4144' />
+    <nd ref='3305' />
+    <nd ref='4167' />
+    <nd ref='4105' />
+    <nd ref='3830' />
+    <nd ref='4127' />
+    <nd ref='4138' />
+    <nd ref='2296' />
+    <nd ref='4160' />
+    <nd ref='4118' />
+    <nd ref='4098' />
+    <nd ref='4100' />
+    <nd ref='2854' />
+    <nd ref='4140' />
+    <nd ref='4120' />
+    <nd ref='4122' />
+    <nd ref='4102' />
+    <nd ref='4162' />
+    <nd ref='4142' />
+    <nd ref='4152' />
+    <nd ref='4132' />
+    <nd ref='4089' />
+    <nd ref='1425' />
+    <nd ref='1720' />
+    <nd ref='4154' />
+    <nd ref='4112' />
+    <nd ref='4091' />
+    <nd ref='4094' />
+    <nd ref='2106' />
+    <nd ref='4134' />
+    <nd ref='4114' />
+    <nd ref='4117' />
+    <nd ref='4097' />
+    <nd ref='4157' />
+    <nd ref='4137' />
+    <nd ref='4169' />
+    <nd ref='64' />
     <tag k='highway' v='secondary' />
     <tag k='id' v='185' />
   </way>
-  <way id='982' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='982' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='580' />
     <nd ref='4043' />
     <nd ref='4297' />
@@ -20116,8 +20145,17 @@
     <nd ref='578' />
     <tag k='highway' v='residential' />
     <tag k='id' v='56' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='984' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='984' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='70' />
     <nd ref='6324' />
     <nd ref='3544' />
@@ -20221,6 +20259,15 @@
     <nd ref='68' />
     <tag k='highway' v='residential' />
     <tag k='id' v='184' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='986' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='584' />
@@ -20327,7 +20374,7 @@
     <tag k='highway' v='secondary' />
     <tag k='id' v='55' />
   </way>
-  <way id='988' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='988' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='74' />
     <nd ref='6341' />
     <nd ref='3561' />
@@ -20431,8 +20478,17 @@
     <nd ref='72' />
     <tag k='highway' v='residential' />
     <tag k='id' v='183' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='990' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='990' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='588' />
     <nd ref='4022' />
     <nd ref='4276' />
@@ -20536,8 +20592,17 @@
     <nd ref='586' />
     <tag k='highway' v='residential' />
     <tag k='id' v='54' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='992' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='992' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='78' />
     <nd ref='6303' />
     <nd ref='3523' />
@@ -20641,6 +20706,15 @@
     <nd ref='76' />
     <tag k='highway' v='residential' />
     <tag k='id' v='182' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='994' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='592' />
@@ -20653,10 +20727,110 @@
     <nd ref='4513' />
     <nd ref='5437' />
     <nd ref='5418' />
+    <nd ref='5420' />
+    <nd ref='5398' />
+    <nd ref='5457' />
+    <nd ref='5439' />
+    <nd ref='3223' />
+    <nd ref='5448' />
+    <nd ref='5407' />
+    <nd ref='5385' />
+    <nd ref='5388' />
+    <nd ref='3577' />
+    <nd ref='5430' />
+    <nd ref='5409' />
+    <nd ref='5412' />
+    <nd ref='5390' />
+    <nd ref='5451' />
+    <nd ref='5432' />
+    <nd ref='5434' />
+    <nd ref='5414' />
+    <nd ref='5406' />
+    <nd ref='5387' />
+    <nd ref='5429' />
+    <nd ref='5411' />
+    <nd ref='5450' />
+    <nd ref='2017' />
+    <nd ref='5401' />
+    <nd ref='5382' />
+    <nd ref='5424' />
+    <nd ref='5404' />
+    <nd ref='5445' />
+    <nd ref='5426' />
+    <nd ref='2769' />
+    <nd ref='1333' />
+    <nd ref='5397' />
+    <nd ref='4915' />
+    <nd ref='5421' />
+    <nd ref='5400' />
+    <nd ref='5441' />
+    <nd ref='5423' />
+    <nd ref='1921' />
+    <nd ref='3923' />
+    <nd ref='5413' />
+    <nd ref='5393' />
+    <nd ref='5435' />
+    <nd ref='5417' />
+    <nd ref='5454' />
+    <nd ref='5438' />
+    <nd ref='4429' />
+    <nd ref='5384' />
+    <nd ref='5427' />
+    <nd ref='5408' />
+    <nd ref='5447' />
+    <nd ref='5431' />
+    <nd ref='3401' />
+    <nd ref='5452' />
+    <nd ref='5389' />
+    <nd ref='5403' />
+    <nd ref='5443' />
+    <nd ref='5425' />
+    <nd ref='2397' />
+    <nd ref='5446' />
+    <nd ref='5383' />
+    <nd ref='2952' />
+    <nd ref='5405' />
+    <nd ref='5399' />
+    <nd ref='5440' />
+    <nd ref='5422' />
+    <nd ref='1531' />
+    <nd ref='5442' />
+    <nd ref='5073' />
+    <nd ref='2208' />
+    <nd ref='5402' />
+    <nd ref='5415' />
+    <nd ref='5453' />
+    <nd ref='5436' />
+    <nd ref='4095' />
+    <nd ref='5456' />
+    <nd ref='5395' />
+    <nd ref='4597' />
+    <nd ref='5419' />
+    <nd ref='5428' />
+    <nd ref='3043' />
+    <nd ref='5449' />
+    <nd ref='5386' />
+    <nd ref='3665' />
+    <nd ref='5410' />
+    <nd ref='5391' />
+    <nd ref='5433' />
+    <nd ref='5444' />
+    <nd ref='5381' />
+    <nd ref='2584' />
+    <nd ref='590' />
     <tag k='highway' v='residential' />
     <tag k='id' v='53' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='996' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='996' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='82' />
     <nd ref='6290' />
     <nd ref='3510' />
@@ -20760,8 +20934,17 @@
     <nd ref='80' />
     <tag k='highway' v='residential' />
     <tag k='id' v='181' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='998' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='998' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='596' />
     <nd ref='4072' />
     <nd ref='4326' />
@@ -20865,6 +21048,15 @@
     <nd ref='594' />
     <tag k='highway' v='residential' />
     <tag k='id' v='52' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1000' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='86' />
@@ -21012,10 +21204,80 @@
     <nd ref='1848' />
     <nd ref='1889' />
     <nd ref='1870' />
+    <nd ref='1809' />
+    <nd ref='1313' />
+    <nd ref='1841' />
+    <nd ref='1823' />
+    <nd ref='1865' />
+    <nd ref='1844' />
+    <nd ref='1885' />
+    <nd ref='1867' />
+    <nd ref='1804' />
+    <nd ref='1816' />
+    <nd ref='1857' />
+    <nd ref='1837' />
+    <nd ref='1879' />
+    <nd ref='1861' />
+    <nd ref='1898' />
+    <nd ref='1882' />
+    <nd ref='1820' />
+    <nd ref='1828' />
+    <nd ref='1871' />
+    <nd ref='1852' />
+    <nd ref='1891' />
+    <nd ref='1875' />
+    <nd ref='1813' />
+    <nd ref='1896' />
+    <nd ref='1833' />
+    <nd ref='1847' />
+    <nd ref='1887' />
+    <nd ref='1869' />
+    <nd ref='1807' />
+    <nd ref='1890' />
+    <nd ref='1827' />
+    <nd ref='1810' />
+    <nd ref='1849' />
+    <nd ref='1843' />
+    <nd ref='1884' />
+    <nd ref='1866' />
+    <nd ref='1511' />
+    <nd ref='1886' />
+    <nd ref='1824' />
+    <nd ref='1806' />
+    <nd ref='1846' />
+    <nd ref='1859' />
+    <nd ref='1897' />
+    <nd ref='1880' />
+    <nd ref='1818' />
+    <nd ref='1900' />
+    <nd ref='1839' />
+    <nd ref='1822' />
+    <nd ref='1863' />
+    <nd ref='1872' />
+    <nd ref='1811' />
+    <nd ref='1893' />
+    <nd ref='1830' />
+    <nd ref='1815' />
+    <nd ref='1854' />
+    <nd ref='1835' />
+    <nd ref='1877' />
+    <nd ref='1888' />
+    <nd ref='1825' />
+    <nd ref='1808' />
+    <nd ref='598' />
     <tag k='highway' v='residential' />
     <tag k='id' v='51' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1004' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1004' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='90' />
     <nd ref='5081' />
     <nd ref='3488' />
@@ -21119,6 +21381,15 @@
     <nd ref='88' />
     <tag k='highway' v='residential' />
     <tag k='id' v='179' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1006' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='604' />
@@ -21225,7 +21496,7 @@
     <tag k='highway' v='motorway' />
     <tag k='id' v='50' />
   </way>
-  <way id='1008' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1008' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='94' />
     <nd ref='6330' />
     <nd ref='3550' />
@@ -21329,8 +21600,17 @@
     <nd ref='92' />
     <tag k='highway' v='residential' />
     <tag k='id' v='178' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1010' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1010' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='608' />
     <nd ref='4067' />
     <nd ref='4321' />
@@ -21434,8 +21714,17 @@
     <nd ref='606' />
     <tag k='highway' v='residential' />
     <tag k='id' v='49' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1012' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1012' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='98' />
     <nd ref='1539' />
     <nd ref='1519' />
@@ -21539,6 +21828,15 @@
     <nd ref='96' />
     <tag k='highway' v='residential' />
     <tag k='id' v='177' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1014' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='612' />
@@ -21607,11 +21905,55 @@
     <nd ref='7939' />
     <nd ref='6763' />
     <nd ref='7890' />
+    <nd ref='7930' />
+    <nd ref='7912' />
+    <nd ref='2415' />
+    <nd ref='7933' />
+    <nd ref='5849' />
+    <nd ref='2970' />
+    <nd ref='7892' />
+    <nd ref='7712' />
+    <nd ref='7927' />
+    <nd ref='7909' />
+    <nd ref='1549' />
+    <nd ref='7929' />
+    <nd ref='5091' />
+    <nd ref='2226' />
+    <nd ref='7889' />
+    <nd ref='7902' />
+    <nd ref='7940' />
+    <nd ref='7923' />
+    <nd ref='4113' />
+    <nd ref='7943' />
+    <nd ref='7344' />
+    <nd ref='4615' />
+    <nd ref='7906' />
+    <nd ref='7915' />
+    <nd ref='3061' />
+    <nd ref='7936' />
+    <nd ref='6423' />
+    <nd ref='3683' />
+    <nd ref='7897' />
+    <nd ref='6961' />
+    <nd ref='7920' />
+    <nd ref='7931' />
+    <nd ref='5475' />
+    <nd ref='2602' />
+    <nd ref='610' />
     <tag k='highway' v='residential' />
     <tag k='id' v='48' />
+    <tag k='name' v='Birch Creek Road' />
     <tag k='oneway' v='true' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1016' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1016' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='102' />
     <nd ref='6310' />
     <nd ref='3530' />
@@ -21715,8 +22057,17 @@
     <nd ref='100' />
     <tag k='highway' v='residential' />
     <tag k='id' v='176' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1018' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1018' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='616' />
     <nd ref='4045' />
     <nd ref='4299' />
@@ -21820,6 +22171,15 @@
     <nd ref='614' />
     <tag k='highway' v='residential' />
     <tag k='id' v='47' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1020' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='106' />
@@ -21978,10 +22338,69 @@
     <nd ref='1916' />
     <nd ref='3918' />
     <nd ref='4866' />
+    <nd ref='4846' />
+    <nd ref='4888' />
+    <nd ref='4870' />
+    <nd ref='4907' />
+    <nd ref='4891' />
+    <nd ref='4424' />
+    <nd ref='4837' />
+    <nd ref='4880' />
+    <nd ref='4861' />
+    <nd ref='4900' />
+    <nd ref='4884' />
+    <nd ref='3396' />
+    <nd ref='4905' />
+    <nd ref='4842' />
+    <nd ref='4856' />
+    <nd ref='4896' />
+    <nd ref='4878' />
+    <nd ref='2392' />
+    <nd ref='4899' />
+    <nd ref='4836' />
+    <nd ref='2947' />
+    <nd ref='4858' />
+    <nd ref='4852' />
+    <nd ref='4893' />
+    <nd ref='4875' />
+    <nd ref='1526' />
+    <nd ref='4895' />
+    <nd ref='4833' />
+    <nd ref='2203' />
+    <nd ref='4855' />
+    <nd ref='4868' />
+    <nd ref='4906' />
+    <nd ref='4889' />
+    <nd ref='4090' />
+    <nd ref='4909' />
+    <nd ref='4848' />
+    <nd ref='4592' />
+    <nd ref='4872' />
+    <nd ref='4881' />
+    <nd ref='3038' />
+    <nd ref='4902' />
+    <nd ref='4839' />
+    <nd ref='3660' />
+    <nd ref='4863' />
+    <nd ref='4844' />
+    <nd ref='4886' />
+    <nd ref='4897' />
+    <nd ref='4834' />
+    <nd ref='2579' />
+    <nd ref='618' />
     <tag k='highway' v='residential' />
     <tag k='id' v='46' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1024' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1024' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='110' />
     <nd ref='6287' />
     <nd ref='3507' />
@@ -22085,6 +22504,15 @@
     <nd ref='108' />
     <tag k='highway' v='residential' />
     <tag k='id' v='174' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1026' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='624' />
@@ -22191,7 +22619,7 @@
     <tag k='highway' v='secondary' />
     <tag k='id' v='45' />
   </way>
-  <way id='1028' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1028' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='114' />
     <nd ref='6293' />
     <nd ref='3513' />
@@ -22295,6 +22723,15 @@
     <nd ref='112' />
     <tag k='highway' v='residential' />
     <tag k='id' v='173' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1030' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='628' />
@@ -22382,10 +22819,35 @@
     <nd ref='11216' />
     <nd ref='10817' />
     <nd ref='4163' />
+    <nd ref='11219' />
+    <nd ref='7394' />
+    <nd ref='4665' />
+    <nd ref='9704' />
+    <nd ref='10459' />
+    <nd ref='3111' />
+    <nd ref='11212' />
+    <nd ref='6473' />
+    <nd ref='3733' />
+    <nd ref='9138' />
+    <nd ref='7011' />
+    <nd ref='10676' />
+    <nd ref='11131' />
+    <nd ref='5525' />
+    <nd ref='2652' />
+    <nd ref='626' />
     <tag k='highway' v='residential' />
     <tag k='id' v='44' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1032' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1032' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='118' />
     <nd ref='2960' />
     <nd ref='2940' />
@@ -22489,8 +22951,17 @@
     <nd ref='116' />
     <tag k='highway' v='residential' />
     <tag k='id' v='172' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1034' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1034' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='632' />
     <nd ref='2669' />
     <nd ref='2671' />
@@ -22594,8 +23065,17 @@
     <nd ref='630' />
     <tag k='highway' v='residential' />
     <tag k='id' v='43' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1036' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1036' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='122' />
     <nd ref='5839' />
     <nd ref='3491' />
@@ -22699,8 +23179,17 @@
     <nd ref='120' />
     <tag k='highway' v='residential' />
     <tag k='id' v='171' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1038' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1038' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='636' />
     <nd ref='4055' />
     <nd ref='4309' />
@@ -22804,6 +23293,15 @@
     <nd ref='634' />
     <tag k='highway' v='residential' />
     <tag k='id' v='42' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1040' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='126' />
@@ -23006,10 +23504,25 @@
     <nd ref='6469' />
     <nd ref='3729' />
     <nd ref='9134' />
+    <nd ref='7007' />
+    <nd ref='10672' />
+    <nd ref='11127' />
+    <nd ref='5521' />
+    <nd ref='2648' />
+    <nd ref='638' />
     <tag k='highway' v='residential' />
     <tag k='id' v='41' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1044' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1044' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='130' />
     <nd ref='2405' />
     <nd ref='2385' />
@@ -23113,6 +23626,15 @@
     <nd ref='128' />
     <tag k='highway' v='residential' />
     <tag k='id' v='169' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1046' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='644' />
@@ -23219,7 +23741,7 @@
     <tag k='highway' v='primary' />
     <tag k='id' v='40' />
   </way>
-  <way id='1048' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1048' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='134' />
     <nd ref='6313' />
     <nd ref='3533' />
@@ -23323,9 +23845,18 @@
     <nd ref='132' />
     <tag k='highway' v='residential' />
     <tag k='id' v='168' />
+    <tag k='name' v='Birch Creek Road' />
     <tag k='oneway' v='true' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1050' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1050' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='648' />
     <nd ref='4050' />
     <nd ref='4304' />
@@ -23429,8 +23960,17 @@
     <nd ref='646' />
     <tag k='highway' v='residential' />
     <tag k='id' v='39' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1052' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1052' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='138' />
     <nd ref='6331' />
     <nd ref='3551' />
@@ -23534,8 +24074,17 @@
     <nd ref='136' />
     <tag k='highway' v='residential' />
     <tag k='id' v='167' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1054' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1054' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='652' />
     <nd ref='4010' />
     <nd ref='4264' />
@@ -23639,6 +24188,15 @@
     <nd ref='650' />
     <tag k='highway' v='residential' />
     <tag k='id' v='38' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1056' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='142' />
@@ -23690,10 +24248,71 @@
     <nd ref='4856' />
     <nd ref='8244' />
     <nd ref='7890' />
+    <nd ref='8266' />
+    <nd ref='8248' />
+    <nd ref='1847' />
+    <nd ref='8271' />
+    <nd ref='5403' />
+    <nd ref='7159' />
+    <nd ref='8260' />
+    <nd ref='8242' />
+    <nd ref='8283' />
+    <nd ref='8263' />
+    <nd ref='4367' />
+    <nd ref='1255' />
+    <nd ref='7533' />
+    <nd ref='8237' />
+    <nd ref='8277' />
+    <nd ref='8257' />
+    <nd ref='3334' />
+    <nd ref='8280' />
+    <nd ref='6701' />
+    <nd ref='3859' />
+    <nd ref='8240' />
+    <nd ref='8251' />
+    <nd ref='2325' />
+    <nd ref='8273' />
+    <nd ref='8231' />
+    <nd ref='5780' />
+    <nd ref='6001' />
+    <nd ref='2883' />
+    <nd ref='8253' />
+    <nd ref='8233' />
+    <nd ref='8235' />
+    <nd ref='6149' />
+    <nd ref='8275' />
+    <nd ref='8255' />
+    <nd ref='8265' />
+    <nd ref='8245' />
+    <nd ref='4777' />
+    <nd ref='1454' />
+    <nd ref='1749' />
+    <nd ref='8267' />
+    <nd ref='7832' />
+    <nd ref='5015' />
+    <nd ref='5326' />
+    <nd ref='2135' />
+    <nd ref='8247' />
+    <nd ref='8062' />
+    <nd ref='8230' />
+    <nd ref='5705' />
+    <nd ref='8270' />
+    <nd ref='8250' />
+    <nd ref='8282' />
+    <nd ref='140' />
     <tag k='highway' v='residential' />
     <tag k='id' v='166' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1058' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1058' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='656' />
     <nd ref='3743' />
     <nd ref='3745' />
@@ -23797,6 +24416,15 @@
     <nd ref='654' />
     <tag k='highway' v='residential' />
     <tag k='id' v='37' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1060' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='146' />
@@ -23903,7 +24531,7 @@
     <tag k='highway' v='secondary' />
     <tag k='id' v='165' />
   </way>
-  <way id='1062' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1062' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='660' />
     <nd ref='4060' />
     <nd ref='4314' />
@@ -24007,9 +24635,18 @@
     <nd ref='658' />
     <tag k='highway' v='residential' />
     <tag k='id' v='36' />
+    <tag k='name' v='Birch Creek Road' />
     <tag k='oneway' v='true' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1064' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1064' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='150' />
     <nd ref='6340' />
     <nd ref='3560' />
@@ -24113,6 +24750,15 @@
     <nd ref='148' />
     <tag k='highway' v='residential' />
     <tag k='id' v='164' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1066' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='664' />
@@ -24219,7 +24865,7 @@
     <tag k='highway' v='secondary' />
     <tag k='id' v='35' />
   </way>
-  <way id='1068' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1068' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='154' />
     <nd ref='3409' />
     <nd ref='3389' />
@@ -24323,8 +24969,17 @@
     <nd ref='152' />
     <tag k='highway' v='residential' />
     <tag k='id' v='163' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1070' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1070' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='668' />
     <nd ref='4040' />
     <nd ref='4294' />
@@ -24428,8 +25083,17 @@
     <nd ref='666' />
     <tag k='highway' v='residential' />
     <tag k='id' v='34' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1072' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1072' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='158' />
     <nd ref='6319' />
     <nd ref='3539' />
@@ -24533,8 +25197,17 @@
     <nd ref='156' />
     <tag k='highway' v='residential' />
     <tag k='id' v='162' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1074' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1074' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='672' />
     <nd ref='4057' />
     <nd ref='4311' />
@@ -24638,8 +25311,17 @@
     <nd ref='670' />
     <tag k='highway' v='residential' />
     <tag k='id' v='33' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1076' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1076' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='162' />
     <nd ref='6335' />
     <nd ref='3555' />
@@ -24743,6 +25425,15 @@
     <nd ref='160' />
     <tag k='highway' v='residential' />
     <tag k='id' v='161' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1078' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='676' />
@@ -24954,7 +25645,7 @@
     <tag k='highway' v='primary' />
     <tag k='id' v='160' />
   </way>
-  <way id='1082' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1082' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='680' />
     <nd ref='4037' />
     <nd ref='4291' />
@@ -25058,8 +25749,17 @@
     <nd ref='678' />
     <tag k='highway' v='residential' />
     <tag k='id' v='31' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1084' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1084' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='170' />
     <nd ref='6315' />
     <nd ref='3535' />
@@ -25163,6 +25863,15 @@
     <nd ref='168' />
     <tag k='highway' v='residential' />
     <tag k='id' v='159' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1086' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='684' />
@@ -25269,7 +25978,7 @@
     <tag k='highway' v='primary' />
     <tag k='id' v='30' />
   </way>
-  <way id='1088' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1088' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='174' />
     <nd ref='6204' />
     <nd ref='3492' />
@@ -25373,8 +26082,17 @@
     <nd ref='172' />
     <tag k='highway' v='residential' />
     <tag k='id' v='158' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1090' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1090' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='688' />
     <nd ref='4085' />
     <nd ref='4339' />
@@ -25478,8 +26196,17 @@
     <nd ref='686' />
     <tag k='highway' v='residential' />
     <tag k='id' v='29' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1092' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1092' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='178' />
     <nd ref='4437' />
     <nd ref='3484' />
@@ -25583,8 +26310,17 @@
     <nd ref='176' />
     <tag k='highway' v='residential' />
     <tag k='id' v='157' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1094' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1094' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='692' />
     <nd ref='4044' />
     <nd ref='4298' />
@@ -25688,8 +26424,17 @@
     <nd ref='690' />
     <tag k='highway' v='residential' />
     <tag k='id' v='28' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1096' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1096' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='182' />
     <nd ref='6326' />
     <nd ref='3546' />
@@ -25793,9 +26538,18 @@
     <nd ref='180' />
     <tag k='highway' v='residential' />
     <tag k='id' v='156' />
+    <tag k='name' v='Birch Creek Road' />
     <tag k='oneway' v='true' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1098' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1098' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='696' />
     <nd ref='4063' />
     <nd ref='4317' />
@@ -25899,6 +26653,15 @@
     <nd ref='694' />
     <tag k='highway' v='residential' />
     <tag k='id' v='27' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1100' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='186' />
@@ -26005,7 +26768,7 @@
     <tag k='highway' v='secondary' />
     <tag k='id' v='155' />
   </way>
-  <way id='1102' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1102' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='700' />
     <nd ref='4023' />
     <nd ref='4277' />
@@ -26109,8 +26872,17 @@
     <nd ref='698' />
     <tag k='highway' v='residential' />
     <tag k='id' v='26' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1104' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1104' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='190' />
     <nd ref='6305' />
     <nd ref='3525' />
@@ -26214,6 +26986,15 @@
     <nd ref='188' />
     <tag k='highway' v='residential' />
     <tag k='id' v='154' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1106' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='704' />
@@ -26320,7 +27101,7 @@
     <tag k='highway' v='motorway' />
     <tag k='id' v='25' />
   </way>
-  <way id='1108' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1108' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='194' />
     <nd ref='6323' />
     <nd ref='3543' />
@@ -26424,8 +27205,17 @@
     <nd ref='192' />
     <tag k='highway' v='residential' />
     <tag k='id' v='153' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1110' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1110' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='708' />
     <nd ref='4000' />
     <nd ref='4172' />
@@ -26529,9 +27319,18 @@
     <nd ref='706' />
     <tag k='highway' v='residential' />
     <tag k='id' v='24' />
+    <tag k='name' v='Birch Creek Road' />
     <tag k='oneway' v='true' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1112' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1112' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='198' />
     <nd ref='6281' />
     <nd ref='3501' />
@@ -26635,8 +27434,17 @@
     <nd ref='196' />
     <tag k='highway' v='residential' />
     <tag k='id' v='152' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1114' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1114' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='712' />
     <nd ref='4021' />
     <nd ref='4275' />
@@ -26740,6 +27548,15 @@
     <nd ref='710' />
     <tag k='highway' v='residential' />
     <tag k='id' v='23' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1116' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='202' />
@@ -26789,10 +27606,73 @@
     <nd ref='9364' />
     <nd ref='6085' />
     <nd ref='4866' />
+    <nd ref='9332' />
+    <nd ref='7900' />
+    <nd ref='9354' />
+    <nd ref='9336' />
+    <nd ref='1857' />
+    <nd ref='9359' />
+    <nd ref='5413' />
+    <nd ref='7169' />
+    <nd ref='9348' />
+    <nd ref='9330' />
+    <nd ref='9371' />
+    <nd ref='9351' />
+    <nd ref='4377' />
+    <nd ref='1265' />
+    <nd ref='7543' />
+    <nd ref='8914' />
+    <nd ref='9365' />
+    <nd ref='9345' />
+    <nd ref='3344' />
+    <nd ref='9368' />
+    <nd ref='6711' />
+    <nd ref='3869' />
+    <nd ref='9284' />
+    <nd ref='9339' />
+    <nd ref='2335' />
+    <nd ref='9361' />
+    <nd ref='8402' />
+    <nd ref='5790' />
+    <nd ref='6011' />
+    <nd ref='2893' />
+    <nd ref='9341' />
+    <nd ref='8561' />
+    <nd ref='8716' />
+    <nd ref='6159' />
+    <nd ref='9363' />
+    <nd ref='9343' />
+    <nd ref='9353' />
+    <nd ref='9333' />
+    <nd ref='4787' />
+    <nd ref='1464' />
+    <nd ref='1759' />
+    <nd ref='9355' />
+    <nd ref='7842' />
+    <nd ref='5025' />
+    <nd ref='5336' />
+    <nd ref='2145' />
+    <nd ref='9335' />
+    <nd ref='8072' />
+    <nd ref='8348' />
+    <nd ref='5715' />
+    <nd ref='9358' />
+    <nd ref='9338' />
+    <nd ref='9370' />
+    <nd ref='200' />
     <tag k='highway' v='residential' />
     <tag k='id' v='151' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1118' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1118' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='716' />
     <nd ref='4082' />
     <nd ref='4336' />
@@ -26896,6 +27776,15 @@
     <nd ref='714' />
     <tag k='highway' v='residential' />
     <tag k='id' v='22' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1120' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='206' />
@@ -27002,7 +27891,7 @@
     <tag k='highway' v='motorway' />
     <tag k='id' v='150' />
   </way>
-  <way id='1122' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1122' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='720' />
     <nd ref='4069' />
     <nd ref='4323' />
@@ -27106,8 +27995,17 @@
     <nd ref='718' />
     <tag k='highway' v='residential' />
     <tag k='id' v='21' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1124' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1124' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='210' />
     <nd ref='1929' />
     <nd ref='1909' />
@@ -27211,6 +28109,15 @@
     <nd ref='208' />
     <tag k='highway' v='residential' />
     <tag k='id' v='149' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1126' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='724' />
@@ -27317,7 +28224,7 @@
     <tag k='highway' v='primary' />
     <tag k='id' v='20' />
   </way>
-  <way id='1128' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1128' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='214' />
     <nd ref='6311' />
     <nd ref='3531' />
@@ -27421,8 +28328,17 @@
     <nd ref='212' />
     <tag k='highway' v='residential' />
     <tag k='id' v='148' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1130' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1130' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='728' />
     <nd ref='4047' />
     <nd ref='4301' />
@@ -27526,8 +28442,17 @@
     <nd ref='726' />
     <tag k='highway' v='residential' />
     <tag k='id' v='19' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1132' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1132' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='218' />
     <nd ref='6329' />
     <nd ref='3549' />
@@ -27631,8 +28556,17 @@
     <nd ref='216' />
     <tag k='highway' v='residential' />
     <tag k='id' v='147' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1134' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1134' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='732' />
     <nd ref='4006' />
     <nd ref='4260' />
@@ -27736,8 +28670,17 @@
     <nd ref='730' />
     <tag k='highway' v='residential' />
     <tag k='id' v='18' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1136' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1136' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='222' />
     <nd ref='6288' />
     <nd ref='3508' />
@@ -27841,8 +28784,17 @@
     <nd ref='220' />
     <tag k='highway' v='residential' />
     <tag k='id' v='146' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1138' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1138' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='736' />
     <nd ref='4025' />
     <nd ref='4279' />
@@ -27946,6 +28898,15 @@
     <nd ref='734' />
     <tag k='highway' v='residential' />
     <tag k='id' v='17' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1140' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='226' />
@@ -28052,7 +29013,7 @@
     <tag k='highway' v='secondary' />
     <tag k='id' v='145' />
   </way>
-  <way id='1142' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1142' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='740' />
     <nd ref='1621' />
     <nd ref='1623' />
@@ -28156,8 +29117,17 @@
     <nd ref='738' />
     <tag k='highway' v='residential' />
     <tag k='id' v='16' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1144' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1144' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='230' />
     <nd ref='4923' />
     <nd ref='3487' />
@@ -28261,7 +29231,16 @@
     <nd ref='228' />
     <tag k='highway' v='residential' />
     <tag k='id' v='144' />
+    <tag k='name' v='Birch Creek Road' />
     <tag k='oneway' v='true' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1146' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='744' />
@@ -28368,7 +29347,7 @@
     <tag k='highway' v='secondary' />
     <tag k='id' v='15' />
   </way>
-  <way id='1148' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1148' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='234' />
     <nd ref='6285' />
     <nd ref='3505' />
@@ -28472,8 +29451,17 @@
     <nd ref='232' />
     <tag k='highway' v='residential' />
     <tag k='id' v='143' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1150' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1150' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='748' />
     <nd ref='4065' />
     <nd ref='4319' />
@@ -28577,8 +29565,17 @@
     <nd ref='746' />
     <tag k='highway' v='residential' />
     <tag k='id' v='14' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1152' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1152' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='238' />
     <nd ref='1341' />
     <nd ref='1321' />
@@ -28682,8 +29679,17 @@
     <nd ref='236' />
     <tag k='highway' v='residential' />
     <tag k='id' v='142' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1154' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1154' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='752' />
     <nd ref='4075' />
     <nd ref='4329' />
@@ -28787,8 +29793,17 @@
     <nd ref='750' />
     <tag k='highway' v='residential' />
     <tag k='id' v='13' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1156' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1156' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='242' />
     <nd ref='2777' />
     <nd ref='2757' />
@@ -28892,8 +29907,17 @@
     <nd ref='240' />
     <tag k='highway' v='residential' />
     <tag k='id' v='141' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1158' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1158' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='756' />
     <nd ref='4035' />
     <nd ref='4289' />
@@ -28997,9 +30021,18 @@
     <nd ref='754' />
     <tag k='highway' v='residential' />
     <tag k='id' v='12' />
+    <tag k='name' v='Birch Creek Road' />
     <tag k='oneway' v='true' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1160' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1160' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='246' />
     <nd ref='6314' />
     <nd ref='3534' />
@@ -29052,10 +30085,59 @@
     <nd ref='10360' />
     <nd ref='10017' />
     <nd ref='1870' />
+    <nd ref='10365' />
+    <nd ref='5426' />
+    <nd ref='7182' />
+    <nd ref='10354' />
+    <nd ref='9555' />
+    <nd ref='10377' />
+    <nd ref='10357' />
+    <nd ref='4390' />
+    <nd ref='1278' />
+    <nd ref='7556' />
+    <nd ref='8927' />
+    <nd ref='10371' />
+    <nd ref='10351' />
+    <nd ref='3357' />
+    <nd ref='10374' />
+    <nd ref='6724' />
+    <nd ref='3882' />
+    <nd ref='9297' />
+    <nd ref='10188' />
+    <nd ref='2348' />
+    <nd ref='10367' />
+    <nd ref='8415' />
+    <nd ref='5803' />
+    <nd ref='6024' />
+    <nd ref='2906' />
+    <nd ref='10285' />
+    <nd ref='8574' />
+    <nd ref='8729' />
+    <nd ref='6172' />
+    <nd ref='10369' />
+    <nd ref='10349' />
+    <nd ref='10359' />
+    <nd ref='9873' />
+    <nd ref='4800' />
+    <nd ref='1477' />
+    <nd ref='1772' />
+    <nd ref='10361' />
+    <nd ref='7855' />
+    <nd ref='5038' />
+    <nd ref='5349' />
+    <nd ref='2158' />
+    <nd ref='9982' />
+    <nd ref='8085' />
+    <nd ref='8361' />
+    <nd ref='5728' />
+    <nd ref='10364' />
+    <nd ref='10155' />
+    <nd ref='10376' />
+    <nd ref='244' />
     <tag k='highway' v='primary' />
     <tag k='id' v='140' />
   </way>
-  <way id='1162' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1162' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='760' />
     <nd ref='4053' />
     <nd ref='4307' />
@@ -29159,8 +30241,17 @@
     <nd ref='758' />
     <tag k='highway' v='residential' />
     <tag k='id' v='11' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1164' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1164' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='250' />
     <nd ref='6333' />
     <nd ref='3553' />
@@ -29264,6 +30355,15 @@
     <nd ref='248' />
     <tag k='highway' v='residential' />
     <tag k='id' v='139' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1166' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='764' />
@@ -29370,7 +30470,7 @@
     <tag k='highway' v='primary' />
     <tag k='id' v='10' />
   </way>
-  <way id='1168' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1168' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='254' />
     <nd ref='6292' />
     <nd ref='3512' />
@@ -29474,8 +30574,17 @@
     <nd ref='252' />
     <tag k='highway' v='residential' />
     <tag k='id' v='138' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1170' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1170' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='768' />
     <nd ref='4030' />
     <nd ref='4284' />
@@ -29579,6 +30688,15 @@
     <nd ref='766' />
     <tag k='highway' v='residential' />
     <tag k='id' v='9' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1172' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='258' />
@@ -29658,10 +30776,43 @@
     <nd ref='5801' />
     <nd ref='6022' />
     <nd ref='2904' />
+    <nd ref='10122' />
+    <nd ref='8572' />
+    <nd ref='8727' />
+    <nd ref='6170' />
+    <nd ref='10144' />
+    <nd ref='10124' />
+    <nd ref='10134' />
+    <nd ref='9871' />
+    <nd ref='4798' />
+    <nd ref='1475' />
+    <nd ref='1770' />
+    <nd ref='10136' />
+    <nd ref='7853' />
+    <nd ref='5036' />
+    <nd ref='5347' />
+    <nd ref='2156' />
+    <nd ref='9980' />
+    <nd ref='8083' />
+    <nd ref='8359' />
+    <nd ref='5726' />
+    <nd ref='10139' />
+    <nd ref='10119' />
+    <nd ref='10151' />
+    <nd ref='256' />
     <tag k='highway' v='residential' />
     <tag k='id' v='137' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1174' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1174' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='772' />
     <nd ref='2483' />
     <nd ref='2485' />
@@ -29765,8 +30916,17 @@
     <nd ref='770' />
     <tag k='highway' v='residential' />
     <tag k='id' v='8' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1176' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1176' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='262' />
     <nd ref='5616' />
     <nd ref='3490' />
@@ -29870,8 +31030,17 @@
     <nd ref='260' />
     <tag k='highway' v='residential' />
     <tag k='id' v='136' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1178' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1178' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='776' />
     <nd ref='4007' />
     <nd ref='4261' />
@@ -29975,6 +31144,15 @@
     <nd ref='774' />
     <tag k='highway' v='residential' />
     <tag k='id' v='7' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1180' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='266' />
@@ -30081,7 +31259,7 @@
     <tag k='highway' v='secondary' />
     <tag k='id' v='135' />
   </way>
-  <way id='1182' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1182' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='780' />
     <nd ref='4070' />
     <nd ref='4324' />
@@ -30185,8 +31363,17 @@
     <nd ref='778' />
     <tag k='highway' v='residential' />
     <tag k='id' v='6' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1184' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1184' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='270' />
     <nd ref='2025' />
     <nd ref='2005' />
@@ -30290,6 +31477,15 @@
     <nd ref='268' />
     <tag k='highway' v='residential' />
     <tag k='id' v='134' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1186' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='784' />
@@ -30396,7 +31592,7 @@
     <tag k='highway' v='secondary' />
     <tag k='id' v='5' />
   </way>
-  <way id='1188' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1188' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='274' />
     <nd ref='6338' />
     <nd ref='3558' />
@@ -30500,8 +31696,17 @@
     <nd ref='272' />
     <tag k='highway' v='residential' />
     <tag k='id' v='133' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1190' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1190' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='788' />
     <nd ref='4020' />
     <nd ref='4274' />
@@ -30605,8 +31810,17 @@
     <nd ref='786' />
     <tag k='highway' v='residential' />
     <tag k='id' v='4' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1192' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1192' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='278' />
     <nd ref='6299' />
     <nd ref='3519' />
@@ -30710,9 +31924,18 @@
     <nd ref='276' />
     <tag k='highway' v='residential' />
     <tag k='id' v='132' />
+    <tag k='name' v='Birch Creek Road' />
     <tag k='oneway' v='true' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1194' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1194' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='792' />
     <nd ref='4039' />
     <nd ref='4293' />
@@ -30816,8 +32039,17 @@
     <nd ref='790' />
     <tag k='highway' v='residential' />
     <tag k='id' v='3' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1196' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1196' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='282' />
     <nd ref='6317' />
     <nd ref='3537' />
@@ -30921,8 +32153,17 @@
     <nd ref='280' />
     <tag k='highway' v='residential' />
     <tag k='id' v='131' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
-  <way id='1198' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1198' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='796' />
     <nd ref='3481' />
     <nd ref='3483' />
@@ -31026,6 +32267,15 @@
     <nd ref='794' />
     <tag k='highway' v='residential' />
     <tag k='id' v='2' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1200' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='286' />
@@ -31132,7 +32382,7 @@
     <tag k='highway' v='primary' />
     <tag k='id' v='130' />
   </way>
-  <way id='1202' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
+  <way id='1202' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='800' />
     <nd ref='4017' />
     <nd ref='4271' />
@@ -31236,6 +32486,15 @@
     <nd ref='798' />
     <tag k='highway' v='residential' />
     <tag k='id' v='1' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1204' action='modify' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='290' />
@@ -31313,8 +32572,43 @@
     <nd ref='8849' />
     <nd ref='8395' />
     <nd ref='5783' />
+    <nd ref='6004' />
+    <nd ref='2886' />
+    <nd ref='8829' />
+    <nd ref='8554' />
+    <nd ref='8709' />
+    <nd ref='6152' />
+    <nd ref='8851' />
+    <nd ref='8831' />
+    <nd ref='8841' />
+    <nd ref='8821' />
+    <nd ref='4780' />
+    <nd ref='1457' />
+    <nd ref='1752' />
+    <nd ref='8843' />
+    <nd ref='7835' />
+    <nd ref='5018' />
+    <nd ref='5329' />
+    <nd ref='2138' />
+    <nd ref='8823' />
+    <nd ref='8065' />
+    <nd ref='8341' />
+    <nd ref='5708' />
+    <nd ref='8846' />
+    <nd ref='8826' />
+    <nd ref='8858' />
+    <nd ref='288' />
     <tag k='highway' v='residential' />
     <tag k='id' v='129' />
+    <tag k='name' v='Birch Creek Road' />
+    <tag k='tiger:cfcc' v='A41' />
+    <tag k='tiger:county' v='Sweetwater, WY' />
+    <tag k='tiger:name_base' v='Birch Creek' />
+    <tag k='tiger:name_type' v='Rd' />
+    <tag k='tiger:reviewed' v='no' />
+    <tag k='tiger:separated' v='no' />
+    <tag k='tiger:source' v='tiger_import_dch_v0.6_20070830' />
+    <tag k='tiger:tlid' v='149464644' />
   </way>
   <way id='1206' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
     <nd ref='804' />
@@ -31421,74 +32715,4 @@
     <tag k='highway' v='motorway' />
     <tag k='id' v='0' />
   </way>
-  <relation id='122896' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
-    <member type='way' ref='910' role='from' />
-    <member type='way' ref='1172' role='to' />
-    <member type='node' ref='2904' role='via' />
-    <tag k='restriction' v='no_left_turn' />
-    <tag k='type' v='restriction' />
-  </relation>
-  <relation id='122882' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
-    <member type='way' ref='1204' role='from' />
-    <member type='way' ref='914' role='to' />
-    <member type='node' ref='5783' role='via' />
-    <tag k='restriction' v='no_left_turn' />
-    <tag k='type' v='restriction' />
-  </relation>
-  <relation id='122851' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
-    <member type='way' ref='978' role='from' />
-    <member type='way' ref='852' role='to' />
-    <member type='node' ref='9544' role='via' />
-    <tag k='restriction' v='no_left_turn' />
-    <tag k='type' v='restriction' />
-  </relation>
-  <relation id='122823' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
-    <member type='way' ref='994' role='from' />
-    <member type='way' ref='842' role='to' />
-    <member type='node' ref='5418' role='via' />
-    <tag k='restriction' v='no_left_turn' />
-    <tag k='type' v='restriction' />
-  </relation>
-  <relation id='122797' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
-    <member type='way' ref='974' role='from' />
-    <member type='way' ref='-122795' role='to' />
-    <member type='node' ref='6392' role='via' />
-    <tag k='restriction' v='no_right_turn' />
-    <tag k='type' v='restriction' />
-  </relation>
-  <relation id='122773' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
-    <member type='way' ref='1002' role='from' />
-    <member type='way' ref='1160' role='to' />
-    <member type='node' ref='1870' role='via' />
-    <tag k='restriction' v='no_left_turn' />
-    <tag k='type' v='restriction' />
-  </relation>
-  <relation id='122759' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
-    <member type='way' ref='1022' role='from' />
-    <member type='way' ref='1116' role='to' />
-    <member type='node' ref='4866' role='via' />
-    <tag k='restriction' v='no_right_turn' />
-    <tag k='type' v='restriction' />
-  </relation>
-  <relation id='122747' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
-    <member type='way' ref='1014' role='from' />
-    <member type='way' ref='1056' role='to' />
-    <member type='node' ref='7890' role='via' />
-    <tag k='restriction' v='no_left_turn' />
-    <tag k='type' v='restriction' />
-  </relation>
-  <relation id='122710' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
-    <member type='way' ref='1030' role='from' />
-    <member type='way' ref='980' role='to' />
-    <member type='node' ref='4163' role='via' />
-    <tag k='restriction' v='no_left_turn' />
-    <tag k='type' v='restriction' />
-  </relation>
-  <relation id='122696' timestamp='2011-12-01T00:00:00Z' uid='8909' user='mvexel' visible='true' version='1' changeset='10038798'>
-    <member type='way' ref='1042' role='from' />
-    <member type='way' ref='940' role='to' />
-    <member type='node' ref='9134' role='via' />
-    <tag k='restriction' v='no_left_turn' />
-    <tag k='type' v='restriction' />
-  </relation>
 </osm>
