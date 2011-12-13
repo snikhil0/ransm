@@ -36,3 +36,20 @@ fixture2.osm
     
 fixture3.osm
     fixture1.osm + all data created on 2008-01-01
+    
+GUIDANCE
+fixture4a.osm
+    fixture1.osm + 101 highway=traffic_signals nodes
+fixture4b.osm
+    fixture1.osm + 101 highway=mini_roundabout nodes
+fixture4c.osm
+    fixture1.osm + 101 highway=stop nodes
+fixture4d.osm
+    fixture1.osm + 101 highway=give_way nodes
+fixture4e.osm
+    fixture1.osm + 101 highway=crossing nodes
+fixture4e.osm
+    fixture1.osm + 101 highway=motorway_junction nodes on Motorway
+fixture4g.osm
+    fixture1.osm + 101 highway=roundabout nodes on nodes (THIS SHOULD BE PENALIZED)
+TODO: Fixtures for incorrect guidance nodes (nodes not in way, way tags used on nodes, motorway_junction not on motorway)
