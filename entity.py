@@ -13,7 +13,6 @@
 # limitations under the License.
 import sys
 from datetime import datetime
-from user import  User
 from math import *
 
 # The radius of the earth, used in the Haversine formula for
@@ -32,7 +31,7 @@ ROAD_CATEGORY = {'motorway': 'highways', 'trunk':'main', 'primary':'main', 'seco
                      'tertiary': 'local', 'residential':'local', 'unclassified': 'unclassified', 'road':'unclassified',
                      'living_street': 'local', 'service': 'local', 'track':'local', 'pedestrian':'local',
                      'raceway':'local', 'services':'local', 'rest_area':'local', 'bus_guideway':'local',
-                     'path':'local', 'cycleway':'guidance', 'footway':'guidance', 'mini_roundabout':'guidance',
+                     'path':'local', 'cycleway':'NA', 'footway':'NA', 'mini_roundabout':'guidance',
                      'stop':'guidance', 'give_way':'guidance', 'traffic_signals':'guidance',
                      'crossing':'guidance', 'roundabout':'guidance', 'motorway_junction':'guidance',
                      'turning_circle':'guidance', 'construction':'guidance', 'motorway_link':'local',
@@ -121,6 +120,10 @@ class Entity(object):
         self.last_timestamp = datetime.min
         self.maxid = 0
         self.minid = sys.maxint
+        self.max_lon = -sys.maxint
+        self.min_lon = sys.maxint
+        self.min_lat = sys.maxint
+        self.max_lat = -sys.maxint
 
     def extract_min_max_timestamp(self, osmtimestamp):
         timestamp = datetime.utcfromtimestamp(osmtimestamp)
@@ -199,7 +202,7 @@ class NodeEntity(Entity):
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_id(osmid)
             self.extract_min_max_version(osmversion)
-
+            self.extract_min_max_lat_lon(ref[0], ref[1])
             AGES_NODES[osmuid] = (float(osmtimestamp / 1000.0))
             AGES.append(AGES_NODES[osmuid])
 
@@ -279,19 +282,23 @@ class WayAttributeModel(Entity):
         if 'maxspeed' in tags:
             self.sum_max_speed_lengths += length
 
-        if 'tiger:tlid' in tags:
-            tigerTagValue = tags['tiger:tlid']
-            self.tiger_tagged_ways += 1
-            if tigerTagValue not in TIGER_BREAKDOWN:
-                TIGER_BREAKDOWN[tigerTagValue] = 1
-            else:
-                TIGER_BREAKDOWN[tigerTagValue] += 1
+        tigerTagged = False
+        for key in tags:
+            if 'tiger' in key:
+                self.tiger_tagged_ways += 1
+                self.version_increase_over_tiger += (osmversion - 1)
+                tigerTagged = True
+                break
 
-            if osmversion == 1:
-                self.untouched_by_user_edits += 1
 
-            self.version_increase_over_tiger += (osmversion - 1)
-            self.sum_versions += osmversion
+        if osmversion == 1:
+            self.untouched_by_user_edits += 1
+
+        if not tigerTagged:
+            self.version_increase_over_tiger += osmversion
+
+        self.sum_versions += osmversion
+
         if 'junction' in tags:
             self.number_of_junctions += 1
             self.sum_junction_length += length
@@ -302,11 +309,15 @@ class WayAttributeModel(Entity):
     def tiger_factor(self):
         # Refactor later to compute temps from different sources and fuze them
         untouched_by_users_factor = 0
+        version_increase_over_tiger_factor = 0
+        
         if self.tiger_tagged_ways:
             untouched_by_users_factor = UNTOUCHED_WEIGHT * float(self.untouched_by_user_edits)/self.tiger_tagged_ways
         else:
             print 'Tiger ways zero'
-        version_increase_over_tiger_factor = VERSION_INCREASE_OVER_TIGER * float(self.version_increase_over_tiger)/self.sum_versions
+        if self.sum_versions:
+            version_increase_over_tiger_factor = VERSION_INCREASE_OVER_TIGER * float(self.version_increase_over_tiger)/self.sum_versions
+
         return untouched_by_users_factor + version_increase_over_tiger_factor
 
     # The routing factor counts all the ways that have either a one way tag, max speed tag or access tag. These are
@@ -400,14 +411,24 @@ class WayEntity(Entity):
                         else:
                             INTERSECTIONS[r] = 1
 
-                # Keep a master tiger count
-                if 'tiger:tlid' in tags:
-                    self.tiger_tagged_ways += 1
-                    if osmversion == 1:
-                        self.untouched_by_user_edits += 1
+                # Keep a master tiger count, on any tiger tag and break out
+                # if even 1 tiger tag is found
+                tigerTagged = False
+                for key in tags:
+                    if 'tiger' in key:
+                        self.tiger_tagged_ways += 1
+                        self.version_increase_over_tiger += (osmversion - 1)
+                        tigerTagged = True
+                        break
 
-                    self.version_increase_over_tiger += (osmversion - 1)
-                    self.sum_versions += osmversion
+
+                if osmversion == 1:
+                    self.untouched_by_user_edits += 1
+
+                if not tigerTagged:
+                    self.version_increase_over_tiger += osmversion
+
+                self.sum_versions += osmversion
 
                 # get the road category: if it is not present in our map
                 # then it is an uncommon one otherwise extract routing and entity level information

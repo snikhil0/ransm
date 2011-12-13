@@ -15,7 +15,6 @@ from imposm.parser import OSMParser
 import sys
 import os
 from time import time
-import numpy as np
 import math
 from tcdb import hdb
 
@@ -32,19 +31,15 @@ DATA_TEMP = 100
 BASIC_TEMP = 68
 
 ## Weights
-
-# Relative weighing value for the number of users doing 95% of the edits.
-USER_WEIGHT95 = 0.1
-
 # Relative weighing value for the routing temperature
 ROUTING_WEIGHT = 0.4
 
 # Relative weighing value for the TIGER temperature
-TIGER_WEIGHT = 0.35
+TIGER_WEIGHT = 0.3
 
 # Relative weighing value for the Freshness temperature
 # Calculated 
-FRESHNESS_WEIGHT = 0.25
+FRESHNESS_WEIGHT = 0.2
 
 # Relative weighing value for the Relations temperature
 # See relation_temperature()
@@ -54,18 +49,19 @@ RELATION_WEIGHT = 0.1
 # These factors are used to calculate data freshness.
 AGE_WEIGHT1 = 0.3
 AGE_WEIGHT10 = 0.25
-AGE_WEIGHT25 = 0.1
-AGE_WEIGHT50 = 0.1
+AGE_WEIGHT25 = 0.15
+AGE_WEIGHT50 = 0.05
 AGE_WEIGHT75 = 0.05
-
+# Relative weighing value for the number of users doing 95% of the edits.
+USER_WEIGHT95 = 0.1
 
 # Base temperature
 ZERO_DATA_TEMPERATURE = 32
 
 # The relative weighing factors for each of the binned way categories as
 # defined in entity.py
-ROAD_CATEGORY_WEIGHTS = {'highways': 0.3, 'main': 0.20, 'local': 0.10, 'guidance': 0.2,
-                         'unclassified':-0.1, 'uncommon':-0.1}
+ROAD_CATEGORY_WEIGHTS = {'highways': 0.4, 'main': 0.30, 'local': 0.20, 'guidance': 0.1,
+                         'unclassified':-0.1, 'uncommon':-0.2}
 
 class RoutingAnalyzer(object):
     def __init__(self):
