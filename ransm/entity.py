@@ -329,8 +329,10 @@ class WayAttributeEntity(Entity):
 
     # Similar to the above ideas, but this counts the junctions.
     def junction_factor(self):
-        return float(self.sum_junction_length)/self.sum_way_lengths
-
+        if self.sum_way_lengths > 0:
+            return float(self.sum_junction_length)/self.sum_way_lengths
+        return 0
+    
 class WayEntity(Entity):
     """""
         This is where the callback for ways gets. The ways entity is a complicated beast,

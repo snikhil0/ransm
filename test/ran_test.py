@@ -13,7 +13,9 @@
 # limitations under the License.
 
 import unittest
+from ransm.entity import WayEntity, RelationEntity, WAY_LENGTH_MAP
 from ransm.routing_analyzer import RoutingAnalyzer
+from test import relations, nodeCacheMock, ways, intersections
 
 
 class Test(unittest.TestCase):
@@ -21,7 +23,7 @@ class Test(unittest.TestCase):
     ran = None
 
     def setUp(self):
-        self.ran = RoutingAnalyzer()
+        self.ran = RoutingAnalyzer(nodeCacheMock)
 
     def tearDown(self):
         pass
@@ -34,3 +36,23 @@ class Test(unittest.TestCase):
         self.assertEquals(3,len(below_p), 'Wrong')
 
 
+    def testRoutingAttributeTemperature(self):
+        wayEntity = WayEntity(nodeCacheMock)
+        wayEntity.analyze(ways)
+        self.assertEqual(self.ran.routing_attributes_temperature(wayEntity), (1 * 0.2 + 0.4 * 0.45 + 0.3 * 0.8)*0.2*68)
+
+    def testRelationTemperature(self):
+        WAY_LENGTH_MAP[90088573] = 1
+        WAY_LENGTH_MAP[90088567] = 2
+
+        relationEntity = RelationEntity()
+        relationEntity.analyze(relations)
+        self.assertEqual(self.ran.relation_temperature(relationEntity, intersections), 68)
+        intersections[1044247388] = 2
+        self.assertEqual(self.ran.relation_temperature(relationEntity, intersections), 34)
+
+    def testFreshnessTemperature(self):
+        ages = [1, 2, 3, 4, 5]
+        counts = {1:10, 2:15, 3:100, 4:200, 5:250}
+        self.assertAlmostEqual(self.ran.freshness_temperature(ages, counts),
+                         (0.2*0.3 + 0.2*0.25 + 0.4*.15 + 0.6*0.05 + 0.8*0.05+0.8*0.1)*68)
