@@ -66,15 +66,11 @@ ROAD_CATEGORY_WEIGHTS = {'highways': 0.4, 'main': 0.30, 'local': 0.20, 'guidance
                          'unclassified':-0.1, 'uncommon':-0.2}
 
 class RoutingAnalyzer(object):
-    def __init__(self):
+
+    def __init__(self, nodecache):
         
         # Initialize the Tokyo Cabinet node cache.
-        self.nodecache = hdb.HDB()
-        try:
-            self.nodecache.open(os.path.join(CACHE_LOCATION, '/nodes.tch'))
-        except Exception:
-            print 'node cache could not be created at %s, does the directory exist? If not, create it. If so, Check permissions and disk space.' % CACHE_LOCATION
-            exit(1)
+        self.nodecache = nodecache
 
         # Initialize feature containers, passing cache ref
         self.ways_entity = WayEntity(self.nodecache)
@@ -116,13 +112,13 @@ class RoutingAnalyzer(object):
     # This function calculates the ROUTING dimension of data temperature
     # by calculating the atributes factor for each of the binned categories
     # of way features and weighing them according to the relative bin weight
-    def routing_attributes_temperature(self):
-        highway_factor = self.ways_entity.attribute_factor('highways')
-        main_factor = self.ways_entity.attribute_factor('main')
-        local_factor = self.ways_entity.attribute_factor('local')
-        guidance_factor = self.ways_entity.attribute_factor('guidance')
-        unclassified_factor = self.ways_entity.attribute_factor('unclassified')
-        uncommon_factor = float (self.ways_entity.uncommon_highway_length)/self.ways_entity.length
+    def routing_attributes_temperature(self, ways):
+        highway_factor = ways.attribute_factor('highways')
+        main_factor = ways.attribute_factor('main')
+        local_factor = ways.attribute_factor('local')
+        guidance_factor = ways.attribute_factor('guidance')
+        unclassified_factor = ways.attribute_factor('unclassified')
+        uncommon_factor = float (ways.uncommon_highway_length)/ways.length
         
         factors = highway_factor * ROAD_CATEGORY_WEIGHTS['highways'] + \
                 main_factor * ROAD_CATEGORY_WEIGHTS['main'] + \
@@ -134,42 +130,45 @@ class RoutingAnalyzer(object):
         return factors * BASIC_TEMP
 
     # This function calculates the RELATION dimension of data temperature
-    def relation_temperature(self):
-        number_of_intersections = len(filter(lambda x: x > 1, INTERSECTIONS.values()))
-        return (float(self.relations_entity.num_turnrestrcitions)/number_of_intersections) * BASIC_TEMP
+    def relation_temperature(self, relations, intersections):
+        number_of_intersections = len(filter(lambda x: x > 1, intersections.values()))
+        return (float(relations.num_turnrestrcitions)/number_of_intersections) * BASIC_TEMP
 
-    def data_temerature(self):
+    def freshness_temperature(self, edit_ages, edit_counts):
         # Aggregate user and edit counts
         # reverse the AGES because the newest will be at the top, so when we get the 1%, 10%,
         # we search from the top
-        ages = AGES
+        ages = edit_ages
         ages.sort(reverse=True)
 
         # don't reverse it, so when we ask for 95% edits it gets from the ascending order
-        counts = USERS_EDITS.values()
+        counts = edit_counts.values()
         counts.sort()
 
         # Freshness factors calculation
         # Count the number of values above the 1% , 10% age score, this gives the number of edits that are fresher
         # than 1% of the value.
-        max_array = max(ages)
-        ages1_factor = float(len(filter(lambda a: a > self.percentile(ages, 0.01), ages)))/max_array * AGE_WEIGHT1
-        ages10_factor = float(len(filter(lambda a: a > self.percentile(ages, 0.10), ages)))/max_array * AGE_WEIGHT10
-        ages25_factor = float(len(filter(lambda a: a > self.percentile(ages, 0.25), ages)))/max_array * AGE_WEIGHT25
-        ages50_factor = float(len(filter(lambda a: a > self.percentile(ages, 0.50), ages)))/max_array * AGE_WEIGHT50
-        ages75_factor = float(len(filter(lambda a: a > self.percentile(ages, 0.75), ages)))/max_array * AGE_WEIGHT75
-        
+        len_array = len(ages)
+        ages1_factor = float(len(filter(lambda a: a >= self.percentile(ages, 0.01), ages)))/len_array * AGE_WEIGHT1
+        ages10_factor = float(len(filter(lambda a: a >= self.percentile(ages, 0.10), ages)))/len_array * AGE_WEIGHT10
+        ages25_factor = float(len(filter(lambda a: a >= self.percentile(ages, 0.25), ages)))/len_array * AGE_WEIGHT25
+        ages50_factor = float(len(filter(lambda a: a >= self.percentile(ages, 0.50), ages)))/len_array * AGE_WEIGHT50
+        ages75_factor = float(len(filter(lambda a: a >= self.percentile(ages, 0.75), ages)))/len_array * AGE_WEIGHT75
+
         # Calculate 95 percintile of users, this is not part of freshness but
         # is used in the freshness temperature.
-        user95_factor = float(len(filter(lambda a: a < self.percentile(counts, 0.95), counts)))/max(counts) * USER_WEIGHT95
+        user95_factor = float(len(filter(lambda a: a <= self.percentile(counts, 0.95), counts)))/len(counts) * USER_WEIGHT95
+        return (ages1_factor + ages10_factor + ages25_factor   + user95_factor + ages50_factor + ages75_factor) * BASIC_TEMP
 
+    def data_temerature(self):
         # Normalize the data temperature to between 0 and 40 and add a buffer of zero celsius
-        return  (RELATION_WEIGHT * self.relation_temperature() +
-                 ROUTING_WEIGHT * self.routing_attributes_temperature() + FRESHNESS_WEIGHT *
-                                                                          (ages1_factor + ages10_factor + ages25_factor   +
-                                                                           user95_factor + ages50_factor + ages75_factor)  * BASIC_TEMP +
-                 TIGER_WEIGHT * self.ways_entity.tiger_factor() * BASIC_TEMP + ZERO_DATA_TEMPERATURE)
+        return  (RELATION_WEIGHT * self.relation_temperature(self.relations_entity, INTERSECTIONS) +
+                 ROUTING_WEIGHT * self.routing_attributes_temperature(self.ways_entity) + FRESHNESS_WEIGHT *
+                                                                          self.freshness_temperature(AGES, USERS_EDITS)
+                 + TIGER_WEIGHT * self.ways_entity.tiger_factor() * BASIC_TEMP + ZERO_DATA_TEMPERATURE)
 
+    # The main function that parses the xml file and
+    # calls the data temp calculations
     def run(self, filename):
         # Timings can be done outside of the program using time(1)
         # and should probably be deprecated here
@@ -212,7 +211,15 @@ def main(args):
         usage()
         exit()
 
-    analysis_engine = RoutingAnalyzer()
+    nodeCache =  hdb.HDB()
+    try:
+        nodeCache.open(os.path.join(CACHE_LOCATION, '/nodes.tch'))
+    except Exception:
+        print 'node cache could not be created at %s, does the directory exist? If not, create it. If so, Check permissions and disk space.' % CACHE_LOCATION
+        exit(1)
+
+    analysis_engine = RoutingAnalyzer(nodeCache)
+    
     analysis_engine.run(args[1])
 
 if __name__ == "__main__":

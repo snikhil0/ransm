@@ -12,29 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import unittest
-import time
 from ransm.entity import NodeEntity, WayAttributeEntity, WayEntity, WAY_LENGTH_MAP, RelationEntity
-
-
-first_timestamp = time.time()
-last_timestamp = time.time() + 10000
-
-ways = ((90088573, {'oneway': 'yes', 'highway': 'secondary', 'name': 'Moffet Boulevard',
-                    'tiger:county': 'Santa Clara', 'tiger:name_base': 'Moffet'}, (65433897, 259415186, 1044247254,
-                                                                                  65486041, 65394577,
-                                                                                  689360672, 65396646), 3,
-         first_timestamp, 1000),
-        (90088567, {'oneway': 'yes', 'highway': 'secondary_link'}, (1044247424, 1044247388, 1044247395, 1044247254), 2,
-         last_timestamp, 2000))
-
-relations = ( (1, {'name': 'Somename', 'type':'restriction'}, [90088573, 90088567], 3, first_timestamp, 1000),
-              (1, {'name': 'Somename', 'type':'route'}, [90088573], 2, last_timestamp, 2000))
-
-nodeCacheMock = {65433897: (-122.0730256, 37.4003229), 259415186: (-122.072894, 37.4004021),
-                 1044247254: (-122.0722244, 37.4009026), 65486041: (-122.071587, 37.4013793),
-                 65394577: (-122.071587, 37.4013793), 689360672: (-122.0694064, 37.4030326),
-                 65396646: (-122.0693492, 37.4031059), 1044247424: (-122.0719762, 37.4012382),
-                 1044247388: (-122.0722374, 37.4009704), 1044247395: (-122.0722529, 37.4009294)}
+from test import first_timestamp, last_timestamp, nodeCacheMock, ways, relations
 
 class EntityTest(unittest.TestCase):
     def setUp(self):
