@@ -17,7 +17,6 @@ import os
 from time import time
 import math
 from tcdb import hdb
-from tcdb import tc
 
 # This class does the way routing analysis.
 # The analysis is based on tags corresponding to
@@ -70,18 +69,7 @@ class RoutingAnalyzer(object):
 
     def __init__(self, nodecache):
         
-        # Initialize the Tokyo Cabinet node cache.
-<<<<<<< HEAD
-        self.nodecache = hdb.HDB()
-        try:
-            self.nodecache.open(os.path.join(CACHE_LOCATION, '/nodes.tch'))
-        except tc.TCException as ex:
-            print 'node cache could not be created at %s, does the directory exist? If not, create it. If so, Check permissions and disk space.' % CACHE_LOCATION
-            print ex.message
-            exit(1)
-=======
         self.nodecache = nodecache
->>>>>>> bf7da6f9057a8b8c078c03e8fd1ec388c5a94bff
 
         # Initialize feature containers, passing cache ref
         self.ways_entity = WayEntity(self.nodecache)
@@ -224,7 +212,7 @@ def main(args):
 
     nodeCache =  hdb.HDB()
     try:
-        nodeCache.open(os.path.join(CACHE_LOCATION, '/nodes.tch'))
+        nodeCache.open(os.path.join(CACHE_LOCATION, 'nodes.tch'))
     except Exception:
         print 'node cache could not be created at %s, does the directory exist? If not, create it. If so, Check permissions and disk space.' % CACHE_LOCATION
         exit(1)
