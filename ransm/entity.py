@@ -93,25 +93,19 @@ def average_age():
     return 0
 
 def extract_user(uid, type):
-    if uid not in USERS_EDITS:
-        USERS_EDITS[uid] = 1
-    else:
-        USERS_EDITS[uid] += 1
+    if type:
+        if uid not in USERS_EDITS:
+            USERS_EDITS[uid] = 1
+        else:
+            USERS_EDITS[uid] += 1
 
 class Entity(object):
-    '''
-    Base class for all other entities
-    Stores the repetitive basic information like:
-    count
-    min, mean and max versions
-    first and last timestamps
-    min and max ids
-    '''
-
+    """
+    """
     def __init__(self):
-        '''
+        """""
         Constructor: initialize members
-        '''
+        """""
         self.entity_count = 0
         self.min_version = sys.maxint
         self.max_version = 0
@@ -156,7 +150,7 @@ class Entity(object):
 
 
 class CoordEntity(Entity):
-    '''
+    """""
         The class that gets the callback for Coords from Imposm parser.
         Holds all the information relevant to the Coord and shares user and age information
         with the global containers
@@ -164,7 +158,7 @@ class CoordEntity(Entity):
         Tokyo Cabinet style node cache for computing distances for ways based on node ids.
         The CoordEntity is the class that holds information for ALL Coords. So this infact is
         a container for all coords.
-    '''
+    """""
     
     def __init__(self, nodecache):
         Entity.__init__(self)
@@ -185,12 +179,12 @@ class CoordEntity(Entity):
             self.nodecache[osmid] = (lon,lat)
 
 class NodeEntity(Entity):
-    '''
+    """""
         This class gets the callback for Nodes from Imposm parser.
         Holds the information relevant to the node. No special tags are stored for Nodes yet,
         but the class can be extended. Again, the NodeEntity is a container for all nodes and hence
         the information stored is either a comparison or accumulation of information from each node.
-    '''
+    """""
     def __init__(self):
         Entity.__init__(self)
 
@@ -211,10 +205,10 @@ class NodeEntity(Entity):
 
 
 class RelationEntity(Entity):
-    '''
+    """""
         The relation callback get here. This class is a container for holding information for all
         relations. Number of restrictions and total length of restrictions are members of this class.
-    '''
+    """""
     def __init__(self):
         Entity.__init__(self)
         self.num_turnrestrcitions = 0
@@ -235,8 +229,8 @@ class RelationEntity(Entity):
 
             length = 0
             for ref in refs:
-                    if ref[0] in WAY_LENGTH_MAP:
-                        length += WAY_LENGTH_MAP[ref[0]]
+                    if ref in WAY_LENGTH_MAP:
+                        length += WAY_LENGTH_MAP[ref]
 
             self.sum_restriction_length += length
                     
@@ -246,11 +240,11 @@ class RelationEntity(Entity):
 
 
 
-class WayAttributeModel(Entity):
-    '''
+class WayAttributeEntity(Entity):
+    """""
      This class maintains the information pertaining to the attributes for routing for a particular class of way.
      This inherits from Entity because we also keep account of the variables of the entity model.
-    '''
+    """""
     def __init__(self):
         Entity.__init__(self)
         self.tiger_tagged_ways = 0
@@ -338,13 +332,13 @@ class WayAttributeModel(Entity):
         return float(self.sum_junction_length)/self.sum_way_lengths
 
 class WayEntity(Entity):
-    '''
+    """""
         This is where the callback for ways gets. The ways entity is a complicated beast,
         it contains a map of road categories to attribute model. The attribute model is defined below.
         The way entity is responsible for computing factors for the individual models and also giving an
         aggregated factor for all ways irrespective of categorization.
 
-    '''
+    """""
     def __init__(self, nodecache):
         Entity.__init__(self)
         self.nodecache = nodecache
@@ -379,7 +373,7 @@ class WayEntity(Entity):
     # the data. Go figure!
     def tiger_factor(self):
         # Refactor later to compute temps from different sources and fuze them
-        if self.tiger_tagged_ways == 0: return 0
+        if not self.tiger_tagged_ways: return 0
         untouched_by_users_factor = UNTOUCHED_WEIGHT * float(self.untouched_by_user_edits)/self.tiger_tagged_ways
         version_increase_over_tiger_factor = VERSION_INCREASE_OVER_TIGER * float(self.version_increase_over_tiger)/self.sum_versions
         return untouched_by_users_factor + version_increase_over_tiger_factor
@@ -440,7 +434,7 @@ class WayEntity(Entity):
                 else:
                     if ROAD_CATEGORY[tags['highway']] not in self.attribute_models:
                         category = ROAD_CATEGORY[tags['highway']]
-                        self.attribute_models[category] = WayAttributeModel()
+                        self.attribute_models[category] = WayAttributeEntity()
                     
                     road_category_entity = self.attribute_models[ROAD_CATEGORY[tags['highway']]]
                     road_category_entity.analyze(osmid, tags, osmversion, osmtimestamp, length)

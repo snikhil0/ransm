@@ -11,8 +11,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 import unittest
-from routing_analyzer import RoutingAnalyzer
+from ransm.routing_analyzer import RoutingAnalyzer
+
 
 class Test(unittest.TestCase):
 
@@ -30,3 +32,5 @@ class Test(unittest.TestCase):
         below_p = filter(lambda l: l < p, list)
         self.assertEquals(4, p, 'Wrong ')
         self.assertEquals(3,len(below_p), 'Wrong')
+
+

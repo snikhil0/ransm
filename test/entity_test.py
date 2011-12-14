@@ -13,26 +13,41 @@
 # limitations under the License.
 import unittest
 import time
-from entity import NodeEntity, WayEntity
-import mock
-from tcdb import hdb
+from ransm.entity import NodeEntity, WayAttributeEntity, WayEntity, WAY_LENGTH_MAP, RelationEntity
+
+
+first_timestamp = time.time()
+last_timestamp = time.time() + 10000
+
+ways = ((90088573, {'oneway': 'yes', 'highway': 'secondary', 'name': 'Moffet Boulevard',
+                    'tiger:county': 'Santa Clara', 'tiger:name_base': 'Moffet'}, (65433897, 259415186, 1044247254,
+                                                                                  65486041, 65394577,
+                                                                                  689360672, 65396646), 3,
+         first_timestamp, 1000),
+        (90088567, {'oneway': 'yes', 'highway': 'secondary_link'}, (1044247424, 1044247388, 1044247395, 1044247254), 2,
+         last_timestamp, 2000))
+
+relations = ( (1, {'name': 'Somename', 'type':'restriction'}, [90088573, 90088567], 3, first_timestamp, 1000),
+              (1, {'name': 'Somename', 'type':'route'}, [90088573], 2, last_timestamp, 2000))
+
+nodeCacheMock = {65433897: (-122.0730256, 37.4003229), 259415186: (-122.072894, 37.4004021),
+                 1044247254: (-122.0722244, 37.4009026), 65486041: (-122.071587, 37.4013793),
+                 65394577: (-122.071587, 37.4013793), 689360672: (-122.0694064, 37.4030326),
+                 65396646: (-122.0693492, 37.4031059), 1044247424: (-122.0719762, 37.4012382),
+                 1044247388: (-122.0722374, 37.4009704), 1044247395: (-122.0722529, 37.4009294)}
 
 class EntityTest(unittest.TestCase):
-
     def setUp(self):
-        self.first_timestamp = time.time()
-        self.last_timestamp = time.time() + 10000
+        pass
 
     def tearDown(self):
         pass
 
     def testNodeEntity(self):
-
-        nodes = ((1, {'oneway':'yes'}, (-122.1123, 38.45333), 1, self.first_timestamp, 1000),
-                (2, {'oneway':'no'},  (-122.2123, 38.35333), 2, self.last_timestamp, 2000))
+        nodes = ((1, {'oneway': 'yes'}, (-122.1123, 38.45333), 1, first_timestamp, 1000),
+                 (2, {'oneway': 'no'}, (-122.2123, 38.35333), 2, last_timestamp, 2000))
         nodeEntity = NodeEntity()
         nodeEntity.analyze(nodes)
-        print nodeEntity.first_timestamp
         self.assertEqual(nodeEntity.max_version, 2)
         self.assertEqual(nodeEntity.min_version, 1)
         self.assertEqual(nodeEntity.minid, 1)
@@ -43,27 +58,6 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(nodeEntity.max_lon, -122.1123)
 
     def testWayEntity(self):
-        ways = ((90088573, {'oneway':'yes', 'highway':'secondary', 'name':'Moffet Boulevard',
-                            'tiger:county':'Santa Clara', 'tiger:name_base':'Moffet'}, (65433897, 259415186, 1044247254,
-                                                                                        65486041, 65394577,
-                                                                                        689360672, 65396646), 3,
-                 self.first_timestamp, 1000),
-                (90088567, {'oneway':'yes', 'highway':'secondary_link'},  (1044247424, 1044247388, 1044247395, 1044247254), 2, self.last_timestamp, 2000))
-
-        nodeCacheMock = {}
-        nodeCacheMock[65433897] = (-122.0730256, 37.4003229)
-        nodeCacheMock[259415186] = (-122.072894, 37.4004021)
-        nodeCacheMock[1044247254] = (-122.0722244, 37.4009026)
-        nodeCacheMock[65486041] = (-122.071587, 37.4013793)
-        nodeCacheMock[65394577] = (-122.071587, 37.4013793)
-        nodeCacheMock[689360672] = (-122.0694064, 37.4030326)
-        nodeCacheMock[65396646] = (-122.0693492, 37.4031059)
-
-        nodeCacheMock[1044247424] = (-122.0719762, 37.4012382)
-        nodeCacheMock[1044247388] = (-122.0722374, 37.4009704)
-        nodeCacheMock[1044247395] = (-122.0722529, 37.4009294)
-        nodeCacheMock[1044247254] = (-122.0722244, 37.4009026)
-
         wayEntity = WayEntity(nodeCacheMock)
         wayEntity.analyze(ways)
 
@@ -78,7 +72,7 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(wayEntity.entity_count, 2)
 
         length_way1 = wayEntity.calc_length([65433897, 259415186, 1044247254, 65486041,
-                                                                      65394577, 689360672, 65396646])
+                                             65394577, 689360672, 65396646])
         length_way2 = wayEntity.calc_length([1044247424, 1044247388, 1044247395, 1044247254])
 
         self.assertEqual(length_way1 + length_way2, wayEntity.length)
@@ -104,5 +98,35 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(attribute.junction_factor(), 0)
         self.assertEqual(attribute.tiger_factor(), 0.8)
 
-        self.assertEqual(wayEntity.attribute_factor('local'), (1 * 0.2 + 0.4*0.45 + 0.3*0.8))
-        
+        self.assertEqual(wayEntity.attribute_factor('local'), (1 * 0.2 + 0.4 * 0.45 + 0.3 * 0.8))
+
+    def testWayAttributeEntity(self):
+        attribute = WayAttributeEntity()
+        attribute.analyze(ways[0][0], ways[0][1], ways[0][3], first_timestamp, 1)
+        self.assertEqual(attribute.entity_count, 1)
+        self.assertEqual(attribute.number_of_access, 0)
+        self.assertEqual(attribute.number_of_junctions, 0)
+        self.assertEqual(attribute.sum_junction_length, 0)
+        self.assertEqual(attribute.sum_one_way_lengths, 1)
+        self.assertEqual(attribute.sum_versions, 3)
+        self.assertEqual(attribute.sum_way_lengths, 1)
+        self.assertEqual(attribute.sum_access_length, 0)
+        self.assertEqual(attribute.sum_max_speed_lengths, 0)
+        self.assertEqual(attribute.tiger_factor(), 2.0/3)
+        self.assertEqual(attribute.tiger_tagged_ways, 1)
+        self.assertEqual(attribute.routing_factor(), 0.45)
+        self.assertEqual(attribute.untouched_by_user_edits, 0)
+        self.assertEqual(attribute.version_increase_over_tiger, 2)
+
+    def testRelationEntity(self):
+        WAY_LENGTH_MAP[90088573] = 1
+        WAY_LENGTH_MAP[90088567] = 2
+
+        relationEntity = RelationEntity()
+        relationEntity.analyze(relations)
+
+        self.assertEquals(relationEntity.entity_count, 2)
+        self.assertEqual(relationEntity.num_turnrestrcitions, 1)
+        self.assertEqual(relationEntity.sum_restriction_length, 4)
+        self.assertEqual(relationEntity.sum_turn_restriction_length, 3)
+

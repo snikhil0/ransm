@@ -12,7 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import unittest
-from user import User
+from ransm.user import User
+
 
 class UserTest(unittest.TestCase):
 

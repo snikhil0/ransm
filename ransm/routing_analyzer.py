@@ -21,9 +21,11 @@ from tcdb import hdb
 # This class does the way routing analysis.
 # The analysis is based on tags corresponding to
 # ways, nodes and relations
-from entity import WayEntity, NodeEntity, RelationEntity, CoordEntity, AGES, USERS_EDITS, INTERSECTIONS
+
 
 # location of the tokyo cabinet node cache
+from entity import WayEntity, NodeEntity, RelationEntity, CoordEntity, AGES, USERS_EDITS, INTERSECTIONS
+
 CACHE_LOCATION = '/tmp'
 
 #The maximum value for the data temperature value
@@ -69,7 +71,7 @@ class RoutingAnalyzer(object):
         # Initialize the Tokyo Cabinet node cache.
         self.nodecache = hdb.HDB()
         try:
-            self.nodecache.open(os.path.join(CACHE_LOCATION, 'nodes.tch'))
+            self.nodecache.open(os.path.join(CACHE_LOCATION, '/nodes.tch'))
         except Exception:
             print 'node cache could not be created at %s, does the directory exist? If not, create it. If so, Check permissions and disk space.' % CACHE_LOCATION
             exit(1)
@@ -134,7 +136,6 @@ class RoutingAnalyzer(object):
     # This function calculates the RELATION dimension of data temperature
     def relation_temperature(self):
         number_of_intersections = len(filter(lambda x: x > 1, INTERSECTIONS.values()))
-        print number_of_intersections
         return (float(self.relations_entity.num_turnrestrcitions)/number_of_intersections) * BASIC_TEMP
 
     def data_temerature(self):
@@ -163,11 +164,11 @@ class RoutingAnalyzer(object):
         user95_factor = float(len(filter(lambda a: a < self.percentile(counts, 0.95), counts)))/max(counts) * USER_WEIGHT95
 
         # Normalize the data temperature to between 0 and 40 and add a buffer of zero celsius
-        return  (RELATION_WEIGHT * self.relation_temperature() + \
-                   ROUTING_WEIGHT * self.routing_attributes_temperature() + FRESHNESS_WEIGHT * \
-                    (ages1_factor + ages10_factor + ages25_factor   + \
-                   user95_factor + ages50_factor + ages75_factor)  * BASIC_TEMP + \
-                   TIGER_WEIGHT * self.ways_entity.tiger_factor() * BASIC_TEMP + ZERO_DATA_TEMPERATURE)
+        return  (RELATION_WEIGHT * self.relation_temperature() +
+                 ROUTING_WEIGHT * self.routing_attributes_temperature() + FRESHNESS_WEIGHT *
+                                                                          (ages1_factor + ages10_factor + ages25_factor   +
+                                                                           user95_factor + ages50_factor + ages75_factor)  * BASIC_TEMP +
+                 TIGER_WEIGHT * self.ways_entity.tiger_factor() * BASIC_TEMP + ZERO_DATA_TEMPERATURE)
 
     def run(self, filename):
         # Timings can be done outside of the program using time(1)
