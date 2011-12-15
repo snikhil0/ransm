@@ -44,10 +44,10 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(wayEntity.min_version, 2)
         self.assertEqual(wayEntity.minid, 90088567)
         self.assertEqual(wayEntity.maxid, 90088573)
-        self.assertEqual(wayEntity.tiger_tagged_ways, 1)
-        self.assertEqual(wayEntity.version_increase_over_tiger, 4)
-        self.assertEqual(wayEntity.untouched_by_user_edits, 0)
-        self.assertEqual(wayEntity.sum_versions, 5)
+        self.assertEqual(wayEntity.commonAttributes.tiger_tagged_ways, 1)
+        self.assertEqual(wayEntity.commonAttributes.version_increase_over_tiger, 4)
+        self.assertEqual(wayEntity.commonAttributes.untouched_by_user_edits, 0)
+        self.assertEqual(wayEntity.commonAttributes.sum_versions, 5)
         self.assertEqual(wayEntity.entity_count, 2)
 
         length_way1 = wayEntity.calc_length([65433897, 259415186, 1044247254, 65486041,
@@ -58,10 +58,10 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(len(wayEntity.attribute_models), 1)
 
         attribute = wayEntity.attribute_models['local']
-        self.assertEqual(attribute.tiger_tagged_ways, 1)
-        self.assertEqual(attribute.untouched_by_user_edits, 0)
-        self.assertEqual(attribute.version_increase_over_tiger, 4)
-        self.assertEqual(attribute.sum_versions, 5)
+        self.assertEqual(attribute.commonAttributes.tiger_tagged_ways, 1)
+        self.assertEqual(attribute.commonAttributes.untouched_by_user_edits, 0)
+        self.assertEqual(attribute.commonAttributes.version_increase_over_tiger, 4)
+        self.assertEqual(attribute.commonAttributes.sum_versions, 5)
         self.assertEqual(attribute.sum_way_lengths, length_way1 + length_way2)
         self.assertEqual(attribute.sum_one_way_lengths, length_way1 + length_way2)
         self.assertEqual(attribute.sum_max_speed_lengths, 0)
@@ -87,15 +87,15 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(attribute.number_of_junctions, 0)
         self.assertEqual(attribute.sum_junction_length, 0)
         self.assertEqual(attribute.sum_one_way_lengths, 1)
-        self.assertEqual(attribute.sum_versions, 3)
+        self.assertEqual(attribute.commonAttributes.sum_versions, 3)
         self.assertEqual(attribute.sum_way_lengths, 1)
         self.assertEqual(attribute.sum_access_length, 0)
         self.assertEqual(attribute.sum_max_speed_lengths, 0)
         self.assertEqual(attribute.tiger_factor(), 2.0/3)
-        self.assertEqual(attribute.tiger_tagged_ways, 1)
+        self.assertEqual(attribute.commonAttributes.tiger_tagged_ways, 1)
         self.assertEqual(attribute.routing_factor(), 0.45)
-        self.assertEqual(attribute.untouched_by_user_edits, 0)
-        self.assertEqual(attribute.version_increase_over_tiger, 2)
+        self.assertEqual(attribute.commonAttributes.untouched_by_user_edits, 0)
+        self.assertEqual(attribute.commonAttributes.version_increase_over_tiger, 2)
 
     def testRelationEntity(self):
         WAY_LENGTH_MAP[90088573] = 1

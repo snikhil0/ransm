@@ -17,6 +17,8 @@ from math import *
 
 # The radius of the earth, used in the Haversine formula for
 # simplified distance calculations
+import itertools
+
 EARTH_RADIUS_IN_MILES = 3963.19
 
 # Binning OSM features into a limited number of categories:
@@ -87,20 +89,29 @@ TIGER_BREAKDOWN = {}
 
 # Common functions to extract user information and age (timestamps)
 # and populate the above
-def average_age():
-    if len(AGES) > 0:
-        return sum(AGES, 0.0) / len(AGES)
+def average(ages):
+    """
+    Calculates the average of the array that is sent into it
+    """
+    if len(ages) > 0:
+        return sum(ages, 0.0) / len(ages)
+
     return 0
 
-def extract_user(uid, type):
-    if type:
-        if uid not in USERS_EDITS:
-            USERS_EDITS[uid] = 1
-        else:
-            USERS_EDITS[uid] += 1
+def extract_user(uid):
+    """
+        increment the user edits map
+        keeps track of number of edits made by the user
+    """
+    if uid not in USERS_EDITS:
+        USERS_EDITS[uid] = 0
+
+    USERS_EDITS[uid] += 1
 
 class Entity(object):
     """
+    The base class for all the other entities. This class keeps track of the min, max
+    versions, mat, lon, id and version. It also keeps track of the count of entities parsed
     """
     def __init__(self):
         """""
@@ -120,6 +131,9 @@ class Entity(object):
         self.max_lat = -sys.maxint
 
     def extract_min_max_timestamp(self, osmtimestamp):
+        """
+            extract the max and min timestamps from each parsed timestamp value
+        """
         timestamp = datetime.utcfromtimestamp(osmtimestamp)
         if timestamp > self.last_timestamp:
             self.last_timestamp = timestamp
@@ -127,12 +141,18 @@ class Entity(object):
             self.first_timestamp = timestamp
 
     def extract_min_max_id(self, osmid):
+        """
+            extract the max and min id's, called by callback for every xml element
+        """
         if osmid > self.maxid:
             self.maxid = osmid
         if osmid < self.minid:
             self.minid = osmid
 
     def extract_min_max_lat_lon(self, lon, lat):
+        """
+            Extract the min and max lat,lon from entities callback
+        """
         if lon > self.max_lon:
             self.max_lon = lon
         if lon < self.min_lon:
@@ -143,6 +163,9 @@ class Entity(object):
             self.max_lat = lat
 
     def extract_min_max_version(self, osmversion):
+        """
+            extract the min and max versions for entities (callback)
+        """
         if osmversion > self.max_version:
             self.max_version = osmversion
         if osmversion < self.min_version:
@@ -161,15 +184,21 @@ class CoordEntity(Entity):
     """""
     
     def __init__(self, nodecache):
+        """
+            The constructor, passes the nodeCache which is a key,value pairs
+            of nodeIds and lat, lon (stored in the tokyo file cabinet)
+        """
         Entity.__init__(self)
         self.min_lat = self.min_lon = float(-180.0)
         self.max_lat = self.max_lon = float(180.0)
         self.nodecache = nodecache
 
-    # This is the callback for the Coords
-    # Different entities have different callback arguments and hence have not be abstracted
-    # Maybe python allows this in some form
+
     def analyze(self, coord):
+        """
+            This is the callback for the Coords. Different entities have different callback arguments
+            and hence have not be abstracted. Maybe python allows this in some form
+        """
         for osmid, lon, lat, osmversion, osmtimestamp, osmuid in coord:
             self.entity_count += 1
             self.extract_min_max_timestamp(osmtimestamp)
@@ -186,13 +215,18 @@ class NodeEntity(Entity):
         the information stored is either a comparison or accumulation of information from each node.
     """""
     def __init__(self):
+        """
+            Constructor
+        """
         Entity.__init__(self)
 
-    # Callback method for the nodes
     def analyze(self, nodes):
+        """
+            Callback method for the nodes
+        """
         for osmid, tags, ref, osmversion, osmtimestamp, osmuid in nodes:
             self.entity_count += 1
-            extract_user(osmuid, 'nodes')
+            extract_user(osmuid)
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_id(osmid)
             self.extract_min_max_version(osmversion)
@@ -210,16 +244,21 @@ class RelationEntity(Entity):
         relations. Number of restrictions and total length of restrictions are members of this class.
     """""
     def __init__(self):
+        """
+            Constructor
+        """
         Entity.__init__(self)
         self.num_turnrestrcitions = 0
         self.sum_restriction_length = 0
         self.sum_turn_restriction_length = 0
 
-    #callback method for the relations
     def analyze(self, relations):
+        """
+            callback method for the relations
+        """
         for osmid, tags, refs, osmversion, osmtimestamp, osmuid in relations:
             self.entity_count += 1
-            extract_user(osmuid, 'relations')
+            extract_user(osmuid)
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_id(osmid)
             self.extract_min_max_version(osmversion)
@@ -239,6 +278,58 @@ class RelationEntity(Entity):
                 self.sum_turn_restriction_length += length
 
 
+class CommonAttributes(object):
+    """
+    Repeated counts for both attributes and way entity
+    """
+    def __init__(self):
+        """
+            Constructor
+        """
+        self.untouched_by_user_edits = 0
+        self.version_increase_over_tiger = 0
+        self.sum_versions = 0
+        self.tiger_tagged_ways = 0
+
+    def analyze(self, tags, osmversion):
+        """
+            Parse the values and keep track of the memeber counts
+        """
+        tigerTagged = False
+        visited = False
+        for key in tags:
+            if 'tiger' in key and not visited:
+                self.tiger_tagged_ways += 1
+                self.version_increase_over_tiger += (osmversion - 1)
+                tigerTagged = True
+                visited = True
+
+        if osmversion == 1:
+            self.untouched_by_user_edits += 1
+
+        if not tigerTagged:
+            self.version_increase_over_tiger += osmversion
+
+        self.sum_versions += osmversion
+
+    def tiger_factor(self):
+        """
+            Tiger factor is based on the number of edits that are untouched from tiger and number of versions over tiger
+            The former gets a negative weighting and the latter gets a positive weighting => the more edits the better
+            the data. Go figure!
+        """
+        # Refactor later to compute temps from different sources and fuze them
+        untouched_by_users_factor = 0
+        version_increase_over_tiger_factor = 0
+
+        if self.tiger_tagged_ways:
+            untouched_by_users_factor = UNTOUCHED_WEIGHT * float(self.untouched_by_user_edits)/self.tiger_tagged_ways
+        else:
+            print 'Tiger ways zero'
+        if self.sum_versions:
+            version_increase_over_tiger_factor = VERSION_INCREASE_OVER_TIGER * float(self.version_increase_over_tiger)/self.sum_versions
+        return untouched_by_users_factor + version_increase_over_tiger_factor
+
 
 class WayAttributeEntity(Entity):
     """""
@@ -246,11 +337,11 @@ class WayAttributeEntity(Entity):
      This inherits from Entity because we also keep account of the variables of the entity model.
     """""
     def __init__(self):
+        """
+            Constructor
+        """
         Entity.__init__(self)
-        self.tiger_tagged_ways = 0
-        self.untouched_by_user_edits = 0
-        self.version_increase_over_tiger = 0
-        self.sum_versions = 0
+        self.commonAttributes = CommonAttributes()
         self.sum_way_lengths = 0
         self.sum_one_way_lengths = 0
         self.sum_max_speed_lengths = 0
@@ -260,8 +351,10 @@ class WayAttributeEntity(Entity):
         self.sum_access_length = 0
 
 
-    # extract all the attribute level info
     def analyze(self, osmid, tags, osmversion, osmtimestamp, length):
+        """
+            Extract all the attribute level info
+        """
         self.entity_count += 1
         self.extract_min_max_id(osmid)
         self.extract_min_max_timestamp(osmtimestamp)
@@ -276,48 +369,28 @@ class WayAttributeEntity(Entity):
         if 'maxspeed' in tags:
             self.sum_max_speed_lengths += length
 
-        tigerTagged = False
-        for key in tags:
-            if 'tiger' in key:
-                self.tiger_tagged_ways += 1
-                self.version_increase_over_tiger += (osmversion - 1)
-                tigerTagged = True
-                break
-
-
-        if osmversion == 1:
-            self.untouched_by_user_edits += 1
-
-        if not tigerTagged:
-            self.version_increase_over_tiger += osmversion
-
-        self.sum_versions += osmversion
-
         if 'junction' in tags:
             self.number_of_junctions += 1
             self.sum_junction_length += length
 
-    # Tiger factor is based on the number of edits that are untouched from tiger and number of versions over tiger
-    # The former gets a negative weighting and the latter gets a positive weighting => the more edits the better
-    # the data. Go figure!
+        self.commonAttributes.analyze(tags, osmversion)
+
+
+
     def tiger_factor(self):
-        # Refactor later to compute temps from different sources and fuze them
-        untouched_by_users_factor = 0
-        version_increase_over_tiger_factor = 0
-        
-        if self.tiger_tagged_ways:
-            untouched_by_users_factor = UNTOUCHED_WEIGHT * float(self.untouched_by_user_edits)/self.tiger_tagged_ways
-        else:
-            print 'Tiger ways zero'
-        if self.sum_versions:
-            version_increase_over_tiger_factor = VERSION_INCREASE_OVER_TIGER * float(self.version_increase_over_tiger)/self.sum_versions
+        """
+            Tiger factor is based on the number of edits that are untouched from tiger and number of versions over tiger
+            The former gets a negative weighting and the latter gets a positive weighting => the more edits the better
+            the data. Go figure!
+        """
+        return self.commonAttributes.tiger_factor()
 
-        return untouched_by_users_factor + version_increase_over_tiger_factor
-
-    # The routing factor counts all the ways that have either a one way tag, max speed tag or access tag. These are
-    # normalized to the total length of all ways for the dataset. Again the larger the factor the better the data for
-    # routing.
     def routing_factor(self):
+        """
+            The routing factor counts all the ways that have either a one way tag, max speed tag or access tag. These are
+            normalized to the total length of all ways for the dataset. Again the larger the factor the better the data for
+            routing.
+        """
         # routing features normalized by way distances
         if not self.sum_one_way_lengths:
             return 0
@@ -327,8 +400,10 @@ class WayAttributeEntity(Entity):
         
         return ONE_WAY_WEIGHT * oneway_factor + MAX_SPEED_WEIGHT * maxspeed_factor + access_factor * ACCESS_WEIGHT
 
-    # Similar to the above ideas, but this counts the junctions.
     def junction_factor(self):
+        """
+            Similar to the above ideas, but this counts the junctions.
+        """
         if self.sum_way_lengths > 0:
             return float(self.sum_junction_length)/self.sum_way_lengths
         return 0
@@ -342,25 +417,26 @@ class WayEntity(Entity):
 
     """""
     def __init__(self, nodecache):
+        """
+            Constructor
+            Note the attribute models which is basically a model per road category
+        """
         Entity.__init__(self)
         self.nodecache = nodecache
         self.attribute_models = {} #key is road category, value is routing cost model
         self.uncommon_highway_count = 0
         self.uncommon_highway_length = 0
         self.length = 0
+        self.commonAttributes = CommonAttributes()
 
-        # Repeated counts for both attributes and way entity
-        # Refactor to separate class
-        self.untouched_by_user_edits = 0
-        self.version_increase_over_tiger = 0
-        self.sum_versions = 0
-        self.tiger_tagged_ways = 0
-
-    # This function calculates the ATTRIBUTES factor which is used in the
-    # ROUTING dimension of the data temperature. 
     def attribute_factor(self, road_category):
+        """
+             This function calculates the ATTRIBUTES factor which is used in the
+             ROUTING dimension of the data temperature.
+        """
         if road_category not in ROAD_CATEGORY.values() or road_category not in self.attribute_models:
             return 0
+
         road_feature = self.attribute_models[road_category]
         length_factor = float(road_feature.sum_way_lengths)/self.length
         routing_factor = road_feature.routing_factor()
@@ -370,25 +446,25 @@ class WayEntity(Entity):
         return length_factor * LENGTH_WEIGHT + routing_factor * ROUTING_WEIGHT + \
                junction_factor * JUNCTION_WEIGHT + tiger_factor * TIGER_WEIGHT
 
-    # Tiger factor is based on the number of edits that are untouched from tiger and number of versions over tiger
-    # The former gets a negative weighting and the latter gets a positive weighting => the more edits the better
-    # the data. Go figure!
     def tiger_factor(self):
-        # Refactor later to compute temps from different sources and fuze them
-        if not self.tiger_tagged_ways: return 0
-        untouched_by_users_factor = UNTOUCHED_WEIGHT * float(self.untouched_by_user_edits)/self.tiger_tagged_ways
-        version_increase_over_tiger_factor = VERSION_INCREASE_OVER_TIGER * float(self.version_increase_over_tiger)/self.sum_versions
-        return untouched_by_users_factor + version_increase_over_tiger_factor
+        """
+            Tiger factor is based on the number of edits that are untouched from tiger and number of versions over tiger
+            The former gets a negative weighting and the latter gets a positive weighting => the more edits the better
+            the data. Go figure!
+        """
+        return self.commonAttributes.tiger_factor()
 
 
     def analyze(self, ways):
-        #callback method for the ways
+        """
+            Callback method for the ways
+        """
         for osmid, tags, ref, osmversion, osmtimestamp, osmuid in ways:
             self.entity_count += 1
             self.extract_min_max_id(osmid)
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_version(osmversion)
-            extract_user(osmuid, 'ways')
+            extract_user(osmuid)
 
             AGES_WAYS[osmuid] = (float(osmtimestamp / 1000.0))
             AGES.append(AGES_WAYS[osmuid])
@@ -403,29 +479,12 @@ class WayEntity(Entity):
 
                 if 'oneway' not in tags:
                     for r in ref:
-                        if r in INTERSECTIONS:
-                            INTERSECTIONS[r] += 1
-                        else:
-                            INTERSECTIONS[r] = 1
+                        if r not in INTERSECTIONS:
+                            INTERSECTIONS[r] = 0
+                        INTERSECTIONS[r] += 1
 
-                # Keep a master tiger count, on any tiger tag and break out
-                # if even 1 tiger tag is found
-                tigerTagged = False
-                for key in tags:
-                    if 'tiger' in key:
-                        self.tiger_tagged_ways += 1
-                        self.version_increase_over_tiger += (osmversion - 1)
-                        tigerTagged = True
-                        break
-
-
-                if osmversion == 1:
-                    self.untouched_by_user_edits += 1
-
-                if not tigerTagged:
-                    self.version_increase_over_tiger += osmversion
-
-                self.sum_versions += osmversion
+                # Parse the common attributes
+                self.commonAttributes.analyze(tags, osmversion)
 
                 # get the road category: if it is not present in our map
                 # then it is an uncommon one otherwise extract routing and entity level information
@@ -442,26 +501,28 @@ class WayEntity(Entity):
                     road_category_entity.analyze(osmid, tags, osmversion, osmtimestamp, length)
 
     def calc_length(self, refs):
-        if len(refs) < 2:
-            return 0
-        lastcoord = ()
-        length = 0.0
-        for ref in refs:
-            if ref in self.nodecache:
-                coord = self.nodecache[ref]
-                if not lastcoord:
-                    lastcoord = (coord[0], coord[1])
-                    continue
-                length += self.haversine(coord[0], coord[1], lastcoord[0], lastcoord[1])
+        """
+            Calculates the length of the way given the list of node id refernces
+            what this does is computes the length per edge and adds it up
+        """
+        length = 0
+        for r1, r2 in itertools.combinations(refs, 2):
+            length += self.haversine(r1, r2, self.nodecache)
+
         return length
 
-    def haversine(self, lon1, lat1, lon2, lat2):
+    def haversine(self, node1, node2, nodeCache):
         """
         Calculate the great circle distance between two points 
         on the earth (specified in decimal degrees)
         """
-        # convert decimal degrees to radians 
-        lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
+        # convert decimal degrees to radians
+        if node1 not in nodeCache or node2 not in nodeCache:
+            return 0
+
+        coord1 = nodeCache[node1]
+        coord2 = nodeCache[node2]
+        lon1, lat1, lon2, lat2 = map(radians, [coord1[1], coord1[0], coord2[1], coord2[0]])
         # haversine formula 
         dlon = lon2 - lon1 
         dlat = lat2 - lat1 
