@@ -45,7 +45,7 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(wayEntity.minid, 90088567)
         self.assertEqual(wayEntity.maxid, 90088573)
         self.assertEqual(wayEntity.commonAttributes.tiger_tagged_ways, 1)
-        self.assertEqual(wayEntity.commonAttributes.version_increase_over_tiger, 4)
+        self.assertEqual(wayEntity.commonAttributes.version_increase_over_tiger, 2)
         self.assertEqual(wayEntity.commonAttributes.untouched_by_user_edits, 0)
         self.assertEqual(wayEntity.commonAttributes.sum_versions, 5)
         self.assertEqual(wayEntity.entity_count, 2)
@@ -60,7 +60,7 @@ class EntityTest(unittest.TestCase):
         attribute = wayEntity.attribute_models['local']
         self.assertEqual(attribute.commonAttributes.tiger_tagged_ways, 1)
         self.assertEqual(attribute.commonAttributes.untouched_by_user_edits, 0)
-        self.assertEqual(attribute.commonAttributes.version_increase_over_tiger, 4)
+        self.assertEqual(attribute.commonAttributes.version_increase_over_tiger, 2)
         self.assertEqual(attribute.commonAttributes.sum_versions, 5)
         self.assertEqual(attribute.sum_way_lengths, length_way1 + length_way2)
         self.assertEqual(attribute.sum_one_way_lengths, length_way1 + length_way2)
@@ -70,14 +70,14 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(attribute.number_of_access, 0)
         self.assertEqual(attribute.sum_access_length, 0)
 
-        self.assertEqual(wayEntity.tiger_factor(), 0.8)
+        self.assertEqual(wayEntity.tiger_factor(), 0.4)
         self.assertEqual(wayEntity.mean_version, 0) #Not used
 
         self.assertEqual(attribute.routing_factor(), 0.45)
         self.assertEqual(attribute.junction_factor(), 0)
-        self.assertEqual(attribute.tiger_factor(), 0.8)
+        self.assertEqual(attribute.tiger_factor(), 0.4)
 
-        self.assertEqual(wayEntity.attribute_factor('local'), (1 * 0.2 + 0.4 * 0.45 + 0.3 * 0.8))
+        self.assertEqual(wayEntity.attribute_factor('local'), (1 * 0.2 + 0.4 * 0.45 + 0.3 * 0.4))
 
     def testWayAttributeEntity(self):
         attribute = WayAttributeEntity()

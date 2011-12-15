@@ -39,7 +39,7 @@ class Test(unittest.TestCase):
     def testRoutingAttributeTemperature(self):
         wayEntity = WayEntity(nodeCacheMock)
         wayEntity.analyze(ways)
-        self.assertEqual(self.ran.routing_attributes_temperature(wayEntity), (1 * 0.2 + 0.4 * 0.45 + 0.3 * 0.8)*0.2*68)
+        self.assertEqual(self.ran.routing_attributes_temperature(wayEntity), (1 * 0.2 + 0.4 * 0.45 + 0.3 * 0.4)*0.2*68)
 
     def testRelationTemperature(self):
         WAY_LENGTH_MAP[90088573] = 1

@@ -304,15 +304,14 @@ class CommonAttributes(object):
                 tigerTagged = True
                 visited = True
 
-        if osmversion == 1:
-            self.untouched_by_user_edits += 1
-
-        if not tigerTagged:
-            self.version_increase_over_tiger += osmversion
+                # Only if the way is tiger then the untouched
+                # is when the version is 1
+                if osmversion == 1:
+                    self.untouched_by_user_edits += 1
 
         self.sum_versions += osmversion
 
-    def tiger_factor(self):
+    def tiger_factor(self, num_ways):
         """
             Tiger factor is based on the number of edits that are untouched from tiger and number of versions over tiger
             The former gets a negative weighting and the latter gets a positive weighting => the more edits the better
@@ -321,11 +320,7 @@ class CommonAttributes(object):
         # Refactor later to compute temps from different sources and fuze them
         untouched_by_users_factor = 0
         version_increase_over_tiger_factor = 0
-
-        if self.tiger_tagged_ways:
-            untouched_by_users_factor = UNTOUCHED_WEIGHT * float(self.untouched_by_user_edits)/self.tiger_tagged_ways
-        else:
-            print 'Tiger ways zero'
+        untouched_by_users_factor = UNTOUCHED_WEIGHT * float(self.untouched_by_user_edits)/num_ways
         if self.sum_versions:
             version_increase_over_tiger_factor = VERSION_INCREASE_OVER_TIGER * float(self.version_increase_over_tiger)/self.sum_versions
         return untouched_by_users_factor + version_increase_over_tiger_factor
@@ -383,7 +378,7 @@ class WayAttributeEntity(Entity):
             The former gets a negative weighting and the latter gets a positive weighting => the more edits the better
             the data. Go figure!
         """
-        return self.commonAttributes.tiger_factor()
+        return self.commonAttributes.tiger_factor(self.entity_count)
 
     def routing_factor(self):
         """
@@ -454,7 +449,7 @@ class WayEntity(Entity):
             The former gets a negative weighting and the latter gets a positive weighting => the more edits the better
             the data. Go figure!
         """
-        return self.commonAttributes.tiger_factor()
+        return self.commonAttributes.tiger_factor(self.entity_count)
 
 
     def analyze(self, ways):
