@@ -159,12 +159,20 @@ class RoutingAnalyzer(object):
         user95_factor = float(len(filter(lambda a: a <= self.percentile(counts, 0.95), counts)))/len(counts) * USER_WEIGHT95
         return (ages1_factor + ages10_factor + ages25_factor   + user95_factor + ages50_factor + ages75_factor) * BASIC_TEMP
 
-    def data_temerature(self):
+    def data_temeratures(self):
         # Normalize the data temperature to between 0 and 40 and add a buffer of zero celsius
-        return  (RELATION_WEIGHT * self.relation_temperature(self.relations_entity, INTERSECTIONS) +
-                 ROUTING_WEIGHT * self.routing_attributes_temperature(self.ways_entity) + FRESHNESS_WEIGHT *
-                                                                          self.freshness_temperature(AGES, USERS_EDITS)
-                 + TIGER_WEIGHT * self.ways_entity.tiger_factor() * BASIC_TEMP + ZERO_DATA_TEMPERATURE)
+        reltemp = self.relation_temperature(self.relations_entity, INTERSECTIONS)
+        routingtemp = self.routing_attributes_temperature(self.ways_entity)
+        freshnesstemp = self.freshness_temperature(AGES, USERS_EDITS)
+        tigertemp = self.ways_entity.tiger_factor()
+        finaltemp = ( RELATION_WEIGHT * reltemp +
+                      ROUTING_WEIGHT * routingtemp + 
+                      FRESHNESS_WEIGHT * freshnesstemp + 
+                      TIGER_WEIGHT * tigertemp
+                      * BASIC_TEMP 
+                      + ZERO_DATA_TEMPERATURE 
+                    )
+        return (reltemp, routingtemp, freshnesstemp, tigertemp, finaltemp)
 
     # The main function that parses the xml file and
     # calls the data temp calculations
@@ -186,9 +194,9 @@ class RoutingAnalyzer(object):
         print 'The parsing of the file took %f' %(t1 - t0)
         
         # Calculate data temperature
-        self.datatemp = self.data_temerature()
+        self.datatemps = self.data_temeratures()
 
-        print 'Data temperature for %s is: %f' % (filename, self.datatemp)
+        print 'Data temperatures for %s are: %s' % (filename, self.datatemps)
 
         #        print 'number of coords / nodes / ways / relations: %d / %d / %d / %d' % (self.coords_entity.entity_count,
         #                                                                                 self.nodes_entity.entity_count,
