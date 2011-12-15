@@ -13,17 +13,22 @@
 # limitations under the License.
 from unittest import TestCase
 import os, glob
+import csv
 import unittest
 from tcdb import hdb
 from ransm.routing_analyzer import RoutingAnalyzer, CACHE_LOCATION
 
 PATH = './fixtures/'
+CSVOUT = os.path.join(PATH, 'results.csv')
+
 class Fixtures(TestCase):
 
     def setUp(self):
         pass
 
     def test_data_temperature(self):
+        csvout = csv.writer(open(CSVOUT, 'wb'), delimiter=',')
+        
         for infile in glob.glob(os.path.join(PATH, '*.osm')):
             db = hdb.HDB()
             try:
@@ -35,7 +40,9 @@ class Fixtures(TestCase):
 
             ran = RoutingAnalyzer(db)
             ran.run(infile)
-            print ran.datatemp
-
+            csvout.writeRow(datatemps)
+#            print ran.datatemp
+        print 'finished. Results in %s' % CSVOUT
+        
 if __name__ == '__main__':
     unittest.main()
