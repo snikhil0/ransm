@@ -169,6 +169,11 @@ class RoutingAnalyzer(object):
     # The main function that parses the xml file and
     # calls the data temp calculations
     def run(self, filename):
+
+        # check if the filename exists
+        if not os.path.exists(filename):
+            return
+
         # Timings can be done outside of the program using time(1)
         # and should probably be deprecated here
         t0 = time()
@@ -181,9 +186,9 @@ class RoutingAnalyzer(object):
         print 'The parsing of the file took %f' %(t1 - t0)
         
         # Calculate data temperature
-        datatemp = self.data_temerature()
+        self.datatemp = self.data_temerature()
 
-        print 'Data temperature for %s is: %f' % (filename, datatemp)
+        print 'Data temperature for %s is: %f' % (filename, self.datatemp)
 
         #        print 'number of coords / nodes / ways / relations: %d / %d / %d / %d' % (self.coords_entity.entity_count,
         #                                                                                 self.nodes_entity.entity_count,

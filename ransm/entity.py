@@ -438,7 +438,9 @@ class WayEntity(Entity):
             return 0
 
         road_feature = self.attribute_models[road_category]
-        length_factor = float(road_feature.sum_way_lengths)/self.length
+        length_factor = 0
+        if 0 < self.length:
+            length_factor = float(road_feature.sum_way_lengths)/self.length
         routing_factor = road_feature.routing_factor()
         junction_factor = road_feature.junction_factor()
         tiger_factor = road_feature.tiger_factor()
