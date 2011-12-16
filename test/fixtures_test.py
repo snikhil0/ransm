@@ -27,7 +27,7 @@ class Fixtures(TestCase):
         pass
 
     def test_data_temperature(self):
-        csvout = csv.writer(open(CSVOUT, 'wb'), delimiter=',')
+        csv_writer = csv.writer(open(CSVOUT, 'wb'), delimiter=',')
         
         for infile in glob.glob(os.path.join(PATH, '*.osm')):
             db = hdb.HDB()
@@ -39,8 +39,9 @@ class Fixtures(TestCase):
                 exit(1)
 
             ran = RoutingAnalyzer(db)
-            ran.run(infile)
-            csvout.writeRow(datatemps)
+            datatemps = ran.run(infile)
+            print datatemps
+            csv_writer.writerow(ran.datatemps)
 #            print ran.datatemp
         print 'finished. Results in %s' % CSVOUT
         

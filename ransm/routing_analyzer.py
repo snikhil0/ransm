@@ -164,12 +164,11 @@ class RoutingAnalyzer(object):
         reltemp = self.relation_temperature(self.relations_entity, INTERSECTIONS)
         routingtemp = self.routing_attributes_temperature(self.ways_entity)
         freshnesstemp = self.freshness_temperature(AGES, USERS_EDITS)
-        tigertemp = self.ways_entity.tiger_factor()
+        tigertemp = self.ways_entity.tiger_factor() * BASIC_TEMP
         finaltemp = ( RELATION_WEIGHT * reltemp +
                       ROUTING_WEIGHT * routingtemp + 
                       FRESHNESS_WEIGHT * freshnesstemp + 
                       TIGER_WEIGHT * tigertemp
-                      * BASIC_TEMP 
                       + ZERO_DATA_TEMPERATURE 
                     )
         return (reltemp, routingtemp, freshnesstemp, tigertemp, finaltemp)
