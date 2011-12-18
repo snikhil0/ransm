@@ -11,6 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+import datetime
 from imposm.parser import OSMParser
 import sys
 import os
@@ -125,20 +126,20 @@ class RoutingAnalyzer(object):
                 guidance_factor * ROAD_CATEGORY_WEIGHTS['guidance'] + \
                 unclassified_factor * ROAD_CATEGORY_WEIGHTS['unclassified'] + \
                 uncommon_factor * ROAD_CATEGORY_WEIGHTS['uncommon']
-        
-        return factors * BASIC_TEMP
 
+        array = [highway_factor, main_factor, local_factor, guidance_factor, unclassified_factor, uncommon_factor, factors]
+        return map(lambda x: BASIC_TEMP * x, array)
+    
     # This function calculates the RELATION dimension of data temperature
     def relation_temperature(self, relations, intersections):
         number_of_intersections = len(filter(lambda x: x > 1, intersections.values()))
         return (float(relations.num_turnrestrcitions)/number_of_intersections) * BASIC_TEMP
 
-    def freshness_temperature(self, edit_ages, edit_counts):
+    def freshness_temperature(self, edit_ages, edit_counts, current_date):
         # Aggregate user and edit counts
-        # reverse the AGES because the newest will be at the top, so when we get the 1%, 10%,
-        # we search from the top
+        # count all the dates that are within 1 month, 3months, 6 months, 1 year, 2 years
+        # from the current date and give it an appropriate weight
         ages = edit_ages
-        ages.sort(reverse=True)
 
         # don't reverse it, so when we ask for 95% edits it gets from the ascending order
         counts = edit_counts.values()
@@ -148,11 +149,11 @@ class RoutingAnalyzer(object):
         # Count the number of values above the 1% , 10% age score, this gives the number of edits that are fresher
         # than 1% of the value.
         len_array = len(ages)
-        ages1_factor = float(len(filter(lambda a: a >= self.percentile(ages, 0.01), ages)))/len_array * AGE_WEIGHT1
-        ages10_factor = float(len(filter(lambda a: a >= self.percentile(ages, 0.10), ages)))/len_array * AGE_WEIGHT10
-        ages25_factor = float(len(filter(lambda a: a >= self.percentile(ages, 0.25), ages)))/len_array * AGE_WEIGHT25
-        ages50_factor = float(len(filter(lambda a: a >= self.percentile(ages, 0.50), ages)))/len_array * AGE_WEIGHT50
-        ages75_factor = float(len(filter(lambda a: a >= self.percentile(ages, 0.75), ages)))/len_array * AGE_WEIGHT75
+        ages1_factor = float(len(filter(lambda a:  current_date - datetime.timedelta(days = 30) <= a, ages)))/len_array * AGE_WEIGHT1
+        ages10_factor = float(len(filter(lambda a: current_date - datetime.timedelta(days = 90) <= a, ages)))/len_array * AGE_WEIGHT10
+        ages25_factor = float(len(filter(lambda a: current_date - datetime.timedelta(days = 180) <= a, ages)))/len_array * AGE_WEIGHT25
+        ages50_factor = float(len(filter(lambda a: current_date - datetime.timedelta(days = 365) <= a, ages)))/len_array * AGE_WEIGHT50
+        ages75_factor = float(len(filter(lambda a: current_date - datetime.timedelta(days = 730) <= a, ages)))/len_array * AGE_WEIGHT75
 
         # Calculate 95 percintile of users, this is not part of freshness but
         # is used in the freshness temperature.
@@ -163,15 +164,15 @@ class RoutingAnalyzer(object):
         # Normalize the data temperature to between 0 and 40 and add a buffer of zero celsius
         reltemp = self.relation_temperature(self.relations_entity, INTERSECTIONS)
         routingtemp = self.routing_attributes_temperature(self.ways_entity)
-        freshnesstemp = self.freshness_temperature(AGES, USERS_EDITS)
+        freshnesstemp = self.freshness_temperature(AGES, USERS_EDITS, datetime.datetime.today())
         tigertemp = self.ways_entity.tiger_factor() * BASIC_TEMP
         finaltemp = ( RELATION_WEIGHT * reltemp +
-                      ROUTING_WEIGHT * routingtemp + 
+                      ROUTING_WEIGHT * routingtemp[6] +
                       FRESHNESS_WEIGHT * freshnesstemp + 
                       TIGER_WEIGHT * tigertemp
                       + ZERO_DATA_TEMPERATURE 
                     )
-        return (reltemp, routingtemp, freshnesstemp, tigertemp, finaltemp)
+        return reltemp, routingtemp, freshnesstemp, tigertemp, finaltemp
 
     # The main function that parses the xml file and
     # calls the data temp calculations
@@ -217,18 +218,35 @@ def usage():
     print 'python routing_analyzer.py [file.xml|pbf]'
 
 
+def flush():
+    INTERSECTIONS.clear()
+    USERS_EDITS.clear()
+    AGES = []
+
+def create_node_cache(infile=None):
+    
+    nodeCache = hdb.HDB()
+    try:
+        base_name = 'nodes.tch'
+        if infile:
+            base_name = os.path.basename(infile) + '_nodes.tch'
+        
+        node_cache_path = os.path.join(CACHE_LOCATION, base_name)
+        if os.path.exists(node_cache_path):
+            os.remove(node_cache_path)
+        nodeCache.open(node_cache_path)
+    except Exception:
+        print 'node cache could not be created at %s, does the directory exist? If not, create it. If so, Check permissions and disk space.' % CACHE_LOCATION
+        exit(1)
+    return nodeCache
+
+
 def main(args):
     if len(args) > 2 or len(args) < 2:
         usage()
         exit()
 
-    nodeCache =  hdb.HDB()
-    try:
-        nodeCache.open(os.path.join(CACHE_LOCATION, 'nodes.tch'))
-    except Exception:
-        print 'node cache could not be created at %s, does the directory exist? If not, create it. If so, Check permissions and disk space.' % CACHE_LOCATION
-        exit(1)
-
+    nodeCache = create_node_cache()
     analysis_engine = RoutingAnalyzer(nodeCache)
     
     analysis_engine.run(args[1])

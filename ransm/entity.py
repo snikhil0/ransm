@@ -65,9 +65,10 @@ WAY_LENGTH_MAP = {}
 # entity class but is a more global container
 USERS_EDITS = {}
 AGES = []
-NODES = {}
 
 # The mapping of the node id's to the number of times they are referenced
+# We need to keep the name of the ways (intersections are defined as ways
+# with different names share a node)
 INTERSECTIONS = {}
 
 # The users cache is a global container for all users
@@ -205,7 +206,7 @@ class CoordEntity(Entity):
             self.extract_min_max_id(osmid)
             self.extract_min_max_lat_lon(lon, lat)
             self.extract_min_max_version(osmversion)
-            self.nodecache[osmid] = (lon,lat)
+            self.nodecache[osmid] = (lon, lat, osmtimestamp, osmversion)
 
 class NodeEntity(Entity):
     """""
@@ -231,11 +232,8 @@ class NodeEntity(Entity):
             self.extract_min_max_id(osmid)
             self.extract_min_max_version(osmversion)
             self.extract_min_max_lat_lon(ref[0], ref[1])
-            AGES_NODES[osmuid] = (float(osmtimestamp / 1000.0))
+            AGES_NODES[osmuid] = datetime.fromtimestamp(osmtimestamp)
             AGES.append(AGES_NODES[osmuid])
-
-            if osmid not in NODES:
-                NODES[osmid] = (ref[0], ref[1])
 
 
 class RelationEntity(Entity):
@@ -263,7 +261,7 @@ class RelationEntity(Entity):
             self.extract_min_max_id(osmid)
             self.extract_min_max_version(osmversion)
 
-            AGES_RELATIONS[osmuid] = (float(osmtimestamp / 1000.0))
+            AGES_RELATIONS[osmuid] = datetime.fromtimestamp(osmtimestamp)
             AGES.append(AGES_RELATIONS[osmuid])
 
             length = 0
@@ -281,6 +279,8 @@ class RelationEntity(Entity):
 class CommonAttributes(object):
     """
     Repeated counts for both attributes and way entity
+    Note that the version comes from the max of the way version and
+    node versions
     """
     def __init__(self):
         """
@@ -293,15 +293,13 @@ class CommonAttributes(object):
 
     def analyze(self, tags, osmversion):
         """
-            Parse the values and keep track of the memeber counts
+            Parse the values and keep track of the member counts
         """
-        tigerTagged = False
         visited = False
         for key in tags:
             if 'tiger' in key and not visited:
                 self.tiger_tagged_ways += 1
                 self.version_increase_over_tiger += (osmversion - 1)
-                tigerTagged = True
                 visited = True
 
                 # Only if the way is tiger then the untouched
@@ -330,6 +328,7 @@ class WayAttributeEntity(Entity):
     """""
      This class maintains the information pertaining to the attributes for routing for a particular class of way.
      This inherits from Entity because we also keep account of the variables of the entity model.
+     The timestamp and the version come from the max of way version and node versions and similarly for timestamps
     """""
     def __init__(self):
         """
@@ -459,11 +458,23 @@ class WayEntity(Entity):
         for osmid, tags, ref, osmversion, osmtimestamp, osmuid in ways:
             self.entity_count += 1
             self.extract_min_max_id(osmid)
+
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_version(osmversion)
             extract_user(osmuid)
 
-            AGES_WAYS[osmuid] = (float(osmtimestamp / 1000.0))
+
+            # get the latest time stamp and version from all the  nodes
+            # and that represents the way timestamp and version
+            node_timestamp = osmtimestamp
+            node_version = osmversion
+            for r in ref:
+                if r in self.nodecache:
+                    node = self.nodecache[r]
+                    node_timestamp = max(node[2], osmtimestamp)
+                    node_version = max(node[3], osmversion)
+
+            AGES_WAYS[osmuid] = datetime.fromtimestamp(osmtimestamp)
             AGES.append(AGES_WAYS[osmuid])
 
             # only compute lengths for road tags
@@ -481,7 +492,7 @@ class WayEntity(Entity):
                         INTERSECTIONS[r] += 1
 
                 # Parse the common attributes
-                self.commonAttributes.analyze(tags, osmversion)
+                self.commonAttributes.analyze(tags, node_version)
 
                 # get the road category: if it is not present in our map
                 # then it is an uncommon one otherwise extract routing and entity level information
@@ -495,7 +506,7 @@ class WayEntity(Entity):
                         self.attribute_models[category] = WayAttributeEntity()
                     
                     road_category_entity = self.attribute_models[ROAD_CATEGORY[tags['highway']]]
-                    road_category_entity.analyze(osmid, tags, osmversion, osmtimestamp, length)
+                    road_category_entity.analyze(osmid, tags, node_version, node_timestamp, length)
 
     def calc_length(self, refs):
         """

@@ -4,6 +4,8 @@
     <list default="true" id="f9db2712-a48c-442d-8c22-c476bd399e9b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/results.csv" afterPath="$PROJECT_DIR$/test/fixtures/results.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ransm/entity.py" afterPath="$PROJECT_DIR$/ransm/entity.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ransm/routing_analyzer.py" afterPath="$PROJECT_DIR$/ransm/routing_analyzer.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures_test.py" afterPath="$PROJECT_DIR$/test/fixtures_test.py" />
     </list>
     <ignored path="ransm.iws" />
@@ -27,10 +29,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="entity.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="entity.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ransm/entity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="332" column="9" selection-start="12054" selection-end="12054" vertical-scroll-proportion="0.0">
+            <state line="304" column="40" selection-start="10823" selection-end="10823" vertical-scroll-proportion="0.48286605">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routing_analyzer.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ransm/routing_analyzer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="165" column="23" selection-start="7285" selection-end="7285" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fixtures_test.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/fixtures_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="38" selection-start="1190" selection-end="1190" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -40,33 +60,6 @@
         <entry file="file://$PROJECT_DIR$/test/entity_test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="106" column="57" selection-start="5169" selection-end="5169" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ran_test.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/ran_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="110" selection-start="1438" selection-end="1438" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fixtures_test.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/fixtures_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="12" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routing_analyzer.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ransm/routing_analyzer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="173" column="15" selection-start="7514" selection-end="7514" vertical-scroll-proportion="0.6347032">
               <folding />
             </state>
           </provider>
@@ -93,11 +86,11 @@
         <option value="$PROJECT_DIR$/test/user_test.py" />
         <option value="$PROJECT_DIR$/test/__init__.py" />
         <option value="$PROJECT_DIR$/test/fixtures/fixtures_test.py" />
-        <option value="$PROJECT_DIR$/ransm/entity.py" />
         <option value="$PROJECT_DIR$/test/ran_test.py" />
         <option value="$PROJECT_DIR$/test/entity_test.py" />
-        <option value="$PROJECT_DIR$/ransm/routing_analyzer.py" />
         <option value="$PROJECT_DIR$/test/fixtures_test.py" />
+        <option value="$PROJECT_DIR$/ransm/entity.py" />
+        <option value="$PROJECT_DIR$/ransm/routing_analyzer.py" />
       </list>
     </option>
   </component>
@@ -127,6 +120,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -175,17 +170,15 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.externalResources" />
     <property name="recentsLimit" value="5" />
-    <property name="options.searchVisible" value="true" />
+    <property name="options.lastSelected" value="preferences.externalResources" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Python's unittest.Unittests in fixtures_test.py">
     <configuration default="false" name="Unittests in Test.testPercentile" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
@@ -264,25 +257,6 @@
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittests in fixtures_test.py" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <module name="ransm" />
-      <option name="SCRIPT_NAME" value="fixtures_test.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="PUREUNITTEST" value="true" />
-      <RunnerSettings RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <method />
-    </configuration>
     <configuration default="true" type="PythonUnitTestConfigurationType" factoryName="Python's unittest">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -328,6 +302,25 @@
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in fixtures_test.py" type="PythonUnitTestConfigurationType" factoryName="Python's unittest">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="ransm" />
+      <option name="SCRIPT_NAME" value="fixtures_test.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="PUREUNITTEST" value="true" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <method />
     </configuration>
     <list size="5">
@@ -386,17 +379,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="716" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="22" width="1280" height="715" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17356688" sideWeight="0.41826922" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5817308" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17356688" sideWeight="0.4494382" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34991974" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -449,16 +442,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.6/site-packages/imposm.parser-1.0.3v-py2.6-macosx-10.6-universal.egg/imposm/parser/simple.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="27" selection-start="5532" selection-end="5532" vertical-scroll-proportion="2.4757283" />
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/utrunner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="0" selection-start="1253" selection-end="1253" vertical-scroll-proportion="0.0" />
@@ -494,36 +477,65 @@
         <state line="269" column="0" selection-start="9601" selection-end="9601" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/__init__.py">
+    <entry file="file:///Library/Python/2.6/site-packages/tcdb/hdb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="27" selection-start="1946" selection-end="1956" vertical-scroll-proportion="0.65559244" />
+        <state line="95" column="16" selection-start="2825" selection-end="2825" vertical-scroll-proportion="0.19865319">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ransm/entity.py">
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/ntpath.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="332" column="9" selection-start="12054" selection-end="12054" vertical-scroll-proportion="0.0" />
+        <state line="60" column="27" selection-start="1836" selection-end="1836" vertical-scroll-proportion="0.27946126">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/entity_test.py">
+    <entry file="file:///Library/Python/2.6/site-packages/imposm.parser-1.0.3v-py2.6-macosx-10.6-universal.egg/imposm/parser/simple.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="57" selection-start="5169" selection-end="5169" vertical-scroll-proportion="0.0" />
+        <state line="131" column="0" selection-start="5305" selection-end="5305" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/ran_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="110" selection-start="1438" selection-end="1438" vertical-scroll-proportion="0.0" />
+        <state line="43" column="24" selection-start="1473" selection-end="1473" vertical-scroll-proportion="0.46127945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="27" selection-start="1946" selection-end="1956" vertical-scroll-proportion="0.75757575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/entity_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="57" selection-start="5169" selection-end="5169" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/fixtures_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="12" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.0">
+        <state line="32" column="38" selection-start="1190" selection-end="1190" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ransm/routing_analyzer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="15" selection-start="7514" selection-end="7514" vertical-scroll-proportion="0.6347032">
+        <state line="165" column="23" selection-start="7285" selection-end="7285" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ransm/entity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="304" column="40" selection-start="10823" selection-end="10823" vertical-scroll-proportion="0.48286605">
           <folding />
         </state>
       </provider>

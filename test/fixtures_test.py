@@ -15,8 +15,7 @@ from unittest import TestCase
 import os, glob
 import csv
 import unittest
-from tcdb import hdb
-from ransm.routing_analyzer import RoutingAnalyzer, CACHE_LOCATION
+from ransm.routing_analyzer import RoutingAnalyzer, create_node_cache, flush
 
 PATH = './fixtures/'
 CSVOUT = os.path.join(PATH, 'results.csv')
@@ -30,19 +29,12 @@ class Fixtures(TestCase):
         csv_writer = csv.writer(open(CSVOUT, 'wb'), delimiter=',')
         csv_writer.writerow('relation temperature, routing temperature, freshness temperature,\
                             tiger temperature, final temperature')
+        
         for infile in glob.glob(os.path.join(PATH, '*.osm')):
-            db = hdb.HDB()
-            try:
-                base_name = os.path.basename(infile) + '_nodes.tch'
-                db.open(os.path.join(CACHE_LOCATION, base_name))
-            except Exception:
-                print 'node cache could not be created at %s, does the directory exist? If not, create it. If so, Check permissions and disk space.' % CACHE_LOCATION
-                exit(1)
-
+            db = create_node_cache(infile)
             ran = RoutingAnalyzer(db)
             ran.run(infile)
             csv_writer.writerow(ran.datatemps)
-#            print ran.datatemp
         print 'finished. Results in %s' % CSVOUT
         
 if __name__ == '__main__':
