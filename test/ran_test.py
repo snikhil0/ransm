@@ -13,7 +13,8 @@
 # limitations under the License.
 
 import unittest
-from ransm.entity import WayEntity, RelationEntity, WAY_LENGTH_MAP
+import datetime
+from ransm.entity import WayEntity, RelationEntity, Constants
 from ransm.routing_analyzer import RoutingAnalyzer
 from test import relations, nodeCacheMock, ways, intersections
 
@@ -37,22 +38,32 @@ class Test(unittest.TestCase):
 
 
     def testRoutingAttributeTemperature(self):
-        wayEntity = WayEntity(nodeCacheMock)
+        const = Constants()
+        wayEntity = WayEntity(nodeCacheMock, const)
         wayEntity.analyze(ways)
-        self.assertEqual(self.ran.routing_attributes_temperature(wayEntity), (1 * 0.2 + 0.4 * 0.45 + 0.3 * 0.4)*0.2*68)
+        self.assertAlmostEqual(self.ran.routing_attributes_temperature(wayEntity)[6], 6.392)
 
     def testRelationTemperature(self):
-        WAY_LENGTH_MAP[90088573] = 1
-        WAY_LENGTH_MAP[90088567] = 2
+        const = Constants()
+        const.WAY_LENGTH_MAP[90088573] = 1
+        const.WAY_LENGTH_MAP[90088567] = 2
 
-        relationEntity = RelationEntity()
+        relationEntity = RelationEntity(const)
         relationEntity.analyze(relations)
         self.assertEqual(self.ran.relation_temperature(relationEntity, intersections), 68)
         intersections[1044247388] = 2
         self.assertEqual(self.ran.relation_temperature(relationEntity, intersections), 34)
 
     def testFreshnessTemperature(self):
-        ages = [1, 2, 3, 4, 5]
+        now = datetime.datetime.today()
+        ages = [datetime.datetime.today(), now + datetime.timedelta(days=-1), now + datetime.timedelta(days=-45),
+                now + datetime.timedelta(-366), now + datetime.timedelta(-990)]
+        #ages = [1, 2, 3, 4, 5]
         counts = {1:10, 2:15, 3:100, 4:200, 5:250}
-        self.assertAlmostEqual(self.ran.freshness_temperature(ages, counts),
-                         (0.2*0.3 + 0.2*0.25 + 0.4*.15 + 0.6*0.05 + 0.8*0.05+0.8*0.1)*68)
+        self.assertAlmostEqual(self.ran.freshness_temperature(ages, counts, datetime.datetime.now()),
+                         (0.4*0.4 + 0.6*0.3 + 0.6*.2 + 0.6*0.05 + 0.8 *0.05+ 0.8*0.1)*68)
+        ages = [now + datetime.timedelta(-3000), now + datetime.timedelta(-3900), now + datetime.timedelta(-4000),
+                now + datetime.timedelta(-4110), now + datetime.timedelta(-4200)]
+        counts = {1:10, 2:15, 3:100, 4:200, 5:250}
+        self.assertAlmostEqual(self.ran.freshness_temperature(ages, counts, datetime.datetime.now()),
+                         (-0.5 + 0.8*0.1)*68)

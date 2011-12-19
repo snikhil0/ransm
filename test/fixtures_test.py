@@ -13,12 +13,9 @@
 # limitations under the License.
 from unittest import TestCase
 import os, glob
-import csv
 import unittest
-from ransm.routing_analyzer import RoutingAnalyzer, create_node_cache, flush
 
 PATH = './fixtures/'
-CSVOUT = os.path.join(PATH, 'results.csv')
 
 class Fixtures(TestCase):
 
@@ -26,16 +23,8 @@ class Fixtures(TestCase):
         pass
 
     def test_data_temperature(self):
-        csv_writer = csv.writer(open(CSVOUT, 'wb'), delimiter=',')
-        csv_writer.writerow('relation temperature, routing temperature, freshness temperature,\
-                            tiger temperature, final temperature')
-        
         for infile in glob.glob(os.path.join(PATH, '*.osm')):
-            db = create_node_cache(infile)
-            ran = RoutingAnalyzer(db)
-            ran.run(infile)
-            csv_writer.writerow(ran.datatemps)
-        print 'finished. Results in %s' % CSVOUT
-        
+            command = 'python ../ransm/routing_analyzer.py %s' %infile
+            os.system(command)
 if __name__ == '__main__':
     unittest.main()

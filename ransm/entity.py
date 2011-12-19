@@ -19,28 +19,9 @@ from math import *
 # simplified distance calculations
 import itertools
 
-EARTH_RADIUS_IN_MILES = 3963.19
 
-# Binning OSM features into a limited number of categories:
-#   - highways
-#   - main
-#   - local
-#   - guidance
-#   - unclassified
 
-# [MvE] this needs some scrutiny!
-ROAD_CATEGORY = {'motorway': 'highways', 'trunk':'main', 'primary':'main', 'secondary':'local',
-                     'tertiary': 'local', 'residential':'local', 'unclassified': 'unclassified', 'road':'unclassified',
-                     'living_street': 'local', 'service': 'local', 'track':'local', 'pedestrian':'local',
-                     'raceway':'local', 'services':'local', 'rest_area':'local', 'bus_guideway':'local',
-                     'path':'local', 'cycleway':'NA', 'footway':'NA', 'mini_roundabout':'guidance',
-                     'stop':'guidance', 'give_way':'guidance', 'traffic_signals':'guidance',
-                     'crossing':'guidance', 'roundabout':'guidance', 'motorway_junction':'guidance',
-                     'turning_circle':'guidance', 'construction':'guidance', 'motorway_link':'local',
-                     'trunk_link':'local', 'primary_link':'local', 'secondary_link':'local',
-                     'tertiary_link':'local'}
-
-# The relative weighing factors used in calculating the 
+# The relative weighing factors used in calculating the
 # ROUTING factor: oneway, maxspeed and access tags
 ONE_WAY_WEIGHT = 0.45
 MAX_SPEED_WEIGHT = 0.45
@@ -54,39 +35,54 @@ VERSION_INCREASE_OVER_TIGER = 1
 # The relative weighing factors used in the ATTRIBUTE factor
 # ATTRIBUTE factor: length
 LENGTH_WEIGHT = 0.2
-ROUTING_WEIGHT = 0.4
+ROUTING_WEIGHT = 0.6
 JUNCTION_WEIGHT = 0.1
-TIGER_WEIGHT = 0.3
 
-WAY_LENGTH_MAP = {}
+EARTH_RADIUS_IN_MILES = 3963.19
 
-# Cache used for temperature computation that is
-# computed in one entity and used in another. This does not belong to the
-# entity class but is a more global container
-USERS_EDITS = {}
-AGES = []
+# Binning OSM features into a limited number of categories:
+#   - highways
+#   - main
+#   - local
+#   - guidance
+#   - unclassified
+# [MvE] this needs some scrutiny!
+ROAD_CATEGORY = {'motorway': 'highways', 'trunk': 'main', 'primary': 'main', 'secondary': 'local',
+                 'tertiary': 'local', 'residential': 'local', 'unclassified': 'unclassified', 'road': 'unclassified',
+                 'living_street': 'local', 'service': 'local', 'track': 'local', 'pedestrian': 'local',
+                 'raceway': 'local', 'services': 'local', 'rest_area': 'local', 'bus_guideway': 'local',
+                 'path': 'local', 'cycleway': 'NA', 'footway': 'NA', 'mini_roundabout': 'guidance',
+                 'stop': 'guidance', 'give_way': 'guidance', 'traffic_signals': 'guidance',
+                 'crossing': 'guidance', 'roundabout': 'guidance', 'motorway_junction': 'guidance',
+                 'turning_circle': 'guidance', 'construction': 'guidance', 'motorway_link': 'local',
+                 'trunk_link': 'local', 'primary_link': 'local', 'secondary_link': 'local',
+                 'tertiary_link': 'local'}
 
-# The mapping of the node id's to the number of times they are referenced
-# We need to keep the name of the ways (intersections are defined as ways
-# with different names share a node)
-INTERSECTIONS = {}
+class Constants(object):
+    """
+        A class that is mae up of constants
+    """
+    WAY_LENGTH_MAP = {}
 
-# The users cache is a global container for all users
-# The user cache's below are containers for entity related users (Not used)
-USER_EDITS_NODES = {}
-USER_EDITS_WAYS = {}
-USER_EDITS_RELATIONS = {}
+    # Cache used for temperature computation that is
+    # computed in one entity and used in another. This does not belong to the
+    # entity class but is a more global container
+    USERS_EDITS = {}
+    AGES = []
 
-# The same for the age: age is the timestamp of the edit made divided by 1000.
-# We collect it in the containers and find the 1,10,25, 50 and 75 percentile ages. (not used)
-AGES_NODES = {}
-AGES_WAYS = {}
-AGES_RELATIONS = {}
+    # The mapping of the node id's to the number of times they are referenced
+    # We need to keep the name of the ways (intersections are defined as ways
+    # with different names share a node)
+    INTERSECTIONS = {}
 
+    # Map of the tiger tags and count for them
+    # tiger:tlid, tiger:cfcc etc
+    TIGER_BREAKDOWN = {}
 
-# Map of the tiger tags and count for them
-# tiger:tlid, tiger:cfcc etc
-TIGER_BREAKDOWN = {}
+    def __init__(self):
+        pass
+
+    
 
 # Common functions to extract user information and age (timestamps)
 # and populate the above
@@ -99,15 +95,15 @@ def average(ages):
 
     return 0
 
-def extract_user(uid):
+def extract_user(uid, users):
     """
         increment the user edits map
         keeps track of number of edits made by the user
     """
-    if uid not in USERS_EDITS:
-        USERS_EDITS[uid] = 0
+    if uid not in users:
+        users[uid] = 0
 
-    USERS_EDITS[uid] += 1
+    users[uid] += 1
 
 class Entity(object):
     """
@@ -215,11 +211,12 @@ class NodeEntity(Entity):
         but the class can be extended. Again, the NodeEntity is a container for all nodes and hence
         the information stored is either a comparison or accumulation of information from each node.
     """""
-    def __init__(self):
+    def __init__(self, constants):
         """
             Constructor
         """
         Entity.__init__(self)
+        self.const = constants
 
     def analyze(self, nodes):
         """
@@ -227,13 +224,13 @@ class NodeEntity(Entity):
         """
         for osmid, tags, ref, osmversion, osmtimestamp, osmuid in nodes:
             self.entity_count += 1
-            extract_user(osmuid)
+            extract_user(osmuid, self.const.USERS_EDITS)
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_id(osmid)
             self.extract_min_max_version(osmversion)
             self.extract_min_max_lat_lon(ref[0], ref[1])
-            AGES_NODES[osmuid] = datetime.fromtimestamp(osmtimestamp)
-            AGES.append(AGES_NODES[osmuid])
+            time = datetime.fromtimestamp(osmtimestamp)
+            self.const.AGES.append(time)
 
 
 class RelationEntity(Entity):
@@ -241,7 +238,7 @@ class RelationEntity(Entity):
         The relation callback get here. This class is a container for holding information for all
         relations. Number of restrictions and total length of restrictions are members of this class.
     """""
-    def __init__(self):
+    def __init__(self, constants):
         """
             Constructor
         """
@@ -249,6 +246,7 @@ class RelationEntity(Entity):
         self.num_turnrestrcitions = 0
         self.sum_restriction_length = 0
         self.sum_turn_restriction_length = 0
+        self.const = constants
 
     def analyze(self, relations):
         """
@@ -256,18 +254,18 @@ class RelationEntity(Entity):
         """
         for osmid, tags, refs, osmversion, osmtimestamp, osmuid in relations:
             self.entity_count += 1
-            extract_user(osmuid)
+            extract_user(osmuid, self.const.USERS_EDITS)
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_id(osmid)
             self.extract_min_max_version(osmversion)
 
-            AGES_RELATIONS[osmuid] = datetime.fromtimestamp(osmtimestamp)
-            AGES.append(AGES_RELATIONS[osmuid])
+            time = datetime.fromtimestamp(osmtimestamp)
+            self.const.AGES.append(time)
 
             length = 0
             for ref in refs:
-                    if ref in WAY_LENGTH_MAP:
-                        length += WAY_LENGTH_MAP[ref]
+                    if ref in self.const.WAY_LENGTH_MAP:
+                        length += self.const.WAY_LENGTH_MAP[ref]
 
             self.sum_restriction_length += length
                     
@@ -315,8 +313,6 @@ class CommonAttributes(object):
             The former gets a negative weighting and the latter gets a positive weighting => the more edits the better
             the data. Go figure!
         """
-        # Refactor later to compute temps from different sources and fuze them
-        untouched_by_users_factor = 0
         version_increase_over_tiger_factor = 0
         untouched_by_users_factor = UNTOUCHED_WEIGHT * float(self.untouched_by_user_edits)/num_ways
         if self.sum_versions:
@@ -343,7 +339,6 @@ class WayAttributeEntity(Entity):
         self.sum_junction_length = 0
         self.number_of_access = 0
         self.sum_access_length = 0
-
 
     def analyze(self, osmid, tags, osmversion, osmtimestamp, length):
         """
@@ -410,7 +405,7 @@ class WayEntity(Entity):
         aggregated factor for all ways irrespective of categorization.
 
     """""
-    def __init__(self, nodecache):
+    def __init__(self, nodecache, constant):
         """
             Constructor
             Note the attribute models which is basically a model per road category
@@ -422,6 +417,7 @@ class WayEntity(Entity):
         self.uncommon_highway_length = 0
         self.length = 0
         self.commonAttributes = CommonAttributes()
+        self.const = constant
 
     def attribute_factor(self, road_category):
         """
@@ -432,15 +428,12 @@ class WayEntity(Entity):
             return 0
 
         road_feature = self.attribute_models[road_category]
-        length_factor = 0
-        if 0 < self.length:
-            length_factor = float(road_feature.sum_way_lengths)/self.length
+        length_factor = float(road_feature.sum_way_lengths)/self.length
         routing_factor = road_feature.routing_factor()
         junction_factor = road_feature.junction_factor()
-        tiger_factor = road_feature.tiger_factor()
 
         return length_factor * LENGTH_WEIGHT + routing_factor * ROUTING_WEIGHT + \
-               junction_factor * JUNCTION_WEIGHT + tiger_factor * TIGER_WEIGHT
+               junction_factor * JUNCTION_WEIGHT
 
     def tiger_factor(self):
         """
@@ -461,7 +454,7 @@ class WayEntity(Entity):
 
             self.extract_min_max_timestamp(osmtimestamp)
             self.extract_min_max_version(osmversion)
-            extract_user(osmuid)
+            extract_user(osmuid, self.const.USERS_EDITS)
 
 
             # get the latest time stamp and version from all the  nodes
@@ -474,8 +467,8 @@ class WayEntity(Entity):
                     node_timestamp = max(node[2], osmtimestamp)
                     node_version = max(node[3], osmversion)
 
-            AGES_WAYS[osmuid] = datetime.fromtimestamp(osmtimestamp)
-            AGES.append(AGES_WAYS[osmuid])
+            time = datetime.fromtimestamp(osmtimestamp)
+            self.const.AGES.append(time)
 
             # only compute lengths for road tags
             if 'highway' in tags:
@@ -483,13 +476,13 @@ class WayEntity(Entity):
                 # sum the lengths 
                 self.length += length
                 # keep a map for later reference : for relations
-                WAY_LENGTH_MAP[osmid] = length
+                self.const.WAY_LENGTH_MAP[osmid] = length
 
                 if 'oneway' not in tags:
                     for r in ref:
-                        if r not in INTERSECTIONS:
-                            INTERSECTIONS[r] = 0
-                        INTERSECTIONS[r] += 1
+                        if r not in self.const.INTERSECTIONS:
+                            self.const.INTERSECTIONS[r] = 0
+                        self.const.INTERSECTIONS[r] += 1
 
                 # Parse the common attributes
                 self.commonAttributes.analyze(tags, node_version)

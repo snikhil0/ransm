@@ -25,7 +25,7 @@ from tcdb import hdb
 
 
 # location of the tokyo cabinet node cache
-from entity import WayEntity, NodeEntity, RelationEntity, CoordEntity, AGES, USERS_EDITS, INTERSECTIONS
+from entity import WayEntity, NodeEntity, RelationEntity, CoordEntity, Constants
 
 CACHE_LOCATION = '/tmp'
 
@@ -50,11 +50,13 @@ RELATION_WEIGHT = 0.1
 
 # Relative weighing factor for the proportion representing the most recent 1/10/25/50/75% of edits
 # These factors are used to calculate data freshness.
-AGE_WEIGHT1 = 0.3
-AGE_WEIGHT10 = 0.25
-AGE_WEIGHT25 = 0.15
+AGE_WEIGHT1 = 0.4
+AGE_WEIGHT10 = 0.3
+AGE_WEIGHT25 = 0.2
 AGE_WEIGHT50 = 0.05
 AGE_WEIGHT75 = 0.05
+OLD_WEIGHT = -0.5
+
 # Relative weighing value for the number of users doing 95% of the edits.
 USER_WEIGHT95 = 0.1
 
@@ -71,11 +73,11 @@ class RoutingAnalyzer(object):
     def __init__(self, nodecache):
         
         self.nodecache = nodecache
-
+        self.constants = Constants()
         # Initialize feature containers, passing cache ref
-        self.ways_entity = WayEntity(self.nodecache)
-        self.nodes_entity = NodeEntity()
-        self.relations_entity = RelationEntity()
+        self.ways_entity = WayEntity(self.nodecache, self.constants)
+        self.nodes_entity = NodeEntity(self.constants)
+        self.relations_entity = RelationEntity(self.constants)
         self.coords_entity = CoordEntity(self.nodecache)
         
         # Initialize the parser
@@ -127,7 +129,7 @@ class RoutingAnalyzer(object):
                 unclassified_factor * ROAD_CATEGORY_WEIGHTS['unclassified'] + \
                 uncommon_factor * ROAD_CATEGORY_WEIGHTS['uncommon']
 
-        array = [highway_factor, main_factor, local_factor, guidance_factor, unclassified_factor, uncommon_factor, factors]
+        array = (highway_factor, main_factor, local_factor, guidance_factor, unclassified_factor, uncommon_factor, factors)
         return map(lambda x: BASIC_TEMP * x, array)
     
     # This function calculates the RELATION dimension of data temperature
@@ -155,16 +157,21 @@ class RoutingAnalyzer(object):
         ages50_factor = float(len(filter(lambda a: current_date - datetime.timedelta(days = 365) <= a, ages)))/len_array * AGE_WEIGHT50
         ages75_factor = float(len(filter(lambda a: current_date - datetime.timedelta(days = 730) <= a, ages)))/len_array * AGE_WEIGHT75
 
+        # if the age of the data is older than 4 years weigh it negatively
+        old_factor = (len_array - len(filter(lambda a: current_date + datetime.timedelta(days = -1460) <= a, ages)))/len_array * OLD_WEIGHT
+
         # Calculate 95 percintile of users, this is not part of freshness but
         # is used in the freshness temperature.
         user95_factor = float(len(filter(lambda a: a <= self.percentile(counts, 0.95), counts)))/len(counts) * USER_WEIGHT95
-        return (ages1_factor + ages10_factor + ages25_factor   + user95_factor + ages50_factor + ages75_factor) * BASIC_TEMP
+        return (ages1_factor + ages10_factor + ages25_factor   + user95_factor + ages50_factor + old_factor +
+                ages75_factor) * BASIC_TEMP
 
     def data_temeratures(self):
         # Normalize the data temperature to between 0 and 40 and add a buffer of zero celsius
-        reltemp = self.relation_temperature(self.relations_entity, INTERSECTIONS)
+        reltemp = self.relation_temperature(self.relations_entity, self.constants.INTERSECTIONS) * DATA_TEMP # extra factor to improve
+        # contribution from relations
         routingtemp = self.routing_attributes_temperature(self.ways_entity)
-        freshnesstemp = self.freshness_temperature(AGES, USERS_EDITS, datetime.datetime.today())
+        freshnesstemp = self.freshness_temperature(self.constants.AGES, self.constants.USERS_EDITS, datetime.datetime.today())
         tigertemp = self.ways_entity.tiger_factor() * BASIC_TEMP
         finaltemp = ( RELATION_WEIGHT * reltemp +
                       ROUTING_WEIGHT * routingtemp[6] +
@@ -172,7 +179,8 @@ class RoutingAnalyzer(object):
                       TIGER_WEIGHT * tigertemp
                       + ZERO_DATA_TEMPERATURE 
                     )
-        return reltemp, routingtemp, freshnesstemp, tigertemp, finaltemp
+        return reltemp, routingtemp[0], routingtemp[1], routingtemp[2], routingtemp[3], routingtemp[4], routingtemp[5], \
+               routingtemp[6], freshnesstemp, tigertemp, finaltemp
 
     # The main function that parses the xml file and
     # calls the data temp calculations
@@ -195,33 +203,13 @@ class RoutingAnalyzer(object):
         
         # Calculate data temperature
         self.datatemps = self.data_temeratures()
-
         print 'Data temperatures for %s are: %s' % (filename, self.datatemps)
-
-        #        print 'number of coords / nodes / ways / relations: %d / %d / %d / %d' % (self.coords_entity.entity_count,
-        #                                                                                 self.nodes_entity.entity_count,
-        #                                                                                 self.ways_entity.entity_count,
-        #                                                                                 self.relations_entity.entity_count)
-        #        print 'min / max node id: %d / %d' % (self.nodes_entity.minid, self.nodes_entity.maxid)
-        #        print 'min / max way id: %d / %d' % (self.ways_entity.minid, self.ways_entity.maxid)
-        #        print 'min / max relation id: %d / %d' % (self.relations_entity.minid, self.relations_entity.maxid)
-        #        print 'bbox: (%f %f, %f %f)' % (self.coords_entity.min_lon, self.coords_entity.min_lat,
-        #                                        self.coords_entity.max_lon, self.coords_entity.min_lat)
-        #        print 'first way timestamp: %s' % (self.ways_entity.first_timestamp)
-        #        print 'last way timestamp: %s' % (self.ways_entity.last_timestamp)
-        #        print 'mean way version: %f' % (self.ways_entity.mean_version)
-        #        print 'turn restrictions: %d' % (self.relations_entity.num_turnrestrcitions)
         print 'Data temperature calculation took %fs' % (time() - t1)
         print 'Total process took %fs' %(time() - t0)
+        return self.datatemps
 
 def usage():
     print 'python routing_analyzer.py [file.xml|pbf]'
-
-
-def flush():
-    INTERSECTIONS.clear()
-    USERS_EDITS.clear()
-    AGES = []
 
 def create_node_cache(infile=None):
     
@@ -249,7 +237,7 @@ def main(args):
     nodeCache = create_node_cache()
     analysis_engine = RoutingAnalyzer(nodeCache)
     
-    analysis_engine.run(args[1])
+    print analysis_engine.run(args[1])
 
 if __name__ == "__main__":
     main(sys.argv)

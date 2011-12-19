@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import unittest
-from ransm.entity import NodeEntity, WayAttributeEntity, WayEntity, WAY_LENGTH_MAP, RelationEntity
+from ransm.entity import NodeEntity, WayAttributeEntity, WayEntity, RelationEntity, Constants
 from test import first_timestamp, last_timestamp, nodeCacheMock, ways, relations
 
 class EntityTest(unittest.TestCase):
@@ -25,7 +25,8 @@ class EntityTest(unittest.TestCase):
     def testNodeEntity(self):
         nodes = ((1, {'oneway': 'yes'}, (-122.1123, 38.45333), 1, first_timestamp, 1000),
                  (2, {'oneway': 'no'}, (-122.2123, 38.35333), 2, last_timestamp, 2000))
-        nodeEntity = NodeEntity()
+        constant = Constants()
+        nodeEntity = NodeEntity(constant)
         nodeEntity.analyze(nodes)
         self.assertEqual(nodeEntity.max_version, 2)
         self.assertEqual(nodeEntity.min_version, 1)
@@ -37,7 +38,8 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(nodeEntity.max_lon, -122.1123)
 
     def testWayEntity(self):
-        wayEntity = WayEntity(nodeCacheMock)
+        constant = Constants()
+        wayEntity = WayEntity(nodeCacheMock, constant)
         wayEntity.analyze(ways)
 
         self.assertEqual(wayEntity.max_version, 3)
@@ -45,9 +47,9 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(wayEntity.minid, 90088567)
         self.assertEqual(wayEntity.maxid, 90088573)
         self.assertEqual(wayEntity.commonAttributes.tiger_tagged_ways, 1)
-        self.assertEqual(wayEntity.commonAttributes.version_increase_over_tiger, 2)
+        self.assertEqual(wayEntity.commonAttributes.version_increase_over_tiger, 4)
         self.assertEqual(wayEntity.commonAttributes.untouched_by_user_edits, 0)
-        self.assertEqual(wayEntity.commonAttributes.sum_versions, 5)
+        self.assertEqual(wayEntity.commonAttributes.sum_versions, 8)
         self.assertEqual(wayEntity.entity_count, 2)
 
         length_way1 = wayEntity.calc_length([65433897, 259415186, 1044247254, 65486041,
@@ -60,8 +62,8 @@ class EntityTest(unittest.TestCase):
         attribute = wayEntity.attribute_models['local']
         self.assertEqual(attribute.commonAttributes.tiger_tagged_ways, 1)
         self.assertEqual(attribute.commonAttributes.untouched_by_user_edits, 0)
-        self.assertEqual(attribute.commonAttributes.version_increase_over_tiger, 2)
-        self.assertEqual(attribute.commonAttributes.sum_versions, 5)
+        self.assertEqual(attribute.commonAttributes.version_increase_over_tiger, 4)
+        self.assertEqual(attribute.commonAttributes.sum_versions, 8)
         self.assertEqual(attribute.sum_way_lengths, length_way1 + length_way2)
         self.assertEqual(attribute.sum_one_way_lengths, length_way1 + length_way2)
         self.assertEqual(attribute.sum_max_speed_lengths, 0)
@@ -70,14 +72,14 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(attribute.number_of_access, 0)
         self.assertEqual(attribute.sum_access_length, 0)
 
-        self.assertEqual(wayEntity.tiger_factor(), 0.4)
+        self.assertEqual(wayEntity.tiger_factor(), 0.5)
         self.assertEqual(wayEntity.mean_version, 0) #Not used
 
         self.assertEqual(attribute.routing_factor(), 0.45)
         self.assertEqual(attribute.junction_factor(), 0)
-        self.assertEqual(attribute.tiger_factor(), 0.4)
+        self.assertEqual(attribute.tiger_factor(), 0.5)
 
-        self.assertEqual(wayEntity.attribute_factor('local'), (1 * 0.2 + 0.4 * 0.45 + 0.3 * 0.4))
+        self.assertAlmostEqual(wayEntity.attribute_factor('local'), 0.47)
 
     def testWayAttributeEntity(self):
         attribute = WayAttributeEntity()
@@ -98,10 +100,11 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(attribute.commonAttributes.version_increase_over_tiger, 2)
 
     def testRelationEntity(self):
-        WAY_LENGTH_MAP[90088573] = 1
-        WAY_LENGTH_MAP[90088567] = 2
+        constant = Constants()
+        constant.WAY_LENGTH_MAP[90088573] = 1
+        constant.WAY_LENGTH_MAP[90088567] = 2
 
-        relationEntity = RelationEntity()
+        relationEntity = RelationEntity(constant)
         relationEntity.analyze(relations)
 
         self.assertEquals(relationEntity.entity_count, 2)
