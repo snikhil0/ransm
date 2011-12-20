@@ -2,16 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9db2712-a48c-442d-8c22-c476bd399e9b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/fixtures/fixture1.osm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/fixtures/~$results_new.xlsx" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/fixture1a.osm" afterPath="$PROJECT_DIR$/test/fixtures/fixture1a.osm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/fixture1b.osm" afterPath="$PROJECT_DIR$/test/fixtures/fixture1b.osm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/fixture1c.osm" afterPath="$PROJECT_DIR$/test/fixtures/fixture1c.osm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/fixture2a.osm" afterPath="$PROJECT_DIR$/test/fixtures/fixture2a.osm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/fixture2b.osm" afterPath="$PROJECT_DIR$/test/fixtures/fixture2b.osm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/fixture2c.osm" afterPath="$PROJECT_DIR$/test/fixtures/fixture2c.osm" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/fixture3.osm" afterPath="$PROJECT_DIR$/test/fixtures/fixture3.osm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/results.csv" afterPath="$PROJECT_DIR$/test/fixtures/results.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/fixture4a.osm" afterPath="$PROJECT_DIR$/test/fixtures/fixture4a.osm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/fixture4b.osm" afterPath="$PROJECT_DIR$/test/fixtures/fixture4b.osm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/fixture4c.osm" afterPath="$PROJECT_DIR$/test/fixtures/fixture4c.osm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/fixture4d.osm" afterPath="$PROJECT_DIR$/test/fixtures/fixture4d.osm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/fixture4e.osm" afterPath="$PROJECT_DIR$/test/fixtures/fixture4e.osm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/fixture4f.osm" afterPath="$PROJECT_DIR$/test/fixtures/fixture4f.osm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/fixture4g.osm" afterPath="$PROJECT_DIR$/test/fixtures/fixture4g.osm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/fixture4h.osm" afterPath="$PROJECT_DIR$/test/fixtures/fixture4h.osm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/fixture4i.osm" afterPath="$PROJECT_DIR$/test/fixtures/fixture4i.osm" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ransm/entity.py" afterPath="$PROJECT_DIR$/ransm/entity.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ransm/routing_analyzer.py" afterPath="$PROJECT_DIR$/ransm/routing_analyzer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/__init__.py" afterPath="$PROJECT_DIR$/test/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/entity_test.py" afterPath="$PROJECT_DIR$/test/entity_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures_test.py" afterPath="$PROJECT_DIR$/test/fixtures_test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ran_test.py" afterPath="$PROJECT_DIR$/test/ran_test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/sort-cities.py" afterPath="$PROJECT_DIR$/util/sort-cities.py" />
     </list>
     <ignored path="ransm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,16 +50,16 @@
       <file leaf-file-name="entity.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ransm/entity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="270" column="20" selection-start="9654" selection-end="9654" vertical-scroll-proportion="-7.2363634">
+            <state line="238" column="46" selection-start="8673" selection-end="8673" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fixtures_test.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="fixtures_test.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/fixtures_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="39" selection-start="883" selection-end="883" vertical-scroll-proportion="0.0">
+            <state line="12" column="32" selection-start="597" selection-end="597" vertical-scroll-proportion="1.1497006">
               <folding />
             </state>
           </provider>
@@ -55,25 +68,7 @@
       <file leaf-file-name="routing_analyzer.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ransm/routing_analyzer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="189" column="40" selection-start="8611" selection-end="8611" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ran_test.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/ran_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="50" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.23853211">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="entity_test.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/entity_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="70" selection-start="2132" selection-end="2132" vertical-scroll-proportion="0.0">
+            <state line="198" column="39" selection-start="8861" selection-end="8861" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -100,11 +95,11 @@
         <option value="$PROJECT_DIR$/test/user_test.py" />
         <option value="$PROJECT_DIR$/test/fixtures/fixtures_test.py" />
         <option value="$PROJECT_DIR$/test/__init__.py" />
+        <option value="$PROJECT_DIR$/test/entity_test.py" />
+        <option value="$PROJECT_DIR$/test/ran_test.py" />
         <option value="$PROJECT_DIR$/ransm/entity.py" />
         <option value="$PROJECT_DIR$/ransm/routing_analyzer.py" />
         <option value="$PROJECT_DIR$/test/fixtures_test.py" />
-        <option value="$PROJECT_DIR$/test/entity_test.py" />
-        <option value="$PROJECT_DIR$/test/ran_test.py" />
       </list>
     </option>
   </component>
@@ -189,48 +184,40 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.externalResources" />
     <property name="recentsLimit" value="5" />
-    <property name="options.searchVisible" value="true" />
+    <property name="options.lastSelected" value="preferences.externalResources" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Python's unittest.Unittests in Fixtures.test_data_temperature">
-    <configuration default="false" name="Unittests in Test.testFreshnessTemperature" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
+  <component name="RunManager" selected="Python's unittest.Unittests in fixtures_test.py">
+    <configuration default="false" name="fixtures_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <module name="ransm" />
-      <option name="SCRIPT_NAME" value="ran_test.py" />
-      <option name="CLASS_NAME" value="Test" />
-      <option name="METHOD_NAME" value="testFreshnessTemperature" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="PUREUNITTEST" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/fixtures_test.py" />
+      <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
-      <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittests in EntityTest.testNodeEntity" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
+    <configuration default="false" name="routing_analyzer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ransm" />
       <option name="IS_MODULE_SDK" value="true" />
       <module name="ransm" />
-      <option name="SCRIPT_NAME" value="entity_test.py" />
-      <option name="CLASS_NAME" value="EntityTest" />
-      <option name="METHOD_NAME" value="testNodeEntity" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="PUREUNITTEST" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ransm/routing_analyzer.py" />
+      <option name="PARAMETERS" value="$PROJECT_DIR$/test/fixtures/fixture4a.osm" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <method />
@@ -355,13 +342,15 @@
       <option name="PATTERN" value="" />
       <option name="PUREUNITTEST" value="true" />
       <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
     <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="Python's unittest.Unittests in Test.testFreshnessTemperature" />
-      <item index="1" class="java.lang.String" itemvalue="Python's unittest.Unittests in fixtures_test.py" />
-      <item index="2" class="java.lang.String" itemvalue="Python's unittest.Unittests in EntityTest.testNodeEntity" />
+      <item index="0" class="java.lang.String" itemvalue="Python.fixtures_test" />
+      <item index="1" class="java.lang.String" itemvalue="Python.routing_analyzer" />
+      <item index="2" class="java.lang.String" itemvalue="Python's unittest.Unittests in fixtures_test.py" />
       <item index="3" class="java.lang.String" itemvalue="Python's unittest.Unittests in EntityTest.testWayEntity" />
       <item index="4" class="java.lang.String" itemvalue="Python's unittest.Unittests in EntityTest.testWayAttributeEntity" />
       <item index="5" class="java.lang.String" itemvalue="Python's unittest.Unittests in Fixtures.test_data_temperature" />
@@ -415,16 +404,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="711" extended-state="0" />
-    <editor active="true" />
+    <frame x="-3" y="22" width="1280" height="714" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32698414" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17356688" sideWeight="0.31511253" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17356688" sideWeight="0.57512116" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42487884" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17356688" sideWeight="0.5761803" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4340836" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.68488747" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -520,56 +509,50 @@
     </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm10/python_stubs/466988703/datetime.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="44" selection-start="491" selection-end="491" vertical-scroll-proportion="0.91719747">
-          <folding />
-        </state>
+        <state line="18" column="44" selection-start="491" selection-end="491" vertical-scroll-proportion="0.91719747" />
       </provider>
     </entry>
     <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/unittest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="278" column="0" selection-start="9830" selection-end="9830" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="278" column="0" selection-start="9830" selection-end="9830" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="110" selection-start="2283" selection-end="2283" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ransm/entity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="270" column="20" selection-start="9654" selection-end="9654" vertical-scroll-proportion="-7.2363634">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/fixtures_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="39" selection-start="883" selection-end="883" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ransm/routing_analyzer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="40" selection-start="8611" selection-end="8611" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="39" column="110" selection-start="2283" selection-end="2283" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/entity_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="70" selection-start="2132" selection-end="2132" vertical-scroll-proportion="0.0">
+        <state line="104" column="45" selection-start="5131" selection-end="5131" vertical-scroll-proportion="1.1830283">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/ran_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="50" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.23853211">
+        <state line="38" column="0" selection-start="1215" selection-end="1215" vertical-scroll-proportion="0.90515804">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ransm/routing_analyzer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="198" column="39" selection-start="8861" selection-end="8861" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ransm/entity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="238" column="46" selection-start="8673" selection-end="8673" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/fixtures_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="32" selection-start="597" selection-end="597" vertical-scroll-proportion="1.1497006">
           <folding />
         </state>
       </provider>

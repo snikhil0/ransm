@@ -14,7 +14,7 @@
 
 import unittest
 import datetime
-from ransm.entity import WayEntity, RelationEntity, Constants
+from ransm.entity import WayEntity, RelationEntity, Containers
 from ransm.routing_analyzer import RoutingAnalyzer
 from test import relations, nodeCacheMock, ways, intersections
 
@@ -36,15 +36,14 @@ class Test(unittest.TestCase):
         self.assertEquals(4, p, 'Wrong ')
         self.assertEquals(3,len(below_p), 'Wrong')
 
-
     def testRoutingAttributeTemperature(self):
-        const = Constants()
+        const = Containers()
         wayEntity = WayEntity(nodeCacheMock, const)
         wayEntity.analyze(ways)
         self.assertAlmostEqual(self.ran.routing_attributes_temperature(wayEntity)[6], 6.392)
 
     def testRelationTemperature(self):
-        const = Constants()
+        const = Containers()
         const.WAY_LENGTH_MAP[90088573] = 1
         const.WAY_LENGTH_MAP[90088567] = 2
 

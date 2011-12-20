@@ -25,7 +25,7 @@ from tcdb import hdb
 
 
 # location of the tokyo cabinet node cache
-from entity import WayEntity, NodeEntity, RelationEntity, CoordEntity, Constants
+from entity import WayEntity, NodeEntity, RelationEntity, CoordEntity, Containers
 
 CACHE_LOCATION = '/tmp'
 
@@ -73,16 +73,17 @@ class RoutingAnalyzer(object):
     def __init__(self, nodecache):
         
         self.nodecache = nodecache
-        self.constants = Constants()
+        self.constants = Containers()
         # Initialize feature containers, passing cache ref
-        self.ways_entity = WayEntity(self.nodecache, self.constants)
-        self.nodes_entity = NodeEntity(self.constants)
-        self.relations_entity = RelationEntity(self.constants)
         self.coords_entity = CoordEntity(self.nodecache)
-        
+        self.nodes_entity = NodeEntity(self.constants)
+        self.ways_entity = WayEntity(self.nodecache, self.constants)
+        self.relations_entity = RelationEntity(self.constants)
+
+        self.nodeParser = OSMParser(concurrency=4, nodes_callback=self.nodes_entity.analyze)
+
         # Initialize the parser
         self.parser = OSMParser(concurrency=4, coords_callback=self.coords_entity.analyze,
-                                nodes_callback=self.nodes_entity.analyze,
                                 ways_callback=self.ways_entity.analyze,
                                 relations_callback=self.relations_entity.analyze)
 
@@ -195,18 +196,19 @@ class RoutingAnalyzer(object):
         t0 = time()
         
         # Parse the input data
+        self.nodeParser.parse(filename)
         self.parser.parse(filename)
         t1 = time()
 
         # Print the parsing time
-        print 'The parsing of the file took %f' %(t1 - t0)
+        # print 'The parsing of the file took %f' %(t1 - t0)
         
         # Calculate data temperature
-        self.datatemps = self.data_temeratures()
-        print 'Data temperatures for %s are: %s' % (filename, self.datatemps)
-        print 'Data temperature calculation took %fs' % (time() - t1)
-        print 'Total process took %fs' %(time() - t0)
-        return self.datatemps
+        datatemps = self.data_temeratures()
+        print 'Data temperatures for %s are: %s' % (filename, datatemps)
+        #print 'Data temperature calculation took %fs' % (time() - t1)
+        #print 'Total process took %fs' %(time() - t0)
+        return datatemps
 
 def usage():
     print 'python routing_analyzer.py [file.xml|pbf]'
@@ -236,8 +238,7 @@ def main(args):
 
     nodeCache = create_node_cache()
     analysis_engine = RoutingAnalyzer(nodeCache)
-    
-    print analysis_engine.run(args[1])
+    analysis_engine.run(args[1])
 
 if __name__ == "__main__":
     main(sys.argv)

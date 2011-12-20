@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import unittest
-from ransm.entity import NodeEntity, WayAttributeEntity, WayEntity, RelationEntity, Constants
+from ransm.entity import NodeEntity, WayAttributeEntity, WayEntity, RelationEntity, Containers
 from test import first_timestamp, last_timestamp, nodeCacheMock, ways, relations
 
 class EntityTest(unittest.TestCase):
@@ -25,7 +25,7 @@ class EntityTest(unittest.TestCase):
     def testNodeEntity(self):
         nodes = ((1, {'oneway': 'yes'}, (-122.1123, 38.45333), 1, first_timestamp, 1000),
                  (2, {'oneway': 'no'}, (-122.2123, 38.35333), 2, last_timestamp, 2000))
-        constant = Constants()
+        constant = Containers()
         nodeEntity = NodeEntity(constant)
         nodeEntity.analyze(nodes)
         self.assertEqual(nodeEntity.max_version, 2)
@@ -38,7 +38,7 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(nodeEntity.max_lon, -122.1123)
 
     def testWayEntity(self):
-        constant = Constants()
+        constant = Containers()
         wayEntity = WayEntity(nodeCacheMock, constant)
         wayEntity.analyze(ways)
 
@@ -75,7 +75,7 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(wayEntity.tiger_factor(), 0.5)
         self.assertEqual(wayEntity.mean_version, 0) #Not used
 
-        self.assertEqual(attribute.routing_factor(), 0.45)
+        self.assertEqual(attribute.routing_factor(0), 0.45)
         self.assertEqual(attribute.junction_factor(), 0)
         self.assertEqual(attribute.tiger_factor(), 0.5)
 
@@ -95,12 +95,12 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(attribute.sum_max_speed_lengths, 0)
         self.assertEqual(attribute.tiger_factor(), 2.0/3)
         self.assertEqual(attribute.commonAttributes.tiger_tagged_ways, 1)
-        self.assertEqual(attribute.routing_factor(), 0.45)
+        self.assertEqual(attribute.routing_factor(0), 0.45)
         self.assertEqual(attribute.commonAttributes.untouched_by_user_edits, 0)
         self.assertEqual(attribute.commonAttributes.version_increase_over_tiger, 2)
 
     def testRelationEntity(self):
-        constant = Constants()
+        constant = Containers()
         constant.WAY_LENGTH_MAP[90088573] = 1
         constant.WAY_LENGTH_MAP[90088567] = 2
 

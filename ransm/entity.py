@@ -19,12 +19,11 @@ from math import *
 # simplified distance calculations
 import itertools
 
-
-
 # The relative weighing factors used in calculating the
 # ROUTING factor: oneway, maxspeed and access tags
-ONE_WAY_WEIGHT = 0.45
-MAX_SPEED_WEIGHT = 0.45
+ONE_WAY_WEIGHT = 0.3
+MAX_SPEED_WEIGHT = 0.3
+GUIDANCE_FACTOR = 0.3
 ACCESS_WEIGHT = 0.1
 
 # The relative weighing factors used in calculating the
@@ -58,9 +57,10 @@ ROAD_CATEGORY = {'motorway': 'highways', 'trunk': 'main', 'primary': 'main', 'se
                  'trunk_link': 'local', 'primary_link': 'local', 'secondary_link': 'local',
                  'tertiary_link': 'local'}
 
-class Constants(object):
+class Containers(object):
     """
-        A class that is mae up of constants
+        A class that is made up of containers for
+         ages, user edits, intersections, tiger breakdown among other things
     """
     WAY_LENGTH_MAP = {}
 
@@ -78,6 +78,9 @@ class Constants(object):
     # Map of the tiger tags and count for them
     # tiger:tlid, tiger:cfcc etc
     TIGER_BREAKDOWN = {}
+
+    ## The way nodes that are needed for Guidance scores
+    WAY_NODES = {}
 
     def __init__(self):
         pass
@@ -231,8 +234,10 @@ class NodeEntity(Entity):
             self.extract_min_max_lat_lon(ref[0], ref[1])
             time = datetime.fromtimestamp(osmtimestamp)
             self.const.AGES.append(time)
-
-
+            # store the node tags for later parsing for
+            # guidance score
+            self.const.WAY_NODES[osmid] = tags
+                    
 class RelationEntity(Entity):
     """""
         The relation callback get here. This class is a container for holding information for all
@@ -272,7 +277,6 @@ class RelationEntity(Entity):
             if 'type' in tags and tags['type'] == 'restriction':
                 self.num_turnrestrcitions += 1
                 self.sum_turn_restriction_length += length
-
 
 class CommonAttributes(object):
     """
@@ -326,7 +330,7 @@ class WayAttributeEntity(Entity):
      This inherits from Entity because we also keep account of the variables of the entity model.
      The timestamp and the version come from the max of way version and node versions and similarly for timestamps
     """""
-    def __init__(self):
+    def __init__(self, constant):
         """
             Constructor
         """
@@ -339,8 +343,10 @@ class WayAttributeEntity(Entity):
         self.sum_junction_length = 0
         self.number_of_access = 0
         self.sum_access_length = 0
+        self.sum_guidance_length = 0
+        self.const = constant
 
-    def analyze(self, osmid, tags, osmversion, osmtimestamp, length):
+    def analyze(self, osmid, tags, ref, osmversion, osmtimestamp, length):
         """
             Extract all the attribute level info
         """
@@ -362,8 +368,22 @@ class WayAttributeEntity(Entity):
             self.number_of_junctions += 1
             self.sum_junction_length += length
 
-        self.commonAttributes.analyze(tags, osmversion)
+        guidance_keys =('stop','give_way', 'traffic_signals', 'crossing', 'roundabout',
+                        'motorway_junction', 'turning_circle', 'construction')
 
+        if tags['highway'] in guidance_keys:
+            self.sum_guidance_length += length
+
+        # Look in the reference nodes and check to see which ones have
+        # guidance on them
+        for r in ref:
+            if r in self.const.WAY_NODES and 'highway' in self.const.WAY_NODES[r]:
+                highway_value = self.const.WAY_NODES[r]['highway']
+                if highway_value in guidance_keys:
+                    self.sum_guidance_length += length
+                    break # count them only once
+
+        self.commonAttributes.analyze(tags, osmversion)
 
 
     def tiger_factor(self):
@@ -386,8 +406,10 @@ class WayAttributeEntity(Entity):
         oneway_factor = float(self.sum_one_way_lengths)/self.sum_way_lengths
         maxspeed_factor = float(self.sum_max_speed_lengths)/self.sum_way_lengths
         access_factor = float(self.sum_access_length)/self.sum_way_lengths
-        
-        return ONE_WAY_WEIGHT * oneway_factor + MAX_SPEED_WEIGHT * maxspeed_factor + access_factor * ACCESS_WEIGHT
+        guidance_factor = float(self.sum_guidance_length)/self.sum_way_lengths
+
+        return ONE_WAY_WEIGHT * oneway_factor + MAX_SPEED_WEIGHT * maxspeed_factor + access_factor * ACCESS_WEIGHT + \
+               GUIDANCE_FACTOR * guidance_factor
 
     def junction_factor(self):
         """
@@ -456,7 +478,6 @@ class WayEntity(Entity):
             self.extract_min_max_version(osmversion)
             extract_user(osmuid, self.const.USERS_EDITS)
 
-
             # get the latest time stamp and version from all the  nodes
             # and that represents the way timestamp and version
             node_timestamp = osmtimestamp
@@ -496,10 +517,12 @@ class WayEntity(Entity):
                 else:
                     if ROAD_CATEGORY[tags['highway']] not in self.attribute_models:
                         category = ROAD_CATEGORY[tags['highway']]
-                        self.attribute_models[category] = WayAttributeEntity()
+                        self.attribute_models[category] = WayAttributeEntity(self.const)
                     
                     road_category_entity = self.attribute_models[ROAD_CATEGORY[tags['highway']]]
-                    road_category_entity.analyze(osmid, tags, node_version, node_timestamp, length)
+                    road_category_entity.analyze(osmid, tags, ref, node_version, node_timestamp, length)
+                
+
 
     def calc_length(self, refs):
         """
