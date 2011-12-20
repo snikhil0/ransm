@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f9db2712-a48c-442d-8c22-c476bd399e9b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ransm/entity.py" afterPath="$PROJECT_DIR$/ransm/entity.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/process_cities.py" afterPath="$PROJECT_DIR$/util/process_cities.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/entity_test.py" afterPath="$PROJECT_DIR$/test/entity_test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ran_test.py" afterPath="$PROJECT_DIR$/test/ran_test.py" />
     </list>
     <ignored path="ransm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,10 +36,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="process_cities.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="entity_test.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/entity_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="54" selection-start="1751" selection-end="1751" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ran_test.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/ran_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="91" selection-start="1466" selection-end="1466" vertical-scroll-proportion="0.9460371">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="process_cities.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/process_cities.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="26" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.6413793">
+            <state line="41" column="31" selection-start="1572" selection-end="1572" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -84,12 +102,12 @@
         <option value="$PROJECT_DIR$/test/user_test.py" />
         <option value="$PROJECT_DIR$/test/fixtures/fixtures_test.py" />
         <option value="$PROJECT_DIR$/test/__init__.py" />
-        <option value="$PROJECT_DIR$/test/entity_test.py" />
-        <option value="$PROJECT_DIR$/test/ran_test.py" />
         <option value="$PROJECT_DIR$/ransm/routing_analyzer.py" />
         <option value="$PROJECT_DIR$/test/fixtures_test.py" />
         <option value="$PROJECT_DIR$/ransm/entity.py" />
         <option value="$PROJECT_DIR$/util/process_cities.py" />
+        <option value="$PROJECT_DIR$/test/entity_test.py" />
+        <option value="$PROJECT_DIR$/test/ran_test.py" />
       </list>
     </option>
   </component>
@@ -119,8 +137,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -183,15 +199,17 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Favorites" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.externalResources" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="recentsLimit" value="5" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager" selected="Python's unittest.Unittests in fixtures_test.py">
     <configuration default="false" name="fixtures_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -354,10 +372,10 @@
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.fixtures_test" />
       <item index="1" class="java.lang.String" itemvalue="Python.routing_analyzer" />
-      <item index="2" class="java.lang.String" itemvalue="Python's unittest.Unittests in fixtures_test.py" />
-      <item index="3" class="java.lang.String" itemvalue="Python's unittest.Unittests in EntityTest.testWayEntity" />
-      <item index="4" class="java.lang.String" itemvalue="Python's unittest.Unittests in EntityTest.testWayAttributeEntity" />
-      <item index="5" class="java.lang.String" itemvalue="Python's unittest.Unittests in Fixtures.test_data_temperature" />
+      <item index="2" class="java.lang.String" itemvalue="Python's unittest.Unittests in EntityTest.testWayEntity" />
+      <item index="3" class="java.lang.String" itemvalue="Python's unittest.Unittests in EntityTest.testWayAttributeEntity" />
+      <item index="4" class="java.lang.String" itemvalue="Python's unittest.Unittests in Fixtures.test_data_temperature" />
+      <item index="5" class="java.lang.String" itemvalue="Python's unittest.Unittests in fixtures_test.py" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -408,7 +426,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="22" width="1280" height="714" extended-state="0" />
+    <frame x="0" y="22" width="1280" height="714" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -521,44 +539,38 @@
         <state line="39" column="110" selection-start="2283" selection-end="2283" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/fixtures_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="32" selection-start="597" selection-end="597" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ransm/routing_analyzer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="198" column="39" selection-start="8861" selection-end="8861" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ransm/entity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="522" column="88" selection-start="20226" selection-end="20226" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/process_cities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="31" selection-start="1572" selection-end="1572" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/entity_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="45" selection-start="5131" selection-end="5131" vertical-scroll-proportion="1.1830283">
+        <state line="41" column="54" selection-start="1751" selection-end="1751" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/ran_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1215" selection-end="1215" vertical-scroll-proportion="0.90515804">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ransm/routing_analyzer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="198" column="39" selection-start="8861" selection-end="8861" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/fixtures_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="32" selection-start="597" selection-end="597" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ransm/entity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="522" column="88" selection-start="20226" selection-end="20226" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/process_cities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="26" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.6413793">
+        <state line="42" column="91" selection-start="1466" selection-end="1466" vertical-scroll-proportion="0.9460371">
           <folding />
         </state>
       </provider>

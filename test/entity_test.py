@@ -75,15 +75,16 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(wayEntity.tiger_factor(), 0.5)
         self.assertEqual(wayEntity.mean_version, 0) #Not used
 
-        self.assertEqual(attribute.routing_factor(0), 0.45)
+        self.assertAlmostEqual(attribute.routing_factor(), 0.30)
         self.assertEqual(attribute.junction_factor(), 0)
         self.assertEqual(attribute.tiger_factor(), 0.5)
 
-        self.assertAlmostEqual(wayEntity.attribute_factor('local'), 0.47)
+        self.assertAlmostEqual(wayEntity.attribute_factor('local'), 0.38)
 
     def testWayAttributeEntity(self):
-        attribute = WayAttributeEntity()
-        attribute.analyze(ways[0][0], ways[0][1], ways[0][3], first_timestamp, 1)
+        contant = Containers()
+        attribute = WayAttributeEntity(contant)
+        attribute.analyze(ways[0][0], ways[0][1], ways[0][2], ways[0][3], first_timestamp, 1)
         self.assertEqual(attribute.entity_count, 1)
         self.assertEqual(attribute.number_of_access, 0)
         self.assertEqual(attribute.number_of_junctions, 0)
@@ -95,7 +96,7 @@ class EntityTest(unittest.TestCase):
         self.assertEqual(attribute.sum_max_speed_lengths, 0)
         self.assertEqual(attribute.tiger_factor(), 2.0/3)
         self.assertEqual(attribute.commonAttributes.tiger_tagged_ways, 1)
-        self.assertEqual(attribute.routing_factor(0), 0.45)
+        self.assertAlmostEqual(attribute.routing_factor(), 0.30)
         self.assertEqual(attribute.commonAttributes.untouched_by_user_edits, 0)
         self.assertEqual(attribute.commonAttributes.version_increase_over_tiger, 2)
 

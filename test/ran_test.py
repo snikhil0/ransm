@@ -40,7 +40,7 @@ class Test(unittest.TestCase):
         const = Containers()
         wayEntity = WayEntity(nodeCacheMock, const)
         wayEntity.analyze(ways)
-        self.assertAlmostEqual(self.ran.routing_attributes_temperature(wayEntity)[6], 6.392)
+        self.assertAlmostEqual(self.ran.routing_attributes_temperature(wayEntity)[6], 5.168)
 
     def testRelationTemperature(self):
         const = Containers()
