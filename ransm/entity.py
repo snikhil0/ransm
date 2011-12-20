@@ -46,15 +46,38 @@ EARTH_RADIUS_IN_MILES = 3963.19
 #   - guidance
 #   - unclassified
 # [MvE] this needs some scrutiny!
-ROAD_CATEGORY = {'motorway': 'highways', 'trunk': 'main', 'primary': 'main', 'secondary': 'local',
-                 'tertiary': 'local', 'residential': 'local', 'unclassified': 'unclassified', 'road': 'unclassified',
-                 'living_street': 'local', 'service': 'local', 'track': 'local', 'pedestrian': 'local',
-                 'raceway': 'local', 'services': 'local', 'rest_area': 'local', 'bus_guideway': 'local',
-                 'path': 'local', 'cycleway': 'NA', 'footway': 'NA', 'mini_roundabout': 'guidance',
-                 'stop': 'guidance', 'give_way': 'guidance', 'traffic_signals': 'guidance',
-                 'crossing': 'guidance', 'roundabout': 'guidance', 'motorway_junction': 'guidance',
-                 'turning_circle': 'guidance', 'construction': 'guidance', 'motorway_link': 'local',
-                 'trunk_link': 'local', 'primary_link': 'local', 'secondary_link': 'local',
+ROAD_CATEGORY = {'motorway': 'highways', 
+                 'trunk': 'main', 
+                 'primary': 'main', 
+                 'secondary': 'local',
+                 'tertiary': 'local', 
+                 'residential': 'local', 
+                 'unclassified': 'unclassified', 
+                 'road': 'unclassified',
+                 'living_street': 'local', 
+                 'service': 'local', 
+                 'track': 'local', 
+                 'pedestrian': 'local',
+                 'raceway': 'local', 
+                 'services': 'local', 
+                 'rest_area': 'local', 
+                 'bus_guideway': 'local',
+                 'path': 'local', 
+                 'cycleway': 'NA', 
+                 'footway': 'NA', 
+                 'mini_roundabout': 'guidance',
+                 'stop': 'guidance', 
+                 'give_way': 'guidance', 
+                 'traffic_signals': 'guidance',
+                 'crossing': 'guidance', 
+                 'roundabout': 'guidance', 
+                 'motorway_junction': 'guidance',
+                 'turning_circle': 'guidance', 
+                 #'construction': 'guidance', 
+                 'motorway_link': 'local',
+                 'trunk_link': 'local', 
+                 'primary_link': 'local', 
+                 'secondary_link': 'local',
                  'tertiary_link': 'local'}
 
 class Containers(object):
@@ -371,11 +394,18 @@ class WayAttributeEntity(Entity):
             self.number_of_junctions += 1
             self.sum_junction_length += length
 
-        guidance_keys =('stop','give_way', 'traffic_signals', 'crossing', 'roundabout',
-                        'motorway_junction', 'turning_circle', 'construction')
+        guidance_keys =( 'stop',
+                         'give_way', 
+                         'traffic_signals', 
+                         'crossing', 
+                         'roundabout',
+                         'motorway_junction', 
+                         'turning_circle', 
+                         #'construction'
+                         )
 
-        if tags['highway'] in guidance_keys:
-            self.sum_guidance_length += length
+        #if tags['highway'] in guidance_keys:
+        #    self.sum_guidance_length += length
 
         # Look in the reference nodes and check to see which ones have
         # guidance on them

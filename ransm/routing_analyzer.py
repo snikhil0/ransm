@@ -167,7 +167,7 @@ class RoutingAnalyzer(object):
         return (ages1_factor + ages10_factor + ages25_factor   + user95_factor + ages50_factor + old_factor +
                 ages75_factor) * BASIC_TEMP
 
-    def data_temeratures(self):
+    def data_temperatures(self):
         # Normalize the data temperature to between 0 and 40 and add a buffer of zero celsius
         reltemp = self.relation_temperature(self.relations_entity, self.constants.INTERSECTIONS) * DATA_TEMP # extra factor to improve
         # contribution from relations
@@ -204,7 +204,7 @@ class RoutingAnalyzer(object):
         # print 'The parsing of the file took %f' %(t1 - t0)
         
         # Calculate data temperature
-        datatemps = self.data_temeratures()
+        datatemps = self.data_temperatures()
         print 'Data temperatures for %s are: %s' % (filename, datatemps)
         #print 'Data temperature calculation took %fs' % (time() - t1)
         #print 'Total process took %fs' %(time() - t0)
