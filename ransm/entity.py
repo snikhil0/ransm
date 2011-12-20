@@ -83,6 +83,9 @@ class Containers(object):
     WAY_NODES = {}
 
     def __init__(self):
+        """
+            Dumb constructor
+        """
         pass
 
     

@@ -13,6 +13,7 @@
 # limitations under the License.
 import os, glob
 import csv
+import gc
 from tcdb import hdb
 from ransm.routing_analyzer import RoutingAnalyzer, CACHE_LOCATION
 
@@ -35,5 +36,8 @@ for infile in glob.glob(os.path.join(PATH, '*.osm.pbf')):
     basepath, cityname = os.path.split(infile)
     outrow.insert(0,cityname)
     csv_writer.writerow(outrow)
+    # clean ups? will this work?
+    ran = None
+    gc.collect()
 #            print ran.datatemp
 print 'finished. Results in %s' % CSVOUT
