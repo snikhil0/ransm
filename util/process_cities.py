@@ -17,23 +17,35 @@ import gc
 from tcdb import hdb
 from ransm.routing_analyzer import RoutingAnalyzer, CACHE_LOCATION
 
-PATH = '/osm/planet/zillow/'
+PATH = '/osm/planet/zillow/sorted/'
 CSVOUT = os.path.join(PATH, 'results.csv')
+
+done = []
+
+if os.path.exists(CSVOUT):
+    csvreader = csv.reader(open(CSVOUT, 'rb'), delimiter=',')
+    for line in csvreader:
+        done.append(line[0])
+    print done
 
 csv_writer = csv.writer(open(CSVOUT, 'wb'), delimiter=',')
         
 for infile in glob.glob(os.path.join(PATH, '*.osm.pbf')):
     db = hdb.HDB()
+    basepath, cityname = os.path.split(infile)
+    if cityname in done:
+        print 'already did %s' % (cityname)
+        continue
+    print 'doing %s' % cityname
     try:
         base_name = os.path.basename(infile) + '_nodes.tch'
-        db.open(os.path.join(CACHE_LOCATION, base_name))
+        db.open(os.path.join(CACHE_LOCATION, cityname))
     except Exception:
             print 'node cache could not be created at %s, does the directory exist? If not, create it. If so, Check permissions and disk space.' % CACHE_LOCATION
             exit(1)
     ran = RoutingAnalyzer(db)
     datatemps = ran.run(infile)
-    outrow = list(ran.datatemps)
-    basepath, cityname = os.path.split(infile)
+    outrow = list(datatemps)
     outrow.insert(0,cityname)
     csv_writer.writerow(outrow)
     # clean ups? will this work?
