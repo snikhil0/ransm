@@ -236,7 +236,7 @@ def main(args):
         usage()
         exit()
 
-    nodeCache = create_node_cache()
+    nodeCache = create_node_cache(args[1])
     analysis_engine = RoutingAnalyzer(nodeCache)
     analysis_engine.run(args[1])
 
